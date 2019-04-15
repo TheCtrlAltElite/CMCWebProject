@@ -1,5 +1,6 @@
 package AdminFunctionalities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import CMCDatabase.DBController;
@@ -45,6 +46,8 @@ public class AdminInteraction {
 	public boolean addUniversity() {
 		//adminFController.addUniversity();
 		DBController dbc = new DBController();
+		
+		List<String> emphases = new ArrayList<String>();
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter school name to be added or 'q' to quit");
@@ -105,12 +108,16 @@ public class AdminInteraction {
 			int socialScale = sc.nextInt();
 			System.out.println("Enter Quality Scale Rating (1-5): \n");
 			int qualityScale = sc.nextInt();
-			// List<String> emphasis = sc.nextLine();
+			String emphasis = sc.nextLine();
+			while(!emphasis.equals("q")) {		//error here
+				emphases.add(emphasis);
+				emphasis = sc.nextLine();
+			}
 			sc.close();
 
 			adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
 					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
-					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale);
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
 			success = true;
 			break;
 			}

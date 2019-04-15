@@ -137,7 +137,7 @@ public class FunctionalTestingClass {
         /**
          * Add University
          */
-     //   aic.addUniversity();     //Not hard coded, asks for parameters
+        aic.addUniversity();     //Not hard coded, asks for parameters
      //   afc.addUniversity("zootoopa", "-1", "-1", "-1", -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);  //call from AdminInteraction
 
     	/**

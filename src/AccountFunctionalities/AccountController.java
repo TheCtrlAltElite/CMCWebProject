@@ -43,7 +43,7 @@ public class AccountController {
 	 *            - password associated with the profile to be logged in.
 	 * @throws Exception
 	 */
-	public Account login(String username, String password) throws Exception {
+	public int login(String username, String password) throws Exception {
 		String msg = "Your username or password is incorrect. Please try again.";
 		if (database.isUserReal(username)) { // makes sure user is real
 			String pw = database.getPassword(username);
@@ -52,17 +52,20 @@ public class AccountController {
 				this.account = new Account(details.get(0), details.get(1), details.get(2), details.get(3),
 						details.get(4).charAt(0), details.get(5).charAt(0));
 				if (this.account.getStatus() == 'N') {
-					throw new Exception("Your account has been deactivated.");
+					return -1;
 				}
 				this.account.setLoginStatus(true);
 				System.out.println("You have been successfully logged in.");
 			} else {
-				throw new IllegalArgumentException(msg);
+				return -2;
 			}
 		} else {
-			throw new IllegalArgumentException(msg);
+			return -3;
 		}
-		return this.account;
+		if(this.account.getType() == 'a') {
+			return 0;
+		}
+		return 1;
 	}
 
 	/**
@@ -265,5 +268,9 @@ public class AccountController {
 	 */
 	public boolean passwordRequirements(String password) {
 		return database.checkPasswordRequirements(password); // returns true if checkPasswordRequirements(password) returned true
+	}
+	
+	public Account getCurrentAccount() {
+		return this.account;
 	}
 }
