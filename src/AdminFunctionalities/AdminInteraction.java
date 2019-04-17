@@ -84,7 +84,7 @@ public class AdminInteraction {
 			String schoolLocation = sc.nextLine();
 			System.out.println("Enter School Control: \n");
 			String schoolControl = sc.nextLine();
-			System.out.println("Enter Number of Students: \\n");
+			System.out.println("Enter Number of Students: \n");
 			int numberStudents = sc.nextInt();
 			System.out.println("Enter Percent Female Students: \n");
 			int percentFemale = sc.nextInt();
@@ -108,8 +108,10 @@ public class AdminInteraction {
 			int socialScale = sc.nextInt();
 			System.out.println("Enter Quality Scale Rating (1-5): \n");
 			int qualityScale = sc.nextInt();
+			sc.nextLine();
+	//		System.out.println("Enter 5 Emphases, type 'q' anytime to quit: \n");
 			String emphasis = sc.nextLine();
-			while(!emphasis.equals("q")) {		//error here
+			while(!emphasis.equals("q")) {		
 				emphases.add(emphasis);
 				emphasis = sc.nextLine();
 			}
@@ -184,6 +186,7 @@ public class AdminInteraction {
 	public boolean editUniversity() {
 
 		List<University> uniList = dbController.loadUniversities();
+		List<String> emphases = new ArrayList<String>();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter school to be edited: \n");
 		String nameToFind = scan.nextLine().toUpperCase();
@@ -237,11 +240,17 @@ public class AdminInteraction {
 			int editsocialScale = scan.nextInt();
 			System.out.println("Enter quality of life: \n");
 			int editqualityOfLifeScale = scan.nextInt();
+			scan.nextLine();
+			String emphasis = scan.nextLine();
+			while(!emphasis.equals("q")) {		
+				emphases.add(emphasis);
+				emphasis = scan.nextLine();
+			}
 
 			uc.editUniversity(nameToFind, editstate, editlocation, editcontrol, editnumberOfStudents,
 					editpercentFemales, editSATVerbal, editSATMath, editexpenses, editpercentFinancialAid,
 					editnumberOfApplicants, editpercentAdmitted, editpercentEnrolled, editacademicsScale,
-					editsocialScale, editqualityOfLifeScale);
+					editsocialScale, editqualityOfLifeScale, emphases);
 		}
 		scan.close();
 		return e;

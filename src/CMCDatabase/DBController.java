@@ -26,7 +26,7 @@ public class DBController {
 	 * Creates a DBController object.
 	 */
 	public DBController() {
-		  library = new UniversityDBLibrary("ctrlaltd","csci230");	
+		  library = new UniversityDBLibrary("ctrlaltd","csci230");
 		  
 	}
 	
@@ -198,6 +198,23 @@ public class DBController {
 	 */
 	public int updateUniversity(String school, String state, String location, java.lang.String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale) {
 		return library.university_editUniversity(school, state, location,control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
+	}
+	
+	/**
+	 * Removes the emphases for a school
+	 * @param schoolName
+	 */
+	public void removeUniversityEmphases(String schoolName) {
+		Map<String, List<String>> listEmphases = this.getUniversityNamesWithEmphases();
+		for (String key : listEmphases.keySet()) {
+			if(key.equals(schoolName)) {
+				List<String> emphases = listEmphases.get(key);
+				for(int i = 0; i < emphases.size(); i++) {
+					String emphasis = emphases.get(i);
+					library.university_removeUniversityEmphasis(schoolName, emphasis);
+				}
+			}
+		}
 	}
 	
 	/**
