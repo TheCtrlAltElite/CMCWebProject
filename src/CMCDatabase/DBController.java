@@ -26,7 +26,7 @@ public class DBController {
 	 * Creates a DBController object.
 	 */
 	public DBController() {
-		  library = new UniversityDBLibrary("ctrlaltd","csci230");	
+		  library = new UniversityDBLibrary("ctrlaltd","csci230");
 		  
 	}
 	
