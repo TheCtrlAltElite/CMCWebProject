@@ -7,7 +7,8 @@
 <title>AdminAddUser</title>
 </head>
 <body>
-	Back to menu
+	<a href="adminMenu.jsp">Back to menu</a>
+	Add User Form:
 	<br>
 	<br>
 	<table style="text-align: left; width: 418px;" border="1"
@@ -42,12 +43,6 @@
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
 					name="Type"><br></td>
-			</tr>
-			<tr>
-				<td style="vertical-align: top;">Status<br>
-				</td>
-				<td style="vertical-align: top;"><input name="UserStatus"><br>
-				</td>
 			</tr>
 		</tbody>
 	</table>

@@ -44,7 +44,7 @@ public class AccountController {
 	 * @throws Exception
 	 */
 	public int login(String username, String password) throws Exception {
-		String msg = "Your username or password is incorrect. Please try again.";
+		int status = -5;
 		if (database.isUserReal(username)) { // makes sure user is real
 			String pw = database.getPassword(username);
 			if (pw.equals(password)) { // checks that the password enter is correct and corresponds with the account
@@ -52,20 +52,20 @@ public class AccountController {
 				this.account = new Account(details.get(0), details.get(1), details.get(2), details.get(3),
 						details.get(4).charAt(0), details.get(5).charAt(0));
 				if (this.account.getStatus() == 'N') {
+					status = -1;
 					return -1;
+				} else if (this.account.getType() == 'a') {
+					this.account.setLoginStatus(true);
+					status = 0;
+					return status;
+				} else if (this.account.getType() == 'u') {
+					this.account.setLoginStatus(true);
+					status = 1;
+					return status;
 				}
-				this.account.setLoginStatus(true);
-				System.out.println("You have been successfully logged in.");
-			} else {
-				return -2;
 			}
-		} else {
-			return -3;
 		}
-		if(this.account.getType() == 'a') {
-			return 0;
-		}
-		return 1;
+		return status;
 	}
 
 	/**
