@@ -5,33 +5,8 @@
 </head>
 <body>
 	Login form:
-	<%
-	String Error = request.getParameter("Error");
-
-	if (Error != null && Error.equals("-1")) {
-
-		out.println("Provided user is deactivated.");
-
-	}
-
-	else if (Error != null && Error.equals("-2")) {
-
-		out.println("Provided password is not valid. ");
-
-	}
-
-	else if (Error != null && Error.equals("-3")) {
-
-		out.println("Provided user is not a valid user.");
-
-	}
-
-	else if (Error != null && Error.equals("-4")) {
-
-		out.println("Please sign in. ");
-
-	}
-	%>
+	<br>
+	<br>
 	<form method="post" action="loginAction.jsp" name="Login">
 		<br>
 		<table style="text-align: left; width: 266px; height: 228px;"
@@ -60,5 +35,19 @@
 		<br>
 	</form>
 	<br>
+	<%
+	String Error = request.getParameter("Error");
+	if (Error != null && Error.equals("-1")) {
+		out.println("Provided user is deactivated.");
+	} else if (Error != null && Error.equals("-2")) {
+		out.println("Provided password is not valid. ");
+	} else if (Error != null && Error.equals("-3")) {
+		out.println("Provided user name is not valid.");
+	} else if (Error != null && Error.equals("-4")) {
+		out.println("Please sign in to access system pages.");
+	} else if (Error != null && Error.equals("-5")) {
+		out.println("Error while trying to access database.");
+	} 
+	%>
 </body>
 </html>

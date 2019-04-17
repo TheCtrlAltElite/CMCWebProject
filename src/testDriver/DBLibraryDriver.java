@@ -43,6 +43,8 @@ public class DBLibraryDriver{
 
      //List<University> listUnis = dbc.loadUniversities();
      //unc.recommendedSchools(listUnis.get(4));
+     
+ //    dbc.removeUniversityEmphases("zootoopa");
 
      //List<University> listUnis = dbc.loadUniversities();
      //unc.recommendedSchools(listUnis.get(0));
@@ -51,7 +53,10 @@ public class DBLibraryDriver{
 
      //unc.compareUniversity(listUnis.get(5)); 	 //not ready
      //unc.recommendedSchools(University university;	//not ready
-     //unc.editUniversity("CSBSJU", "MN", "URBAN", "STATE", 20000, 50, 70, 600, 600, 31500, 20, 1000, 3, 5, 5, 5);
+     
+     //List<String> emphases = new ArrayList<String>();
+     //unc.editUniversity("zootoopa", "MN", "URBAN", "STATE", 20000, 50, 70, 600, 600, 31500, 20, 1000, 3, 5, 5, 5, emphases);
+     
      //dbc.addUniversity("TESTUNIDONTDELETE", "-1", "-1", "-1", -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1);
      //unc.getDetailsUni("TESTUNI"); 							//Make sure school being searched is in DB as all caps, otherwise remove toUpperCase() in UniversityController.
      

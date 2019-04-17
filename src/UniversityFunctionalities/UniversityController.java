@@ -283,9 +283,14 @@ public class UniversityController {
 	/**
 	 * edits a University by taking in information to be changed and calling updateUniversity() in DBController
 	 */
-	public boolean editUniversity(String nameToFind, String editState, String editLocation, String editControl, int editNumberOfStudents, double editPercentFemales, double editSATVerbal, double editSATMath, double editExpenses, double editPercentFinancialAid, int editNumberOfApplicants, double editPercentAdmitted, double editPercentEnrolled, int editAcademicsScale, int editSocialScale, int editQualityOfLifeScale) {
+	public boolean editUniversity(String nameToFind, String editState, String editLocation, String editControl, int editNumberOfStudents, double editPercentFemales, double editSATVerbal, double editSATMath, double editExpenses, double editPercentFinancialAid, int editNumberOfApplicants, double editPercentAdmitted, double editPercentEnrolled, int editAcademicsScale, int editSocialScale, int editQualityOfLifeScale, List<String> emphases) {
 		boolean e = false;
 		int num = dbc.updateUniversity(nameToFind, editState, editLocation, editControl, editNumberOfStudents, editPercentFemales, editSATVerbal, editSATMath, editExpenses, editPercentFinancialAid, editNumberOfApplicants, editPercentAdmitted, editPercentEnrolled, editAcademicsScale, editSocialScale, editQualityOfLifeScale);
+		dbc.removeUniversityEmphases(nameToFind);
+		for (int i = 0; i < emphases.size(); i++) {
+			String emphasis = emphases.get(i);
+			dbc.addUniversityEmphasis(nameToFind, emphasis);
+		}
 		listUnis = dbc.loadUniversities();
 		List<String> schools = new ArrayList<String>();
 		for(int i = 0; i < listUnis.size(); i++) {
