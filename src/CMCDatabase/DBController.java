@@ -201,6 +201,23 @@ public class DBController {
 	}
 	
 	/**
+	 * Removes the emphases for a school
+	 * @param schoolName
+	 */
+	public void removeUniversityEmphases(String schoolName) {
+		Map<String, List<String>> listEmphases = this.getUniversityNamesWithEmphases();
+		for (String key : listEmphases.keySet()) {
+			if(key.equals(schoolName)) {
+				List<String> emphases = listEmphases.get(key);
+				for(int i = 0; i < emphases.size(); i++) {
+					String emphasis = emphases.get(i);
+					library.university_removeUniversityEmphasis(schoolName, emphasis);
+				}
+			}
+		}
+	}
+	
+	/**
 	 * Adds a new university to the database
 	 * 
 	 * @param newUni
