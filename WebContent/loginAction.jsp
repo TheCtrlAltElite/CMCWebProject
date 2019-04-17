@@ -7,11 +7,8 @@
 	int status = ac.login(u, p);
 
 	if (status == 0) {
-		
 		session.setAttribute("AC", ac);
-		
 		response.sendRedirect("AdminMenu.jsp");
-
 	}
 	else if(status == 1) {
 		session.setAttribute("AC", ac);

@@ -1,6 +1,10 @@
 <%@ page language="java" import="UniversityFunctionalities.*"%>
 
 <html>
+
+<%//University uni = new University(); %>
+<%@include file="verifyLogin.jsp" %>
+
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>ViewUniversity</title>
