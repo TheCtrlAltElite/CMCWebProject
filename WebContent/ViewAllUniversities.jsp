@@ -5,11 +5,11 @@
 </head>
 <body>
 	<% 	
-	//AdminFunctionalityController afc = new AdminFunctionalityController();
+	AdminFunctionalityController afc = new AdminFunctionalityController();
 
 	//session.setAttribute("AFC", afc);
 	
-	AdminFunctionalityController afc = (AdminFunctionalityController)session.getAttribute("AFC");
+	//AdminFunctionalityController afc = (AdminFunctionalityController)session.getAttribute("AFC");
 	
 	
 %>
