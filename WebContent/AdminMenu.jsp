@@ -8,7 +8,7 @@
 Welcome Admin: <%AC.getCurrentAccount().getEmail(); %><br>
 <br>
 <br>
-Manage Users<br>
-Manage Universities<br>
+<a href="ViewUsers.jsp">Manage Users</a><br>
+<a href="ViewUniversities.jsp">Manage Universities</a><br>
 </body>
 </html>
