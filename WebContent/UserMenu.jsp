@@ -1,12 +1,12 @@
 <%@ page language="java" import="AccountFunctionalities.*"%>
-<%AccountInteraction ac = (AccountInteraction)session.getAttribute("ac");%>
-<%-- <%@include file="verifyLogin.jsp" %> --%>
+<%@include file="verifyLogin.jsp" %>
+<%@include file="LogoutButton.jsp" %>
 <html>
 <head>
 <title>Menu</title>
 </head>
 <body>
-Welcome User: <%ac.getCurrentAccount().getEmail(); %><br>
+Welcome User: <%=ac.getCurrentAccount().getEmail()%><br>
 <br>
 <br>
 <a href="UserEditUser.jsp">Manage My Profile</a><br>

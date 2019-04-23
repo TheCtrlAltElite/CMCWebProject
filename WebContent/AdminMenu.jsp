@@ -1,5 +1,6 @@
 <%@ page language="java" import="AccountFunctionalities.*"%>
 <%@include file="verifyLogin.jsp" %>
+<%@include file="LogoutButton.jsp" %>
 <html>
 <head>
 <title>Menu</title>

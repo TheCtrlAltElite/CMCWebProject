@@ -6,9 +6,9 @@
 	String lname = request.getParameter("LastName");
 	String username = request.getParameter("Username");
 	String password = request.getParameter("Password");
-	char type = request.getParameter("Type").charAt(0);
+	String type = request.getParameter("Type");
 	
-	afc.addUser(fname, lname, username, password, type);
+	afc.addUser(fname, lname, username, password, type.charAt(0));
 	response.sendRedirect("AdminMenu.jsp");
 	
 %>

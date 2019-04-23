@@ -89,7 +89,7 @@ public class AdminFunctionalityController {
 	 * Adds a user to the database
 	 * by getting the information from the user
 	 */
-	public int addUser(String firstName, String lastName, String username, String password, char type) {
+	public int addUser(String firstName, String lastName, String username, String password, String type) {
 		
 		DBController dbc = new DBController();
 		List<Account> users = dbc.loadUsers();
@@ -113,7 +113,7 @@ public class AdminFunctionalityController {
 		
 			
 			else {
-				dbc.addUser(firstName, lastName, username, password, type);
+				dbc.addUser(firstName, lastName, username, password, type.charAt(0));
 //				Account acc = new Account(username, firstName, lastName,  password,  type, 'Y');
 				result = 3;
 				//added = true;
