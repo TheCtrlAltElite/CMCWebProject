@@ -116,7 +116,7 @@ public class FunctionalTestingClass {
          * View school information
          * INCLUDES RECOMMENDED SCHOOLS
          */        
-     //   ufc.viewSchool("ABILENE CHRISTIAN UNIVERSITY");
+     //   ufc.viewSchool("ARIZONA STATE");
      //   List<University> listUnis = dbc.loadUniversities();
      //   unc.recommendedSchools(listUnis.get(0));        
        
@@ -166,6 +166,18 @@ public class FunctionalTestingClass {
     	 */
      //	  acc.addProfilePicture("joettinge001@gmail.com", "joettinge001@gmail.com");
     	
+    	
+    	/**
+    	 * Testing the removeUniveristy with Emphases and in Saved Schools List
+    	 */
+//        	List<String> emphases = new ArrayList<String>();
+//        	emphases.add("BIOLOGY");
+//        	emphases.add("ART");
+//        	emphases.add("ACCOUNTING");
+//            afc.addUniversity("ZOOTOOPA", "-1", "-1", "-1", -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, emphases);
+//            ufc.addToSavedSchoolsList3("FBaggins@gmail.com", "ZOOTOOPA");  
+//            afc.removeUniversityDB("ZOOTOOPA");
+            
     }
     catch(Exception e){
       e.printStackTrace();

@@ -359,6 +359,16 @@ public class UniversityController {
 				details.add(Integer.toString(universities.get(i).getAcademicScale()));
 				details.add(Integer.toString(universities.get(i).getSocialScale()));
 				details.add(Integer.toString(universities.get(i).getQualityScale()));
+				
+				Map<String, List<String>> uniEmphases = dbc.getUniversityNamesWithEmphases();
+				for (Map.Entry entry : uniEmphases.entrySet()){
+					if(schoolName.equals(entry.getKey())) {
+						List<String> tempArray = uniEmphases.get(schoolName);
+						for (int j = 0; j < tempArray.size(); j++) {
+							details.add(tempArray.get(j));
+						}
+					}
+				}
 			}
 		}
 		System.out.println(details.toString());
