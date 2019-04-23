@@ -8,7 +8,7 @@
 <title>UserEditUser</title>
 </head>
 <body>
-	Back to menu
+	<a href="UserMenu.jsp">Back to menu</a>
 	<br>
 	<br>
 	<table style="text-align: left; width: 418px;" border="1"
