@@ -76,8 +76,8 @@ public class AccountInteraction {
 	 * 
 	 * @param username
 	 */
-	public void viewProfile(String username) {
-		accController.viewProfile(username);
+	public List<String> viewProfile(String username) {
+		return accController.viewProfile(username);
 	}
 	
 	/**

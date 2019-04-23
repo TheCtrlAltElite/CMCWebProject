@@ -8,7 +8,7 @@
 <title>AdminAddUser</title>
 </head>
 <body>
-	<a href="adminMenu.jsp">Back to menu</a>
+	<a href="AdminMenu.jsp">Back to menu</a>
 	Add User Form:
 	<br>
 	<br>
@@ -48,7 +48,7 @@
 		</tbody>
 	</table>
 	<br>
-	<input value="Add User" name="AddUser" type="submit">&nbsp;&nbsp;&nbsp;
+	<a href=addAction.jsp><input value="Add User" name="AddUser" type="submit">&nbsp;&nbsp;&nbsp;</a>
 	<input name="Reset" type="reset">
 	<br>
 	<br>

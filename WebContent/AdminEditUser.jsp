@@ -4,6 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<% List<String> list = ac.viewProfile(request.getParameter("Username")); 
+%>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>AdminEditUser</title>
 </head>
@@ -18,36 +20,37 @@
 				<td style="vertical-align: top; width: 200px;">First Name<br>
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
-					name="FirstName"></td>
+					name="FirstName" value = <%=list.get(1)%>></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 200px;">Last Name<br>
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
-					name="LastName"><br></td>
+					name="LastName" value = <%=list.get(2)%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 200px;">Username<br>
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
-					readonly="readonly" name="Username"><br></td>
+					readonly="readonly" name="Username" value = <%=list.get(0)%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 200px;">Password<br>
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
-					name="Password"><br></td>
+					name="Password" value = <%=list.get(3)%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 200px;">Type<br>
 				</td>
 				<td style="vertical-align: top; width: 200px;"><input
-					name="Type"><br></td>
+					name="Type" value = <%=list.get(4)%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top;">Status<br>
 				</td>
-				<td style="vertical-align: top;"><input name="UserStatus"><br>
+				<td style="vertical-align: top; width: 200px; "><input name="UserStatus" 
+				    value = <%=list.get(5)%>><br>
 				</td>
 			</tr>
 		</tbody>
