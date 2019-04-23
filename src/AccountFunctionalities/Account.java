@@ -34,7 +34,6 @@ public class Account {
 	 * @param email, firstName, lastName, password, type, status
 	 */
 	public Account(String email, String firstName, String lastName, String password, char type, char status) {
-		System.out.println(type);
 		if(type == 'a' || type == 'u' || type == 'A' || type == 'U') {
 			if(status == 'y' || status == 'n'|| status == 'Y' || status == 'N') {
 				this.email = email;
