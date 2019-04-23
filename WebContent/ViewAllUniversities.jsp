@@ -16,7 +16,7 @@
 			<tr>
 				<td colspan="17"
 					style="vertical-align: top; width: 23px; text-align: center;"><a
-					href="AdminAddUniversity.jsp">Add a New University</a><br></td>
+					href="addUniversity.jsp">Add a New University</a><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 130px; text-align: center;">School<br>

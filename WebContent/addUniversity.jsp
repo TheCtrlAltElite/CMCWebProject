@@ -42,7 +42,7 @@
 					name="students"><br></td>
 			</tr>
 			<tr>
-				<td style="vertical-align: top; width: 243px;">PERCENT FEMALE<br>
+				<td style="vertical-align: top; width: 243px;">PERCENT FEMALE (Integer between 0 and 100)<br>
 				</td>
 				<td style="vertical-align: top; width: 309px;"><input
 					name="females"><br></td>
