@@ -6,13 +6,14 @@
 <body>
 	<% 	
 	AdminFunctionalityController afc = new AdminFunctionalityController();
-
+	
 	//session.setAttribute("AFC", afc);
 	
 	//AdminFunctionalityController afc = (AdminFunctionalityController)session.getAttribute("AFC");
 	
 	
 %>
+<%@include file="verifyLogin.jsp" %>
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">

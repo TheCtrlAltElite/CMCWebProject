@@ -1,5 +1,5 @@
 <%@ page language="java" import="AccountFunctionalities.*"%>
-<%AccountController AC = (AccountController) session.getAttribute("AC"); %>
+<%AccountController AC = (AccountController) session.getAttribute("ac"); %>
 <%@include file="verifyLogin.jsp" %>
 <html>
 <head>
