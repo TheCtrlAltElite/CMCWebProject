@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
-<title>ViewUniversity</title>
+<title>School Search</title>
 </head>
 <body>
 	<br>
@@ -174,7 +174,13 @@
 			</tr>
 		</tbody>
 	</table>
+	<input name="Submit" type="submit">&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+	&nbsp;&nbsp; &nbsp;&nbsp;
+	<input name="Reset" type="reset">
+	<br>
 	<br>
 	<br>
 </body>
 </html>
+
