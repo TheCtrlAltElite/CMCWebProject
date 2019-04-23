@@ -34,7 +34,6 @@ public class Account {
 	 * @param email, firstName, lastName, password, type, status
 	 */
 	public Account(String email, String firstName, String lastName, String password, char type, char status) {
-		
 		if(type == 'a' || type == 'u' || type == 'A' || type == 'U') {
 			if(status == 'y' || status == 'n'|| status == 'Y' || status == 'N') {
 				this.email = email;
@@ -46,11 +45,11 @@ public class Account {
 				this.loginStatus = false;
 			}
 			else {
-				throw new IllegalArgumentException("Type is invalid.");
+				throw new IllegalArgumentException("Status is invalid.");
 			}
 		}
 		else {
-			throw new IllegalArgumentException("Status is invalid.");
+			throw new IllegalArgumentException("Type is invalid.");
 		}
 	}
 	

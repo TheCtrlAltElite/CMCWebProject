@@ -5,6 +5,7 @@
 package CMCDatabase;
 
 import java.sql.Timestamp;
+
 import java.util.*;
 
 import AccountFunctionalities.Account;
@@ -52,12 +53,12 @@ public class DBController {
 		List<Account> users = loadUsers();
 		for(int i = 0; i < users.size(); i++) {
 			if(userName.equals(users.get(i).getEmail())) {				
-				details.add(users.get(i).getFirstName());
-				details.add(users.get(i).getLastName());
-				details.add(users.get(i).getEmail());
-				details.add(users.get(i).getPassword());
-				details.add(Character.toString(users.get(i).getType()));
-				details.add(Character.toString(users.get(i).getStatus()));
+				details.add(0, users.get(i).getEmail());
+				details.add(1, users.get(i).getFirstName());
+				details.add(2, users.get(i).getLastName());
+				details.add(3, users.get(i).getPassword());
+				details.add(4, Character.toString(users.get(i).getType()));
+				details.add(5, Character.toString(users.get(i).getStatus()));
 			}
 		}
 		return details;
@@ -198,23 +199,6 @@ public class DBController {
 	 */
 	public int updateUniversity(String school, String state, String location, java.lang.String control, int numberOfStudents, double percentFemales, double SATVerbal, double SATMath, double expenses, double percentFinancialAid, int numberOfApplicants, double percentAdmitted, double percentEnrolled, int academicsScale, int socialScale, int qualityOfLifeScale) {
 		return library.university_editUniversity(school, state, location,control, numberOfStudents, percentFemales, SATVerbal, SATMath, expenses, percentFinancialAid, numberOfApplicants, percentAdmitted, percentEnrolled, academicsScale, socialScale, qualityOfLifeScale);
-	}
-	
-	/**
-	 * Removes the emphases for a school
-	 * @param schoolName
-	 */
-	public void removeUniversityEmphases(String schoolName) {
-		Map<String, List<String>> listEmphases = this.getUniversityNamesWithEmphases();
-		for (String key : listEmphases.keySet()) {
-			if(key.equals(schoolName)) {
-				List<String> emphases = listEmphases.get(key);
-				for(int i = 0; i < emphases.size(); i++) {
-					String emphasis = emphases.get(i);
-					library.university_removeUniversityEmphasis(schoolName, emphasis);
-				}
-			}
-		}
 	}
 	
 	/**

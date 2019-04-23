@@ -1,7 +1,7 @@
 <%@ page language="java" import="AccountFunctionalities.*"%>
 <%@include file="verifyLogin.jsp" %>
 <%
-	AccountController AC = (AccountController) session.getAttribute("AC");
+	AccountController AC = (AccountController) session.getAttribute("ac");
 	String uname = request.getParameter("Username");
 	String fName = request.getParameter("FirstName");
 	String lName = request.getParameter("LastName");
