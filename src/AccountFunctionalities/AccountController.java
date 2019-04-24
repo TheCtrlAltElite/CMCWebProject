@@ -42,7 +42,7 @@ public class AccountController {
 	 *            - password associated with the profile to be logged in.
 	 * @throws Exception
 	 */
-	public int login(String username, String password) throws Exception {
+	public int login(String username, String password) {
 		int status = -5;
 		if (database.isUserReal(username)) { // makes sure user is real
 			String pw = database.getPassword(username);
