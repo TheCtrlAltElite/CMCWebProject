@@ -69,7 +69,6 @@ public class AccountController {
 	 */
 	public Account logOut() {
 		this.account.setLoginStatus(false);
-		System.out.println("You have successfully logged out.");
 		return this.account;
 	}
 
@@ -81,11 +80,6 @@ public class AccountController {
 	 */
 	public boolean isUserReal(String username) {
 		boolean real = database.isUserReal(username);
-		if (real == true) {
-			System.out.println("User is real.");
-		} else {
-			System.out.println("User does not exist");
-		}
 		return real;
 	}
 
@@ -98,8 +92,6 @@ public class AccountController {
 	 */
 	public String getPassword(String username) {
 		String pass = database.getPassword(username);
-	    
-		System.out.println(pass);
 		return pass;
 	}
 
@@ -111,7 +103,6 @@ public class AccountController {
 	 */
 	public List<String> viewProfile(String username) {
 		List<String> accDetails = database.getDetailsProfile2(username);
-		System.out.println(accDetails);
 		return accDetails;
 	}
 
@@ -151,10 +142,10 @@ public class AccountController {
 	 * @param n2
 	 *            - new password, must be the same as n1
 	 */
-	public boolean resetPassword(String o, String n1, String n2) { //WILL NEED TO CHANGE ONCE WE START TO USE GUI
+	public int resetPassword(String o, String n1, String n2) {
 	
 		List<Account> listUsers = database.loadUsers();
-		boolean changeStatus = false;
+		int changeStatus = -1;
 		for (int i = 0; i < listUsers.size(); i++) { // goes through users in database and finds which one corresponds
 														// with the account email
 			if (listUsers.get(i).getPassword().equals(o)) { // compares the old password with the current
@@ -163,16 +154,15 @@ public class AccountController {
 															// requirements
 						Account acc = listUsers.get(i);
 						acc.setPassword(n2); // sets the password for the account
-						changeStatus = true;
-						database.editUser(listUsers.get(i));
-						System.out.println("Your password has been changed.");// sets the password in database
+						changeStatus = 0;
+						database.editUser(listUsers.get(i)); // sets the password in database
 						break;
 					}
 				} else {
-					System.out.print("Your new passwords do not match.");
+					changeStatus = 1; //new passwords entered in do not match
 				}
 			} else if (i == listUsers.size() - 1) {
-				System.out.println("Your old password was incorrect. Please try again.");
+				changeStatus = 2;    //Error if old password is not correct
 			}
 		}
 		return changeStatus;
@@ -191,16 +181,16 @@ public class AccountController {
 	 *            security purposes.
 	 * @throws MessagingException
 	 */
-	public boolean recoverPassword(String email) throws MessagingException {
+	public int recoverPassword(String email) throws MessagingException {
 
 		String newPassword = database.sendRecoverEmail(email);
-		boolean statusOfReset = this.resetPassword(database.getPassword(email), newPassword, newPassword); // Resets the
+		int statusOfReset = this.resetPassword(database.getPassword(email), newPassword, newPassword); // Resets the
 																											// recovered
 																											// password
 																											// as the
 																											// new
 																											// password
-		if (statusOfReset) {
+		if (statusOfReset == 0) {
 			try {
 				Properties props = new Properties();
 				props.put("mail.smtp.user", "cmcdatabase2019@gmail.com"); // sets email to be sent from
@@ -225,9 +215,9 @@ public class AccountController {
 				message.setSubject("Password Recovery"); // subject of the email
 				message.setText(mail_body); // sets the body of the email to mail_body
 
-				System.out.println(message); // shows email has begun to send out
+			//	System.out.println(message); // shows email has begun to send out
 				Transport.send(message); // Sends out email
-				System.out.println("Message sent!"); // Informs message is sent
+			//	System.out.println("Message sent!"); // Informs message is sent
 
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -49,8 +49,8 @@
 			<tr>
 				<td style="vertical-align: top;">Status<br>
 				</td>
-				<td style="vertical-align: top; width: 200px; "><input name="UserStatus" 
-				    value = <%=list.get(5)%>><br>
+				<td style="vertical-align: top; width: 200px; "><input 
+					name="UserStatus" value = <%=list.get(5)%>><br>
 				</td>
 			</tr>
 		</tbody>
