@@ -1,4 +1,5 @@
-<%@page language="java" import="AdminFunctionalities.*" import="UserFunctionalities.*"%>
+<%@page language="java" import="AdminFunctionalities.*" import="UserFunctionalities.*"%>\
+<%@include file="verifyLogin.jsp" %>
 <%
 	AdminInteraction afc = (AdminInteraction)session.getAttribute("sessionVariable");
 
@@ -9,6 +10,5 @@
 	String type = request.getParameter("Type");
 	
 	afc.addUser(fname, lname, username, password, type);
-	response.sendRedirect("AdminMenu.jsp");
-	
+	response.sendRedirect("ViewAllUsers.jsp");
 %>
