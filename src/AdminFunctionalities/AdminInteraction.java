@@ -43,17 +43,105 @@ public class AdminInteraction {
 	 * Adds a new university to the database by calling addUniversity() in
 	 * AdminFunctionalityController
 	 */
-	public boolean addUniversity() {
-		//adminFController.addUniversity();
-		DBController dbc = new DBController();
-		
-		List<String> emphases = new ArrayList<String>();
+//	public boolean addUniversity() {
+//		//adminFController.addUniversity();
+//		DBController dbc = new DBController();
+//		
+//		List<String> emphases = new ArrayList<String>();
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter school name to be added or 'q' to quit");
+//		String schoolName = sc.nextLine();
+//
+//		boolean success = false;
+//
+//		int i = 0;
+//		// searches through list of universities retrieved through loadUniversities()
+//		while (i < dbc.loadUniversities().size()) {
+//
+//			String name = dbc.loadUniversities().get(i).getSchoolName();
+//
+//			// confirms that the uniToFind exists
+//			if (name.toUpperCase().equals(schoolName.toUpperCase())) {
+//				// e= true;
+//				System.out.println(schoolName + " exists, choose a different name.");
+//				sc.close();
+//				
+//				addUniversity();
+//
+//			}
+//
+//			else if(schoolName.equals("q")) {
+//				sc.close();
+//				break;
+//			}
+//
+//			else {
+//				
+//			System.out.println("Enter School State: \n");
+//			String schoolState = sc.nextLine();
+//			System.out.println("Enter School Location: \n");
+//			String schoolLocation = sc.nextLine();
+//			System.out.println("Enter School Control: \n");
+//			String schoolControl = sc.nextLine();
+//			System.out.println("Enter Number of Students: \n");
+//			int numberStudents = sc.nextInt();
+//			System.out.println("Enter Percent Female Students: \n");
+//			int percentFemale = sc.nextInt();
+//			System.out.println("Enter Average Verbal SAT Score: \n");
+//			int verbalSAT = sc.nextInt();
+//			System.out.println("Enter Average Math SAT Score: \n");
+//			int mathSAT = sc.nextInt();
+//			System.out.println("Enter School Cost: \n");
+//			int schoolExpenses = sc.nextInt();
+//			System.out.println("Enter Percent of Students Receiving Financial Aid: \n");
+//			int percentFinancialAid = sc.nextInt();
+//			System.out.println("Enter Number of Applicants: \n");
+//			int numApplicants = sc.nextInt();
+//			System.out.println("Enter Percent of Students Admitted: \n");
+//			int percentAdmitted = sc.nextInt();
+//			System.out.println("Enter Percent of Students Enrolled: \n");
+//			int percentEnrolled = sc.nextInt();
+//			System.out.println("Enter Academic Scale Rating (1-5): \n");
+//			int academicScale = sc.nextInt();
+//			System.out.println("Enter Social Scale Rating (1-5): \n");
+//			int socialScale = sc.nextInt();
+//			System.out.println("Enter Quality Scale Rating (1-5): \n");
+//			int qualityScale = sc.nextInt();
+//			sc.nextLine();
+//	//		System.out.println("Enter 5 Emphases, type 'q' anytime to quit: \n");
+//			String emphasis = sc.nextLine();
+//			while(!emphasis.equals("q")) {		
+//				emphases.add(emphasis);
+//				emphasis = sc.nextLine();
+//			}
+//			sc.close();
+//
+//			adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+//					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+//					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+//			success = true;
+//			break;
+//			}
+//		}
+//		return success;
+//	}
+	
+	
+	
+	/**
+	 * Adds a new university to the database by calling addUniversity() in
+	 * AdminFunctionalityController
+	 */
+	public boolean addUniversity(String schoolName, String schoolState, String schoolLocation, String schoolControl, int numberStudents,
+			int percentFemale, int verbalSAT, int mathSAT, int schoolExpenses, int percentFinancialAid, int numApplicants,
+			int percentAdmitted, int percentEnrolled, int academicScale, int socialScale, int qualityScale,  String emphasis1, String emphasis2, String emphasis3, String emphasis4, String emphasis5) {
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter school name to be added or 'q' to quit");
-		String schoolName = sc.nextLine();
+		DBController dbc = new DBController();
+
 
 		boolean success = false;
+		int x= 0;
 
 		int i = 0;
 		// searches through list of universities retrieved through loadUniversities()
@@ -65,65 +153,49 @@ public class AdminInteraction {
 			if (name.toUpperCase().equals(schoolName.toUpperCase())) {
 				// e= true;
 				System.out.println(schoolName + " exists, choose a different name.");
-				sc.close();
-				
-				addUniversity();
-
-			}
-
-			else if(schoolName.equals("q")) {
-				sc.close();
 				break;
+
+				//addUniversity();
 			}
 
-			else {
-				
-			System.out.println("Enter School State: \n");
-			String schoolState = sc.nextLine();
-			System.out.println("Enter School Location: \n");
-			String schoolLocation = sc.nextLine();
-			System.out.println("Enter School Control: \n");
-			String schoolControl = sc.nextLine();
-			System.out.println("Enter Number of Students: \n");
-			int numberStudents = sc.nextInt();
-			System.out.println("Enter Percent Female Students: \n");
-			int percentFemale = sc.nextInt();
-			System.out.println("Enter Average Verbal SAT Score: \n");
-			int verbalSAT = sc.nextInt();
-			System.out.println("Enter Average Math SAT Score: \n");
-			int mathSAT = sc.nextInt();
-			System.out.println("Enter School Cost: \n");
-			int schoolExpenses = sc.nextInt();
-			System.out.println("Enter Percent of Students Receiving Financial Aid: \n");
-			int percentFinancialAid = sc.nextInt();
-			System.out.println("Enter Number of Applicants: \n");
-			int numApplicants = sc.nextInt();
-			System.out.println("Enter Percent of Students Admitted: \n");
-			int percentAdmitted = sc.nextInt();
-			System.out.println("Enter Percent of Students Enrolled: \n");
-			int percentEnrolled = sc.nextInt();
-			System.out.println("Enter Academic Scale Rating (1-5): \n");
-			int academicScale = sc.nextInt();
-			System.out.println("Enter Social Scale Rating (1-5): \n");
-			int socialScale = sc.nextInt();
-			System.out.println("Enter Quality Scale Rating (1-5): \n");
-			int qualityScale = sc.nextInt();
-			sc.nextLine();
-	//		System.out.println("Enter 5 Emphases, type 'q' anytime to quit: \n");
-			String emphasis = sc.nextLine();
-			while(!emphasis.equals("q")) {		
-				emphases.add(emphasis);
-				emphasis = sc.nextLine();
+			if(i == dbc.loadUniversities().size() - 1) {
+				x = 1;
 			}
-			sc.close();
+
+		}
+
+
+		if(x == 1) {	
+
+			List<String> emphasesList = new ArrayList<String>();
+
+			if(emphasis1 != null) {		
+				emphasesList.add(emphasis1);
+			}
+
+			if(emphasis2 != null && emphasis2 != emphasis1) {		
+				emphasesList.add(emphasis2);
+			}
+
+			if(emphasis3 != null && emphasis3 != emphasis1 && emphasis3 != emphasis2) {		
+				emphasesList.add(emphasis3);
+			}
+
+			if(emphasis4 != null && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {		
+				emphasesList.add(emphasis4);
+			}
+
+			if(emphasis5 != null && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3 && emphasis5 != emphasis4) {		
+				emphasesList.add(emphasis5);
+			}
 
 			adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
 					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
-					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasesList);
 			success = true;
-			break;
-			}
+
 		}
+
 		return success;
 	}
 
