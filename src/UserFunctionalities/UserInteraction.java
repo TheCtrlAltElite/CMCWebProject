@@ -1,6 +1,7 @@
 package UserFunctionalities;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import javax.mail.MessagingException;
@@ -58,11 +59,8 @@ public class UserInteraction {
 	/**
 	 * Presents the user with the list of saved schools
 	 */		
-	public void viewSavedSchools() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter a user to view thier saved schools list:");
-		String user = sc.nextLine();
-		userController.getSavedSchoolsList(user);
+	public Map<String, String> viewSavedSchools(String user) {
+		return userController.getSavedSchoolsList(user);
 	}
 	
 	/**
