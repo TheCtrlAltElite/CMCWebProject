@@ -10,6 +10,7 @@
 <title>AdminEditUser</title>
 </head>
 <body>
+	<form method="post" action="AdminEditUserAction.jsp" name="AdminEditUser">
 	<a href="AdminMenu.jsp">Back to menu</a>
 	<br>
 	<br>
@@ -56,9 +57,10 @@
 		</tbody>
 	</table>
 	<br>
-	<a href="AdminEditUserAction.jsp"><input value="Edit User" name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;</a>
+	<input value="Edit User" name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;
 	<input name="Reset" type="reset">
 	<br>
+		</form>
 	<br>
 </body>
 </html>

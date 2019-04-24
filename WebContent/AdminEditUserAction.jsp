@@ -8,9 +8,13 @@
 	String pass = request.getParameter("Password");
 	String stat = request.getParameter("Status");
 	String type = request.getParameter("Type");
+	System.out.println(uname + " " + fName + " " + lName + " " + pass + " " + stat + " " + type);
+	
 	boolean change = AC.editProfile(fName, lName, uname, pass, type, stat);
 	if(change){
-		response.sendRedirect("AdminMenu.jsp");
+		response.sendRedirect("ViewAllUsers.jsp");
 	}
-	response.sendRedirect("AdminMenu.jsp?Error=-1");
+	else {
+		response.sendRedirect("ViewAllUsers.jsp?Error=-1");
+	}
 %>
