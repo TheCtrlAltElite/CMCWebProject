@@ -101,7 +101,6 @@ public class DBController {
 	 * @param username the user of which to get the details for
 	 */
 	public int editUser(Account account) {
-		System.out.println(this.library.user_editUser(account.getEmail(), account.getFirstName(), account.getLastName(), account.getPassword(), account.getType(), account.getStatus()));
 		return this.library.user_editUser(account.getEmail(), account.getFirstName(), account.getLastName(), account.getPassword(), account.getType(), account.getStatus());
 	}
 	
@@ -160,9 +159,7 @@ public class DBController {
 			
 			University uni = new University(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
 			listUnis.add(uni);
-			//System.out.println(listUnis.get(i).getSchoolName());    //prints all universities
 		}
-		//System.out.println(listUnis.get(54).getSchoolName());   //will return university at index 54 which is Harvard
 		return listUnis;
 	}
 	
@@ -346,11 +343,9 @@ public class DBController {
 		//User user = new User(details.get(0), details.get(1), details.get(2), details.get(3), details.get(4).charAt(0), details.get(5).charAt(0));
 		//if(email.equals(user.getEmail()) && firstName.equals(user.getFirstName()) && lastName.equals(user.getLastName())) {
 		if(userName.equals(details.get(2)) && firstName.equals(details.get(0)) && lastName.equals(details.get(1))) {
-			System.out.println("Success");
 			return true;
 		}
 		else {
-		System.out.println("Your email, first name, or last name was incorrect.");
 		return false;
 		}
 	}
@@ -395,10 +390,8 @@ public class DBController {
 	 */
 	public boolean checkPasswordRequirements(String password) {
 		if(this.containsLowerCase(password) && this.containsUpperCase(password) && this.containsNumber(password) && this.passwordLength(password)) {
-			System.out.println("Your password meets the requirements.");
 			return true;
 		}
-		System.out.println("Did not meet password requirements.");
 		return false;
 	}
 	
@@ -415,7 +408,6 @@ public class DBController {
 				return true;
 			}
 		}
-		System.out.println("Password must contain a lower case letter.");
 		return false;
 	}
 	/**
@@ -431,7 +423,6 @@ public class DBController {
 				return true;
 			}
 		}
-		System.out.println("Password must contain an upper case letter.");
 		return false;
 	}
 	/**
@@ -445,7 +436,6 @@ public class DBController {
 		if(password.length() >= 10) {
 			return true;
 		}
-		System.out.println("Password must be 10 characters long.");
 		return false;
 	}
 	/**
@@ -461,7 +451,6 @@ public class DBController {
 				return true;
 			}
 		}
-		System.out.println("Password must contain a number.");
 		return false;
 	}
 	/**
@@ -488,7 +477,6 @@ public class DBController {
 		}
 		Collections.sort(listOfStudents);
 		float maxStudents = listOfStudents.get(listOfStudents.size() - 1);	//Subtracts 1 to ensure that the 
-//		System.out.println(maxStudents);
 		return maxStudents;		//index of the array is realigned
 	}
 	

@@ -1,6 +1,6 @@
 <%@page language="java" import="AdminFunctionalities.*" import="UserFunctionalities.*"%>
 <%
-	AdminFunctionalityController afc = (AdminFunctionalityController)session.getAttribute("sessionVariable");
+	AdminInteraction afc = (AdminInteraction)session.getAttribute("sessionVariable");
 
 	String fname = request.getParameter("FirstName");
 	String lname = request.getParameter("LastName");
@@ -8,7 +8,7 @@
 	String password = request.getParameter("Password");
 	String type = request.getParameter("Type");
 	
-	afc.addUser(fname, lname, username, password, type.charAt(0));
+	afc.addUser(fname, lname, username, password, type);
 	response.sendRedirect("AdminMenu.jsp");
 	
 %>

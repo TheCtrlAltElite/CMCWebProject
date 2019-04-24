@@ -27,12 +27,12 @@ public class FunctionalTestingClass {
 	
 	
 	public FunctionalTestingClass() {
-	 //    unc = new UniversityController();
-	 //    dbc = new DBController();
-	 //    acc = new AccountController();
-	 //    aic = new AdminInteraction();
-	 //    afc = new AdminFunctionalityController();
-	 //    ufc = new UserFunctionalityController();
+	     unc = new UniversityController();
+	     dbc = new DBController();
+	     acc = new AccountController();
+	     aic = new AdminInteraction();
+	     afc = new AdminFunctionalityController();
+	     ufc = new UserFunctionalityController();
 	}
 
 	public static void main(String[] args) {
@@ -116,9 +116,9 @@ public class FunctionalTestingClass {
          * View school information
          * INCLUDES RECOMMENDED SCHOOLS
          */        
-     //   ufc.viewSchool("ARIZONA STATE");
-     //   List<University> listUnis = dbc.loadUniversities();
-     //   unc.recommendedSchools(listUnis.get(0));        
+        //ufc.viewSchool("ARIZONA STATE");
+        //List<University> listUnis = dbc.loadUniversities();
+        //unc.recommendedSchools(listUnis.get(0));        
        
         /**
          * Edit University
@@ -153,13 +153,13 @@ public class FunctionalTestingClass {
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY
          * INCLUDES RANDOM PASSWORD GENERATOR ***ADDITIONAL FUNCTIONALITY
          */
-     //   acc.recoverPassword("jmuehls@gmail.com");	    
+        //acc.recoverPassword("jmuehls@gmail.com");	    
         
     	/**
     	 * Email saved schools list   ***ADDITIONAL FUNCTIONALITY
     	 * needs fix
     	 */
-     //	  ufc.emailSavedSchools("jmuehls@gmail.com")
+     	  //ufc.emailSavedSchools("jmuehls@gmail.com");
     	
     	/**
     	 * Set profile pic	****ADDITIONAL FUNCTIONALITY

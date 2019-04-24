@@ -239,20 +239,9 @@ public class AdminInteraction {
 	 * Adds a new user to the database by calling addUser() in
 	 * AdminFunctionalityController
 	 */
-	public void addUser() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter first name: \n");
-		String firstName = sc.nextLine();
-		System.out.println("Please enter last name: \n");
-		String lastName = sc.nextLine();
-		System.out.println("Please enter email/username: \n");
-		String username = sc.nextLine();
-		System.out.println("Please enter password: \n");
-		String password = sc.nextLine();
-		System.out.println("Please enter type: \n");
-		char type = sc.next().charAt(0); 
-		sc.close();
-		adminFController.addUser(firstName, lastName, username, password, type);
+	public void addUser(String firstName, String lastName, String username, String password, String type) {
+		char typeToPass = type.charAt(0);
+		adminFController.addUser(firstName, lastName, username, password, typeToPass);
 	}
 
 	public boolean editUniversity() {
