@@ -5,14 +5,10 @@
 </head>
 <body>
 	<% 	
-	//AdminFunctionalityController afc = new AdminFunctionalityController();
+	AdminFunctionalityController afc = new AdminFunctionalityController();
 
-	//session.setAttribute("AFC", afc);
-	
-	AdminFunctionalityController afc = (AdminFunctionalityController)session.getAttribute("AFC");
-	
-	
 %>
+<%@include file="verifyLogin.jsp" %>
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
@@ -20,7 +16,7 @@
 			<tr>
 				<td colspan="17"
 					style="vertical-align: top; width: 23px; text-align: center;"><a
-					href="AdminAddUniversity.jsp">Add a New University</a><br></td>
+					href="addUniversity.jsp">Add a New University</a><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 130px; text-align: center;">School<br>
@@ -73,23 +69,22 @@
 
 %>
 			<tr>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;">100<br>
-				</td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
-				<td style="vertical-align: top; width: 100px;"><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolName());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolState());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolLocation());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolControl());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getNumberStudents());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentFemale());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getVerbalSAT());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getMathSAT());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolExpenses());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentFinancialAid());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getNumApplicants());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentAdmitted());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentEnrolled());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getAcademicScale());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSocialScale());%><br></td>
+				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getQualityScale());%><br></td>
 				<td style="vertical-align: top; text-align: center;"><a
 					href="AdminEditUniversity.jsp"><button value="Edit" name="Edit">Edit</button>
 						<br> </a></td>

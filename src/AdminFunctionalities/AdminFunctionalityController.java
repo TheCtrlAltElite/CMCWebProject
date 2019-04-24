@@ -89,7 +89,7 @@ public class AdminFunctionalityController {
 	 * Adds a user to the database
 	 * by getting the information from the user
 	 */
-	public int addUser(String firstName, String lastName, String username, String password, char type) {
+	public int addUser(String firstName, String lastName, String username, String password, String type) {
 		
 		DBController dbc = new DBController();
 		List<Account> users = dbc.loadUsers();
@@ -113,7 +113,7 @@ public class AdminFunctionalityController {
 		
 			
 			else {
-				dbc.addUser(firstName, lastName, username, password, type);
+				dbc.addUser(firstName, lastName, username, password, type.charAt(0));
 //				Account acc = new Account(username, firstName, lastName,  password,  type, 'Y');
 				result = 3;
 				//added = true;
@@ -153,7 +153,7 @@ public class AdminFunctionalityController {
 			//confirms that the uniToFind exists
 			if (name.toUpperCase().equals(uniName)){
 				result = 1;
-					System.out.println("YES, " + schoolName + " exists.\n ");   			
+					System.out.println("YES, " + uniName + " exists.\n ");   			
 					break;
 			}
 			
@@ -178,19 +178,18 @@ public class AdminFunctionalityController {
 					 for (Map.Entry entry : savedList.entrySet()){
 						 
 						 if(schoolName.toUpperCase().equals(entry.getKey().toString().toUpperCase())) {
-							 result = 3;
-							 System.out.println("School was not removed becasue it is in someone's savedSchool list.\n ");
-							 break outerloop;
+							 ufc.removeSavedSchool(users.get(i).getEmail(), uniName);
+						 }						 
+//							 result = 3;
+//							 System.out.println("School was not removed becasue it is in someone's savedSchool list.\n ");
+//							 break outerloop;
 						 } 
 					 }
+				database.removeUniversityEmphases(schoolName); 		//removes all Emphases for the school			
+				database.removeUniversityDB(schoolName);
+				System.out.println("School was removed.\n ");
+				result = 4;
 				}
-				
-				if(result == 1) {
-					database.removeUniversityDB(schoolName);
-					System.out.println("School was removed.\n ");
-					result = 4;
-				}
-		}
 			return result;
 		
 	}

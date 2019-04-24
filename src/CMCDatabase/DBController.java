@@ -5,6 +5,7 @@
 package CMCDatabase;
 
 import java.sql.Timestamp;
+
 import java.util.*;
 
 import AccountFunctionalities.Account;
@@ -52,12 +53,12 @@ public class DBController {
 		List<Account> users = loadUsers();
 		for(int i = 0; i < users.size(); i++) {
 			if(userName.equals(users.get(i).getEmail())) {				
-				details.add(users.get(i).getFirstName());
-				details.add(users.get(i).getLastName());
-				details.add(users.get(i).getEmail());
-				details.add(users.get(i).getPassword());
-				details.add(Character.toString(users.get(i).getType()));
-				details.add(Character.toString(users.get(i).getStatus()));
+				details.add(0, users.get(i).getEmail());
+				details.add(1, users.get(i).getFirstName());
+				details.add(2, users.get(i).getLastName());
+				details.add(3, users.get(i).getPassword());
+				details.add(4, Character.toString(users.get(i).getType()));
+				details.add(5, Character.toString(users.get(i).getStatus()));
 			}
 		}
 		return details;

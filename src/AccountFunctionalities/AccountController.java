@@ -52,15 +52,12 @@ public class AccountController {
 						details.get(4).charAt(0), details.get(5).charAt(0));
 				if (this.account.getStatus() == 'N') {
 					status = -1;
-					return -1;
 				} else if (this.account.getType() == 'a') {
 					this.account.setLoginStatus(true);
 					status = 0;
-					return status;
 				} else if (this.account.getType() == 'u') {
 					this.account.setLoginStatus(true);
 					status = 1;
-					return status;
 				}
 			}
 		}

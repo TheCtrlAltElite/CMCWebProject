@@ -41,8 +41,9 @@ public class AccountInteraction {
 	 * @param password
 	 * @throws Exception 
 	 */
-	public void login(String username, String password) throws Exception {
-		accController.login(username, password);
+	public int login(String username, String password) throws Exception {
+		int status = accController.login(username, password);
+		return status;
 	}
 
 	/**
@@ -75,8 +76,8 @@ public class AccountInteraction {
 	 * 
 	 * @param username
 	 */
-	public void viewProfile(String username) {
-		accController.viewProfile(username);
+	public List<String> viewProfile(String username) {
+		return accController.viewProfile(username);
 	}
 	
 	/**
@@ -172,5 +173,9 @@ public class AccountInteraction {
 	 */
 	public void addProfilePicture(String email, String jpeg) {
 		accController.addProfilePicture(email, jpeg);
+	}
+	
+	public Account getCurrentAccount() {
+		return accController.getCurrentAccount();
 	}
 }

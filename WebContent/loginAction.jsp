@@ -4,15 +4,15 @@
 	String username = request.getParameter("Username");
 	String password = request.getParameter("Password");
 	
-	AccountController ac = new AccountController();
+	AccountInteraction ai = new AccountInteraction();
 	
-	int loginStatus = ac.login(username, password);
+	int loginStatus = ai.login(username, password);
 
 	if (loginStatus == 0) {
-		session.setAttribute("sessionVariable", ac);
+		session.setAttribute("ac", ai);
 		response.sendRedirect("AdminMenu.jsp");
 	} else if(loginStatus == 1) {
-		session.setAttribute("sessionVariable", ac);
+		session.setAttribute("ac", ai);
 		response.sendRedirect("UserMenu.jsp");
 	} else if (loginStatus == -1) {
 		response.sendRedirect("LoginForm.jsp?Error=-1");
