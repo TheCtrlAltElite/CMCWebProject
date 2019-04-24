@@ -213,7 +213,7 @@ public class UserFunctionalityController {
 			}
 			return matchingUnis;
 		} else {
-			System.out.println("You have not entered any arguments to search for.");
+			//System.out.println("You have not entered any arguments to search for.");
 			throw new NullPointerException("Enter some arguments.");
 		}
 	}
@@ -260,7 +260,7 @@ public class UserFunctionalityController {
 			// confirms that the uniToFind is in that user's saved schools list
 			if (name.equals(uniToFind)) {
 				e = true;
-				System.out.println("YES, " + uniToFind + " exists.");
+				//System.out.println("YES, " + uniToFind + " exists.");
 				break;
 			}
 
@@ -334,7 +334,7 @@ public class UserFunctionalityController {
 	 */
 	public Map<String, String> getSavedSchoolsList(String username) {
 		Map<String, String> savedSchoolsList = dbc.getSavedSchoolsList(username);
-		System.out.println(savedSchoolsList);
+		//System.out.println(savedSchoolsList);
 		return savedSchoolsList;
 	}
 }

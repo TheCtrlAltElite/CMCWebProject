@@ -10,7 +10,8 @@
 <title>AdminEditUser</title>
 </head>
 <body>
-	Back to menu
+	<form method="post" action="AdminEditUserAction.jsp" name="AdminEditUser">
+	<a href="AdminMenu.jsp">Back to menu</a>
 	<br>
 	<br>
 	<table style="text-align: left; width: 418px;" border="1"
@@ -49,7 +50,8 @@
 			<tr>
 				<td style="vertical-align: top;">Status<br>
 				</td>
-				<td style="vertical-align: top; width: 200px; "><input name="UserStatus" 
+
+				<td style="vertical-align: top; width: 200px; "><input name="Status" 
 				    value = <%=list.get(5)%>><br>
 				</td>
 			</tr>
@@ -59,6 +61,7 @@
 	<input value="Edit User" name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;
 	<input name="Reset" type="reset">
 	<br>
+		</form>
 	<br>
 </body>
 </html>

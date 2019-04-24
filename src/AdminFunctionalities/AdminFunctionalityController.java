@@ -43,12 +43,12 @@ public class AdminFunctionalityController {
    			
     		if (name.equals(userToFind.toUpperCase())){
    				result = 1;
-   				System.out.println("YES, " + userToFind + " exists.\n ");   			
+  			
    				break outerloop;
     		}
     			
     		if(i == (dbc.loadUsers().size())-1) {
-		   		System.out.print(userToFind + " does NOT exist.\n ");
+
 		   		result = 2;
 		   		break outerloop;
     		}
@@ -57,14 +57,8 @@ public class AdminFunctionalityController {
 	
    		if(result == 1) {
    			UniversityController unc = new UniversityController();
-   			result = unc.addToSavedSchoolsList2(userToFind, schoolName);
-   			
-   			if(result == 4) {
-   				System.out.println("Successfully added " + schoolName + " to " + username + "'s SavedSchool list.\n ");
-   			}
-   				
+   			result = unc.addToSavedSchoolsList2(userToFind, schoolName); 				
     	}	
-   		System.out.print(result);
    		return result;
 	}
 
@@ -89,7 +83,7 @@ public class AdminFunctionalityController {
 	 * Adds a user to the database
 	 * by getting the information from the user
 	 */
-	public int addUser(String firstName, String lastName, String username, String password, String type) {
+	public int addUser(String firstName, String lastName, String username, String password, char type) {
 		
 		DBController dbc = new DBController();
 		List<Account> users = dbc.loadUsers();
@@ -113,10 +107,8 @@ public class AdminFunctionalityController {
 		
 			
 			else {
-				dbc.addUser(firstName, lastName, username, password, type.charAt(0));
-//				Account acc = new Account(username, firstName, lastName,  password,  type, 'Y');
+				dbc.addUser(firstName, lastName, username, password, type);
 				result = 3;
-				//added = true;
 			}
 		}	
 		if(result != 3) {
@@ -126,9 +118,6 @@ public class AdminFunctionalityController {
 			System.out.println("User was added. \n");
 
 		}
-	
-		
-
 		return result;
 	}
 	
@@ -152,14 +141,12 @@ public class AdminFunctionalityController {
 			
 			//confirms that the uniToFind exists
 			if (name.toUpperCase().equals(uniName)){
-				result = 1;
-					System.out.println("YES, " + uniName + " exists.\n ");   			
+				result = 1; 			
 					break;
 			}
 			
 			//if the while loop reaches the end of the list, uniToFind does not exist
-			if(j == (database.loadUniversities().size())-1) {
-		   		System.out.println("School does not exist, did not remove school.\n ");
+			if(j == (database.loadUniversities().size())-1) {	   		
 				result = 2;
 		   		return result;
 			}
@@ -187,24 +174,17 @@ public class AdminFunctionalityController {
 					 }
 				database.removeUniversityEmphases(schoolName); 		//removes all Emphases for the school			
 				database.removeUniversityDB(schoolName);
-				System.out.println("School was removed.\n ");
 				result = 4;
 				}
-			return result;
-		
+			return result;		
 	}
-	
-	
-	
+
 	/**
 	 * Retrieves universities from database
 	 * by calling loadUniversities() in DBController
 	 */
 	public List<University> viewUniversities() {
-		List<University> listUnis = database.loadUniversities();
-		for(int i = 0; i < listUnis.size(); i++) {
-			System.out.println(listUnis.get(i).getSchoolName());
-		}		
+		List<University> listUnis = database.loadUniversities();	
 		return listUnis;
 	}
 	
@@ -216,10 +196,7 @@ public class AdminFunctionalityController {
 	 * @return List of Users
 	 */
 	public List<Account> viewUsers() {
-		List<Account> listUsers = database.loadUsers();
-		for(int i = 0; i < listUsers.size(); i++) {
-			System.out.println(listUsers.get(i).getFirstName() + " " + listUsers.get(i).getLastName() + " " + listUsers.get(i).getEmail() + " " + listUsers.get(i).getStatus() + " " + listUsers.get(i).getType());
-		}	
+		List<Account> listUsers = database.loadUsers();	
 		return listUsers;
 	}
 	

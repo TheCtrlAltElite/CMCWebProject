@@ -11,10 +11,13 @@
 		AdminFunctionalityController afc = new AdminFunctionalityController();
 	%>
 	<%@include file="verifyLogin.jsp"%>
+	<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	</div>
 	Hello User
 	<%
 		out.println(ac.getCurrentAccount().getEmail());
 	%>
+
 	<table style="text-align: left; width: 100%;" border="1"
 		cellpadding="2" cellspacing="2">
 		<tbody>
