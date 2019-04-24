@@ -50,6 +50,7 @@
 			<tr>
 				<td style="vertical-align: top;">Status<br>
 				</td>
+
 				<td style="vertical-align: top; width: 200px; "><input name="Status" 
 				    value = <%=list.get(5)%>><br>
 				</td>
