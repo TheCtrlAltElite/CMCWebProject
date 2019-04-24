@@ -58,7 +58,7 @@
 				<td style="vertical-align: top; width: 243px;">SAT MATH<br>
 				</td>
 				<td style="vertical-align: top; width: 309px;"><input
-					name="sat math"><br></td>
+					name="satmath"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 243px;">EXPENSES<br>
@@ -81,7 +81,7 @@
 					name="num applicants"><br></td>
 			</tr>
 			<tr>
-				<td style="vertical-align: top; width: 243px;">PERCENTS
+				<td style="vertical-align: top; width: 243px;">PERCENT
 					ADMITTED<br>
 				</td>
 				<td style="vertical-align: top; width: 309px;"><input
@@ -91,7 +91,7 @@
 				<td style="vertical-align: top; width: 243px;">PERCENT ENROLLED<br>
 				</td>
 				<td style="vertical-align: top; width: 309px;"><input
-					name="percent enrolled" type="password"><br></td>
+					name="percent enrolled"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 243px;">ACADEMIC SCALE<br>

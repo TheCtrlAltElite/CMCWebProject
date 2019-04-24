@@ -1,53 +1,41 @@
-<%@page language="java" import="AdminFunctionalities.*"%>
+<%@page language="java" import="AdminFunctionalities.*,java.util.*"%>
 
 <%@include file="verifyLogin.jsp" %>
 
 <%
-String firstName = request.getParameter("FirstName");
-String lastName = request.getParameter("LastName");
-String username = request.getParameter("Username");
-String password = request.getParameter("Password");
-//String type = request.getParameter("Type");
-char type = request.getParameter("Type").charAt(0); 
-char status = request.getParameter("Status").charAt(0); 
 
-User newUser = new User(firstName, lastName, username, password, type, status);
+AdminInteraction ai = new AdminInteraction();
 
-UserController uc = (UserController)session.getAttribute("UC");
-uc.addUser(newUser);
-response.sendRedirect("Menu.jsp");
+String schoolName = request.getParameter("school");
+String schoolState = request.getParameter("state");
+String schoolLocation =request.getParameter("location");
+String schoolControl = request.getParameter("control");
+int numberStudents = Integer.parseInt(request.getParameter("students"));
+int percentFemale = Integer.parseInt(request.getParameter("females"));
+int verbalSAT = Integer.parseInt(request.getParameter("satverbal"));
+int mathSAT = Integer.parseInt(request.getParameter("satmath"));
+int schoolExpenses = Integer.parseInt(request.getParameter("expenses"));
+int percentFinancialAid = Integer.parseInt(request.getParameter("financial aid"));
+int numApplicants = Integer.parseInt(request.getParameter("num applicants"));
+int percentAdmitted = Integer.parseInt(request.getParameter("percent admitted"));
+int percentEnrolled = Integer.parseInt(request.getParameter("percent enrolled"));
+int academicScale = Integer.parseInt(request.getParameter("academic scale"));
+int socialScale = Integer.parseInt(request.getParameter("social scale"));
+int qualityScale = Integer.parseInt(request.getParameter("quality scale"));
+String emphasis1 = request.getParameter("emphasis1");
+String emphasis2 = request.getParameter("emphasis2");
+String emphasis3 = request.getParameter("emphasis3");
+String emphasis4 = request.getParameter("emphasis4");
+String emphasis5 = request.getParameter("emphasis5");
+
+
+boolean success = ai.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
+
+if(success){
+	response.sendRedirect("ViewAllUniversities.jsp");
+}
+else {
+	response.sendRedirect("ViewAllUniversities.jsp?Error=-1");
+}
+
 %>
-
-System.out.println("Enter School State: \n");
-//			String schoolState = sc.nextLine();
-//			System.out.println("Enter School Location: \n");
-//			String schoolLocation = sc.nextLine();
-//			System.out.println("Enter School Control: \n");
-//			String schoolControl = sc.nextLine();
-//			System.out.println("Enter Number of Students: \n");
-//			int numberStudents = sc.nextInt();
-//			System.out.println("Enter Percent Female Students: \n");
-//			int percentFemale = sc.nextInt();
-//			System.out.println("Enter Average Verbal SAT Score: \n");
-//			int verbalSAT = sc.nextInt();
-//			System.out.println("Enter Average Math SAT Score: \n");
-//			int mathSAT = sc.nextInt();
-//			System.out.println("Enter School Cost: \n");
-//			int schoolExpenses = sc.nextInt();
-//			System.out.println("Enter Percent of Students Receiving Financial Aid: \n");
-//			int percentFinancialAid = sc.nextInt();
-//			System.out.println("Enter Number of Applicants: \n");
-//			int numApplicants = sc.nextInt();
-//			System.out.println("Enter Percent of Students Admitted: \n");
-//			int percentAdmitted = sc.nextInt();
-//			System.out.println("Enter Percent of Students Enrolled: \n");
-//			int percentEnrolled = sc.nextInt();
-//			System.out.println("Enter Academic Scale Rating (1-5): \n");
-//			int academicScale = sc.nextInt();
-//			System.out.println("Enter Social Scale Rating (1-5): \n");
-//			int socialScale = sc.nextInt();
-//			System.out.println("Enter Quality Scale Rating (1-5): \n");
-//			int qualityScale = sc.nextInt();
-//			sc.nextLine();
-//	//		System.out.println("Enter 5 Emphases, type 'q' anytime to quit: \n");
-//			String emphasis = sc.nextLine();
