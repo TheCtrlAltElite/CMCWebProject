@@ -121,8 +121,7 @@ public class AccountController {
 	 * @param username
 	 *            - the profile that will be edited
 	 */
-	public boolean editProfile(String firstName, String lastName, String email, String password, char type,
-			char status) {
+	public boolean editProfile(String firstName, String lastName, String email, String password, char type, char status) {
 		boolean e = false;
 		Account acc = new Account(email, firstName, lastName, password, type, status);
 		int record = this.database.editUser(acc);
