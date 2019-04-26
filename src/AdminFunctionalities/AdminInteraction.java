@@ -136,21 +136,26 @@ public class AdminInteraction {
 	public boolean addUniversity1(String schoolName, String schoolState, String schoolLocation, String schoolControl, int numberStudents,
 			int percentFemale, int verbalSAT, int mathSAT, int schoolExpenses, int percentFinancialAid, int numApplicants,
 			int percentAdmitted, int percentEnrolled, int academicScale, int socialScale, int qualityScale,  String emphasis1, String emphasis2, String emphasis3, String emphasis4, String emphasis5) {
+		System.out.println("here");
 
 		DBController dbc = new DBController();
 
 
 		boolean success = false;
 		int x= 0;
-
+		int uniSize = dbc.loadUniversities().size();
 		int i = 0;
+		String schoolName2 = schoolName.toUpperCase();
+		
 		// searches through list of universities retrieved through loadUniversities()
 		while (i < dbc.loadUniversities().size()) {
+			System.out.println(i);
+			
 
-			String name = dbc.loadUniversities().get(i).getSchoolName();
+			String name = dbc.loadUniversities().get(i).getSchoolName().toUpperCase();
 
 			// confirms that the uniToFind exists
-			if (name.toUpperCase().equals(schoolName.toUpperCase())) {
+			if (name.equals(schoolName2)) {
 				// e= true;
 				System.out.println(schoolName + " exists, choose a different name.");
 				break;
@@ -158,14 +163,77 @@ public class AdminInteraction {
 				//addUniversity();
 			}
 
-			if(i == dbc.loadUniversities().size() - 1) {
+			if(i == uniSize - 1) {
 				x = 1;
 			}
+			i++;
 
 		}
+		
+		
 
 
 		if(x == 1) {	
+			
+			if(schoolState==null) {
+				schoolState = "-1";
+			}
+			
+			if(schoolLocation==null) {
+				schoolLocation = "-1";
+			}
+			
+			if(schoolControl==null) {
+				schoolControl = "-1";
+			}
+			
+			if(numberStudents == 0) {
+				numberStudents = -1;
+			}
+			
+			if(percentFemale==0) {
+				percentFemale = -1;
+			}
+			
+			if(verbalSAT==0) {
+				verbalSAT = -1;
+			}
+			
+			if(mathSAT==0) {
+				mathSAT = -1;
+			}
+			
+			if(schoolExpenses==0) {
+				schoolExpenses = -1;
+			}
+			
+			if(percentFinancialAid==0) {
+				percentFinancialAid = -1;
+			}
+
+			if(numApplicants==0) {
+				numApplicants = -1;
+			}
+			
+			if(percentAdmitted==0) {
+				percentAdmitted = -1;
+			}
+			
+			if(percentEnrolled==0) {
+				percentEnrolled = -1;
+			}
+			
+			if(academicScale==0) {
+				academicScale = -1;
+			}
+			
+			if(socialScale==0) {
+				socialScale = -1;
+			}
+			
+			if(qualityScale==0) {
+				qualityScale = -1;
+			}
 
 			List<String> emphasesList = new ArrayList<String>();
 
@@ -195,6 +263,7 @@ public class AdminInteraction {
 			success = true;
 
 		}
+		System.out.println("here2");
 
 		return success;
 	}
