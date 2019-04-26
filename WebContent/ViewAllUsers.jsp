@@ -15,7 +15,7 @@
 	</div>
 	Hello User
 	<%
-		out.println(ac.getCurrentAccount().getEmail());
+		out.println(ai.getCurrentAccount().getEmail());
 	%>
 
 	<table style="text-align: left; width: 100%;" border="1"
@@ -35,7 +35,7 @@
 				<td style="vertical-align: top; text-align: center;">Password</td>
 				<td style="vertical-align: top; text-align: center;">Type</td>
 				<td style="vertical-align: top; text-align: center;">Status</td>
-				<td style="vertical-align: top;">Delete</td>
+				<td style="vertical-align: top;">Deactive/Activate</td>
 			</tr>
 
 
@@ -76,14 +76,25 @@
 						out.println(afc.viewUsers().get(i).getStatus());
 					%>
 				</td>
+				<%if(afc.viewUsers().get(i).getStatus()=='y' || afc.viewUsers().get(i).getStatus()=='Y') {%>
 				<td style="vertical-align: top;">
-					<form method="post" action="Delete.jsp" name="Delete">
-						<input name="Delete" value="Delete" type="submit"> <input
+					<form method="post" action="DeactivateAction.jsp" name="Deactivate">
+						<input name="Deactivate" value="Deactivate" type="submit"> <input
 							name="Username"
 							value=<% out.println(afc.viewUsers().get(i).getEmail()); %>
 							type="hidden">
 					</form>
 				</td>
+				<% } else{ %>
+					<td style="vertical-align: top;">
+					<form method="post" action="ActivateAction.jsp" name="Activate">
+						<input name="Activate" value="Activate" type="submit"> <input
+							name="Username"
+							value=<% out.println(afc.viewUsers().get(i).getEmail()); %>
+							type="hidden">
+					</form>
+				</td>
+				<% } %>
 			</tr>
 			<%
 }
@@ -92,3 +103,9 @@
 	</table>
 </body>
 </html>
+<%
+String Error = request.getParameter("Error");
+if (Error != null && Error.equals("-1")) {
+	out.println("Something went wrong while accessing the database.");
+}
+%>

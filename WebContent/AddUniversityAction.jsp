@@ -4,7 +4,7 @@
 
 <%
 
-AdminInteraction ai = new AdminInteraction();
+AdminInteraction adminI = new AdminInteraction();
 
 String schoolName = request.getParameter("school");
 String schoolState = request.getParameter("state");
@@ -29,7 +29,7 @@ String emphasis4 = request.getParameter("emphasis4");
 String emphasis5 = request.getParameter("emphasis5");
 
 
-boolean success = ai.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
+boolean success = adminI.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
 
 if(success){
 	response.sendRedirect("ViewAllUniversities.jsp");

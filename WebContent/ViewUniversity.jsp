@@ -1,8 +1,10 @@
-<%@ page language="java" import="UniversityFunctionalities.*"%>
+<%@ page language="java" import="UniversityFunctionalities.*" import="UserFunctionalities.*"%>
 
 <html>
 
-<%//University uni = new University(); %>
+<%
+	UserInteraction UI = new UserInteraction();
+%>
 <%@include file="verifyLogin.jsp" %>
 
 <head>
@@ -10,6 +12,7 @@
 <title>ViewUniversity</title>
 </head>
 <body>
+	<%List<String> list = ai.viewProfile(request.getParameter("UniName"));%>
 	<table style="text-align: left; height: 480px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>

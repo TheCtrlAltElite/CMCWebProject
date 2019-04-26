@@ -15,7 +15,7 @@
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<%
-				Account acc = ac.getCurrentAccount();
+				Account acc = ai.getCurrentAccount();
 				Map<String, String> savedSchools = UI.viewSavedSchools(acc.getEmail());
 				for (Map.Entry entry : savedSchools.entrySet()) {
 			%>
@@ -28,8 +28,13 @@
 						out.println(entry.getKey() + " (added on: " + entry.getValue() + ")");
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;"><a
-					href="ViewUniversity.jsp"><button value="View" name="View">View</button></a>
+				<td style="vertical-align: top; width: 100px;">
+				<form method="post" action="ViewUniversity.jsp" name="Edit">
+						<input name="Edit" value="Edit" type="submit"> <input
+							name="UniName"
+							value=<%out.println(entry.getKey());%>
+							type="hidden">
+					</form>
 				</td>
 			</tr>
 			<%
