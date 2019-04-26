@@ -100,7 +100,7 @@ public class FunctionalTestingClass {
         /**
          * Save school from search
          */        
-     //   ufc.addToSavedSchoolsList3("FBaggins@gmail.com", "YANKTOWN COLLEGE");
+        ufc.addToSavedSchoolsList3("juser", "AUBURN");
   
         /**
          * Get saved school list
