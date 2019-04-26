@@ -153,7 +153,7 @@ public class FunctionalTestingClass {
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY
          * INCLUDES RANDOM PASSWORD GENERATOR ***ADDITIONAL FUNCTIONALITY
          */
-        //acc.recoverPassword("jmuehls@gmail.com");	    
+        acc.recoverPassword("juser");	    
         
     	/**
     	 * Email saved schools list   ***ADDITIONAL FUNCTIONALITY
