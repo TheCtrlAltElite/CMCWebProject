@@ -8,7 +8,6 @@
 	String pass = request.getParameter("Password");
 	String stat = request.getParameter("Status");
 	String type = request.getParameter("Type");
-	System.out.println(uname + " " + fName + " " + lName + " " + pass + " " + stat + " " + type);
 	
 	boolean change = AC.editProfile(fName, lName, uname, pass, type, stat);
 	if(change){

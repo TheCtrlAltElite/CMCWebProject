@@ -32,7 +32,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<br>
+		<a href="ForgotPassword.jsp"> Forgot Password? </a><br>
 	</form>
 	<br>
 	<%
