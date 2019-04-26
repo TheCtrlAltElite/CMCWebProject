@@ -6,7 +6,7 @@
 <title>Menu</title>
 </head>
 <body>
-Welcome Admin: <%ac.getCurrentAccount().getEmail(); %><br>
+Welcome Admin: <%ai.getCurrentAccount().getEmail(); %><br>
 <br>
 <br>
 <a href="ViewAllUsers.jsp">Manage Users</a><br>

@@ -8,8 +8,8 @@
 <title>AdminAddUser</title>
 </head>
 <body>
-<form method="post" action="addAction.jsp" name="AdminAddUser">
 	<a href="AdminMenu.jsp">Back to menu</a>
+	<form method="post" action="addAction.jsp" name="AdminAddUser">
 	Add User Form:
 	<br>
 	<br>

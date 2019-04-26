@@ -74,7 +74,7 @@ public class FunctionalTestingClass {
     	/**
     	 * Add New User
     	 */
-     //   aic.addUser();     //Not hard coded, asks for parameters
+     //   aic.addUser("Billy", "Joe", "biljo@gmail.com", "asdfQWER123", "u");     //Not hard coded, asks for parameters
      //   afc.addUser("BEEBOOPBOPBOOP", "Robot", "zuser259@gmail.com", "Zpasswordis99", 'a'); //call from AdminInteraction	
         
     	/**

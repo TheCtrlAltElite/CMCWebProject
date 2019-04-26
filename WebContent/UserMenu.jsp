@@ -6,7 +6,7 @@
 <title>Menu</title>
 </head>
 <body>
-Welcome User: <%=ac.getCurrentAccount().getEmail()%><br>
+Welcome User: <%=ai.getCurrentAccount().getEmail()%><br>
 <br>
 <br>
 <a href="UserEditUser.jsp">Manage My Profile</a><br>
