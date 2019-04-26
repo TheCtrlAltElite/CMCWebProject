@@ -7,10 +7,11 @@
 <title>School Search</title>
 </head>
 <body>
+	<form method="post" action="SchoolSearchAction.jsp" name="SchoolSearch">
 	<br>
 	<div style="text-align: left;">
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp; &nbsp;&nbsFunctionalityControllerp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
@@ -25,7 +26,7 @@
 				<td style="vertical-align: top; width: 291px;">SCHOOL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">Contains <input
-					name="School Name"><br>
+					name="SchoolName"><br>
 				</td>
 			</tr>
 			<tr>
@@ -53,28 +54,28 @@
 					STUDENTS<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Num Students"> and <input name="Num Students2"><br>
+					name="NumStudents"> and <input name="NumStudents2"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT FEMALE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Percent Female"> and <input name="Percent" female2=""><br>
+					name="PercentFemale"> and <input name="PercentFemale2"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">SAT VERBAL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="SAT Verbal"> and <input name="SAT" verbal2=""><br>
+					name="SATVerbal"> and <input name="SATVerbal2"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">SAT MATH<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="SAT Math"> and <input name="SAT" math2=""><br>
+					name="SATMath"> and <input name="SATMath2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -89,7 +90,7 @@
 					FINANCIAL AID<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Percent Aid"> and <input name="Percent" aid2=""><br>
+					name="PercentAid"> and <input name="PercentAid2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -97,24 +98,21 @@
 					APPLICANTS<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Num Applicants"> and <input name="Number" of=""
-					applicants2=""><br>
+					name="NumApplicants"> and <input name="NumApplicants2"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT ADMITTED<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Percent Admitted"> and <input name="Percent"
-					admitted2=""><br>
+					name="PercentAdmitted"> and <input name="PercentAdmitted2"><br>
 				</td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT ENROLLED<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Percent Enrolled"> and <input name="percent"
-					enrolled2=""><br>
+					name="PercentEnrolled"> and <input name="PercentEnrolled2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -122,7 +120,7 @@
 					SCALE(1-5)<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Academic Scale"> and <input name="Academic" scale2=""><br>
+					name="AcademicScale"> and <input name="AcademicScale2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -130,7 +128,7 @@
 					SCALE(1-5)<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Social Scale"> and <input name="Social" scale2=""><br>
+					name="SocialScale"> and <input name="SocialScale2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -138,7 +136,7 @@
 					SCALE(1-5)<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Quality Scale"> and <input name="Quality" scale2=""><br>
+					name="Quality Scale"> and <input name="QualityScsale2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -180,6 +178,7 @@
 	<input name="Reset" type="reset">
 	<br>
 	<br>
+	</form>
 	<br>
 </body>
 </html>
