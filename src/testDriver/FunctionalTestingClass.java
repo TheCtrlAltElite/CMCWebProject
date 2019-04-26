@@ -74,7 +74,7 @@ public class FunctionalTestingClass {
     	/**
     	 * Add New User
     	 */
-     //   aic.addUser();     //Not hard coded, asks for parameters
+     //   aic.addUser("Billy", "Joe", "biljo@gmail.com", "asdfQWER123", "u");     //Not hard coded, asks for parameters
      //   afc.addUser("BEEBOOPBOPBOOP", "Robot", "zuser259@gmail.com", "Zpasswordis99", 'a'); //call from AdminInteraction	
         
     	/**
@@ -100,7 +100,7 @@ public class FunctionalTestingClass {
         /**
          * Save school from search
          */        
-     //   ufc.addToSavedSchoolsList3("FBaggins@gmail.com", "YANKTOWN COLLEGE");
+        ufc.addToSavedSchoolsList3("juser", "AUBURN");
   
         /**
          * Get saved school list
@@ -153,7 +153,9 @@ public class FunctionalTestingClass {
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY
          * INCLUDES RANDOM PASSWORD GENERATOR ***ADDITIONAL FUNCTIONALITY
          */
-        //acc.recoverPassword("jmuehls@gmail.com");	    
+     //   int result = acc.recoverPassword("");	   
+     //   System.out.println(result);
+    	
         
     	/**
     	 * Email saved schools list   ***ADDITIONAL FUNCTIONALITY

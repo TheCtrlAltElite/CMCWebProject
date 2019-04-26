@@ -1,15 +1,17 @@
-<%@page language="java" import="AccountFunctionalities.*"%>
+<%@page language="java" import="AccountFunctionalities.*" import="AdminFunctionalities.*"%>
 
 <%
 	String username = request.getParameter("Username");
 	String password = request.getParameter("Password");
 	
 	AccountInteraction ai = new AccountInteraction();
+	AdminInteraction adminI = new AdminInteraction();
 	
 	int loginStatus = ai.login(username, password);
 
 	if (loginStatus == 0) {
 		session.setAttribute("ac", ai);
+		session.setAttribute("adminI", adminI);
 		response.sendRedirect("AdminMenu.jsp");
 	} else if(loginStatus == 1) {
 		session.setAttribute("ac", ai);

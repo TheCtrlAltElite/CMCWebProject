@@ -76,7 +76,7 @@ public class DBLibraryDriver{
      
      AdminInteraction aic = new AdminInteraction();
      //aic.addToSavedSchoolsList4();    //works 100%
-     //aic.addUniversity();     //works 100%
+    //aic.addUniversity1("zzzzz", "a", "a", "a", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "a", "a", "a", "a", "a");     //works 100%
      //aic.removeUniversityDB();    //works 100%
      //aic.addUser();     //works 100%
      //aic.editUniversity();     //works 100%

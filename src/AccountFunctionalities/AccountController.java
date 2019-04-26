@@ -182,47 +182,58 @@ public class AccountController {
 	 */
 	public int recoverPassword(String email) throws MessagingException {
 
-		String newPassword = database.sendRecoverEmail(email);
-		int statusOfReset = this.resetPassword(database.getPassword(email), newPassword, newPassword); // Resets the
-																											// recovered
-																											// password
-																											// as the
-																											// new
-																											// password
-		if (statusOfReset == 0) {
-			try {
-				Properties props = new Properties();
-				props.put("mail.smtp.user", "cmcdatabase2019@gmail.com"); // sets email to be sent from
-																			// cmcdatabase2019@gmail.com
-				props.put("mail.smtp.host", "smtp.gmail.com"); // sets server host as gmail
-				props.put("mail.smtp.starttls.enable", "true");
-				props.put("mail.smtp.auth", "true");
-				props.put("mail.smtp.port", "587"); // sets the port
+		if (database.isUserReal(email)) {
+			if (email.contains("@") & email.contains(".com")) {
 
-				System.out.println(props); // displays server information
-
-				Authenticator auth = new SMTPAuthenticator();
-				Session session = Session.getInstance(props, auth);
-
-				String mail_body = "Here's your new password: " + newPassword; // body of email
-
-				MimeMessage message = new MimeMessage(session); // creates MimeMessage object to send email
-				message.setFrom(new InternetAddress("cmcdatabase2019@gmail.com")); // sets from email which is
+				String newPassword = database.sendRecoverEmail(email);
+				int statusOfReset = this.resetPassword(database.getPassword(email), newPassword, newPassword); // Resets
+																												// the
+																												// recovered
+																												// password
+																												// as
+																												// the
+																												// new
+																												// password
+				if (statusOfReset == 0) {
+					try {
+						Properties props = new Properties();
+						props.put("mail.smtp.user", "cmcdatabase2019@gmail.com"); // sets email to be sent from
 																					// cmcdatabase2019@gmail.com
-				message.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); // receiver of
-																											// the email
-				message.setSubject("Password Recovery"); // subject of the email
-				message.setText(mail_body); // sets the body of the email to mail_body
+						props.put("mail.smtp.host", "smtp.gmail.com"); // sets server host as gmail
+						props.put("mail.smtp.starttls.enable", "true");
+						props.put("mail.smtp.auth", "true");
+						props.put("mail.smtp.port", "587"); // sets the port
 
-			//	System.out.println(message); // shows email has begun to send out
-				Transport.send(message); // Sends out email
-			//	System.out.println("Message sent!"); // Informs message is sent
+						System.out.println(props); // displays server information
 
-			} catch (Exception e) {
-				e.printStackTrace();
+						Authenticator auth = new SMTPAuthenticator();
+						Session session = Session.getInstance(props, auth);
+
+						String mail_body = "Here's your new password: " + newPassword; // body of email
+
+						MimeMessage message = new MimeMessage(session); // creates MimeMessage object to send email
+						message.setFrom(new InternetAddress("cmcdatabase2019@gmail.com")); // sets from email which is
+																							// cmcdatabase2019@gmail.com
+						message.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); // receiver of
+																									// the email
+						message.setSubject("Password Recovery"); // subject of the email
+						message.setText(mail_body); // sets the body of the email to mail_body
+
+						// System.out.println(message); // shows email has begun to send out
+						Transport.send(message); // Sends out email
+						// System.out.println("Message sent!"); // Informs message is sent
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				return statusOfReset;	//Returns 0 if reset password & sent email successful
+			} else {	//Possibly not a valid email
+				return -2;
 			}
+		} else {	//user is not real
+			return -1;
 		}
-		return statusOfReset;
 	}
 	
 	/**
