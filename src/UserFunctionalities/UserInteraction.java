@@ -48,8 +48,8 @@ public class UserInteraction {
 	 * Presents the user with the information of a school
 	 * @param String schoolName - name of the school
 	 */	
-	public void viewSchool(String uniName) {
-		userController.viewSchool(uniName);
+	public List<String> viewSchool(String uniName) {
+		return userController.viewSchool(uniName);
 	}
 	
 	/**
