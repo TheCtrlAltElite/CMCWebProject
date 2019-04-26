@@ -153,7 +153,9 @@ public class FunctionalTestingClass {
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY
          * INCLUDES RANDOM PASSWORD GENERATOR ***ADDITIONAL FUNCTIONALITY
          */
-        acc.recoverPassword("juser");	    
+     //   int result = acc.recoverPassword("");	   
+     //   System.out.println(result);
+    	
         
     	/**
     	 * Email saved schools list   ***ADDITIONAL FUNCTIONALITY

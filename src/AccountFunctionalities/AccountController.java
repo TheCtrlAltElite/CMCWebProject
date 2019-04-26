@@ -183,7 +183,7 @@ public class AccountController {
 	public int recoverPassword(String email) throws MessagingException {
 
 		if (database.isUserReal(email)) {
-			//if (email.contains("@gmail.com")) {
+			if (email.contains("@") & email.contains(".com")) {
 
 				String newPassword = database.sendRecoverEmail(email);
 				int statusOfReset = this.resetPassword(database.getPassword(email), newPassword, newPassword); // Resets
@@ -227,13 +227,13 @@ public class AccountController {
 						e.printStackTrace();
 					}
 				}
-				return statusOfReset;
-			} else {
+				return statusOfReset;	//Returns 0 if reset password & sent email successful
+			} else {	//Possibly not a valid email
 				return -2;
 			}
-		//} else {
-		//	return -1;
-		//}
+		} else {	//user is not real
+			return -1;
+		}
 	}
 	
 	/**

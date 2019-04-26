@@ -42,7 +42,7 @@
 	} else if (Error != null && Error.equals("-2")) {
 		out.println("Provided password is not valid. ");
 	} else if (Error != null && Error.equals("-3")) {
-		out.println("Provided user name is not valid.");
+		out.println("Provided username is not valid.");
 	} else if (Error != null && Error.equals("-4")) {
 		out.println("Please sign in to access system pages.");
 	} else if (Error != null && Error.equals("-5")) {
