@@ -13,7 +13,7 @@
 
 <div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
 	</div>
-	
+
 
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
@@ -166,9 +166,19 @@
 							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
 							type="hidden">
 					</form>
+					<form method="post" action="AdminDeleteUniversity.jsp"
+						name="Delete">
+						<input name="Delete" value="Delete" type="submit"> <input
+							name="University"
+							value=<%out.println(afc.viewUniversities().get(i).getSchoolName());%>
+							type="hidden">
+					</form>
+
 			</tr>
 
-			<%}%>
+			<%
+				}
+			%>
 		</tbody>
 	</table>
 	<br>
