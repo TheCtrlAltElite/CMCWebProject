@@ -4,7 +4,6 @@
 <title>UniTable</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<% 	
 	AdminFunctionalityController afc = new AdminFunctionalityController();
 
@@ -13,14 +12,7 @@
 
 <div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
 	</div>
-	
-	
-=======
-	<%
-		AdminFunctionalityController afc = new AdminFunctionalityController();
-	%>
-	<%@include file="verifyLogin.jsp"%>
->>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
+
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
