@@ -20,7 +20,7 @@
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr>
-				<td colspan="17"
+				<td colspan="18"
 					style="vertical-align: top; width: 23px; text-align: center;"><a
 					href="AddUniversity.jsp">Add a New University</a><br></td>
 			</tr>
@@ -166,6 +166,8 @@
 							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
 							type="hidden">
 					</form>
+					</td>
+					<td style="vertical-align: top; text-align: center;">
 					<form method="post" action="AdminDeleteUniversity.jsp"
 						name="Delete">
 						<input name="Delete" value="Delete" type="submit"> <input
@@ -173,7 +175,7 @@
 							value=<%out.println(afc.viewUniversities().get(i).getSchoolName());%>
 							type="hidden">
 					</form>
-
+</td>
 			</tr>
 
 			<%
