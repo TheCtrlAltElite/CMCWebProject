@@ -11,6 +11,10 @@
 <title>SavedSchoolsList</title>
 </head>
 <body>
+	<div style="text-align: left;"><a href="UserMenu.jsp">Back to menu</a>
+	<br>
+	<br>
+	</div>
 	<table style="text-align: center; width: 800px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
@@ -20,17 +24,21 @@
 				for (Map.Entry entry : savedSchools.entrySet()) {
 			%>
 			<tr>
-				<td style="vertical-align: top; width: 100px;"><a
-					href="RemoveFromSavedSchoolsAction.jsp"><button value="Remove"
-							name="Remove" >Remove</button></a></td>
+				<td style="vertical-align: top; width: 100px;">				
+				<form method="post" action="RemoveFromSavedSchoolsAction.jsp" name="Remove">
+						<input name="Remove" value="Remove" type="submit"> <input
+							name="UniName"
+							value=<%out.println(entry.getKey());%>
+							type="hidden">
+					</form></td>
 				<td style="vertical-align: top; width: 600px;">
 					<%
 						out.println(entry.getKey() + " (added on: " + entry.getValue() + ")");
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
-				<form method="post" action="ViewUniversity.jsp" name="Edit">
-						<input name="Edit" value="Edit" type="submit"> <input
+				<form method="post" action="ViewUniversity.jsp" name="View">
+						<input name="View" value="View" type="submit"> <input
 							name="UniName"
 							value=<%out.println(entry.getKey());%>
 							type="hidden">

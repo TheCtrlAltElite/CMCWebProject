@@ -177,7 +177,7 @@ public class UserFunctionalityController {
 					continue;
 				}
 			}
-			if (emphases != null) {
+			if (emphases != null && emphases.size()!=0) {
 				counter++;
 				// List<String> emphasesInDB = dbc.getUniversityEmphases();
 				// int emphasesCounter = 0;

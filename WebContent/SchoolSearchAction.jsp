@@ -106,7 +106,7 @@
 	if(socialScale2 == "" || socialScale2 == null){
 		socialScale2 = null;
 	}
-	String qualityScale1 = request.getParameter("QuailityScale");
+	String qualityScale1 = request.getParameter("QualityScale");
 	if(qualityScale1 == "" || qualityScale1 == null){
 		qualityScale1 = null;
 	}
@@ -144,8 +144,8 @@
 
 	System.out.println("This" + schoolName + " " + state + " " + location + " " + control + " " + numStudents1 + " " + numStudents2 + " " + percentFemale1 + " " + percentFemale2 + " " + satVerbal1 + " " + satVerbal2 + " " + satMath1 + " " + satMath2 + " " + expenses1 + " " + expenses2 + " " + percentFinancialAid1 + " " + percentFinancialAid2 + " " + numApplicants1 + " " + numApplicants2 + " " + percentAdmitted1 + " " + percentAdmitted2 + " " + percentEnrolled1 + " " + percentEnrolled2 + " " + academicScale1 + " " + academicScale2 + " " + socialScale1 + " " + socialScale2 + " " + qualityScale1 + " " + qualityScale2 + " " + emphases);
 	
-	
 	List<University> unis = ui.searchSchools(schoolName, state, location, control, numStudents1, numStudents2, percentFemale1, percentFemale2, satVerbal1, satVerbal2, satMath1, satMath2, expenses1, expenses2, percentFinancialAid1, percentFinancialAid2, numApplicants1, numApplicants2, percentAdmitted1, percentAdmitted2, percentEnrolled1, percentEnrolled2, academicScale1, academicScale2, socialScale1, socialScale2, qualityScale1, qualityScale2, emphases);
+	System.out.println(unis);
 	%>
 	<html>
 	<head>

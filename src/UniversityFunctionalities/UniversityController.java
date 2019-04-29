@@ -341,10 +341,10 @@ public class UniversityController {
 				}
 			}
 		}
-		System.out.println(details.toString());
-		for (int i =0; i < details.size(); i++) {
-			System.out.println(details.get(i));
-		}
+//		System.out.println(details.toString());
+//		for (int i =0; i < details.size(); i++) {
+//			System.out.println(details.get(i));
+//		}
 		return details;
 	}
 }
