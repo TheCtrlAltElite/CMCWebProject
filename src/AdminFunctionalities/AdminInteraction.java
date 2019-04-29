@@ -264,7 +264,11 @@ public class AdminInteraction {
 
 		return success;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 7c6ebcb07cf48f61e3ab247d0e585bd422104bf6
 	/**
 	 * Removes a stored university from the database by calling
 	 * removeUniversityDB(String) in AdminFunctionalityController
