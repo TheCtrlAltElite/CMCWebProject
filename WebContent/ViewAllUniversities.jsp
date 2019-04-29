@@ -4,6 +4,7 @@
 <title>UniTable</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<% 	
 	AdminFunctionalityController afc = new AdminFunctionalityController();
 
@@ -14,6 +15,12 @@
 	</div>
 	
 	
+=======
+	<%
+		AdminFunctionalityController afc = new AdminFunctionalityController();
+	%>
+	<%@include file="verifyLogin.jsp"%>
+>>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
@@ -73,10 +80,11 @@
 				<td style="vertical-align: top; width: 130px; text-align: center;"><br>
 				</td>
 			</tr>
-			<% for(int i = 0 ; i <afc.viewUniversities().size(); i++ ){
-
-%>
+			<%
+				for (int i = 0; i < afc.viewUniversities().size(); i++) {
+			%>
 			<tr>
+<<<<<<< HEAD
 				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolName());%><br></td>
 				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolState());%><br></td>
 				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolLocation());%><br></td>
@@ -109,8 +117,97 @@
 <br> </a></td>
 						
 				
+=======
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSchoolName());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSchoolState());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSchoolLocation());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSchoolControl());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getNumberStudents());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getPercentFemale());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getVerbalSAT());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getMathSAT());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSchoolExpenses());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getPercentFinancialAid());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getNumApplicants());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getPercentAdmitted());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getPercentEnrolled());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getAcademicScale());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getSocialScale());
+					%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<%
+						out.println(afc.viewUniversities().get(i).getQualityScale());
+					%><br>
+				</td>
+				<td style="vertical-align: top; text-align: center;">
+					<form method="post" action="AdminEditUniversity.jsp" name="Edit">
+						<input name="Edit" value="Edit" type="submit"> <input
+							name="SchoolName"
+							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
+							type="hidden">
+					</form>
+>>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
 			</tr>
-			
+
 			<%}%>
 		</tbody>
 	</table>
