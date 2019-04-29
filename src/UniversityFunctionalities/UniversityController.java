@@ -257,9 +257,16 @@ public class UniversityController {
 		boolean e = false;
 		int num = dbc.updateUniversity(nameToFind, editState, editLocation, editControl, editNumberOfStudents, editPercentFemales, editSATVerbal, editSATMath, editExpenses, editPercentFinancialAid, editNumberOfApplicants, editPercentAdmitted, editPercentEnrolled, editAcademicsScale, editSocialScale, editQualityOfLifeScale);
 		dbc.removeUniversityEmphases(nameToFind);
+		
+		
+		if(num != -1) {
+		if(emphases != null || emphases.size() > 0) {
+		
 		for (int i = 0; i < emphases.size(); i++) {
 			String emphasis = emphases.get(i);
 			dbc.addUniversityEmphasis(nameToFind, emphasis);
+		}
+		}
 		}
 		listUnis = dbc.loadUniversities();
 		List<String> schools = new ArrayList<String>();
@@ -287,6 +294,10 @@ public class UniversityController {
 				percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale);
 		if(addUniNum != -1) {
 			int counter = 0;
+			if(emphases == null) {
+				return 0;
+			}
+			else {
 			for (int i = 0; i < emphases.size(); i++) {
 				int num = dbc.addUniversityEmphasis(schoolName, emphases.get(i));
 				if (num != -1) {
@@ -297,6 +308,7 @@ public class UniversityController {
 				return -2;
 			}
 			return 0;
+			}
 		}
 		else {
 			return -1;

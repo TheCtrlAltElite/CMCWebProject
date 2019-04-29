@@ -146,12 +146,17 @@ public class AdminInteraction {
 		int uniSize = dbc.loadUniversities().size();
 		int i = 0;
 		
-		for(int j = 0; i < schoolName.length(); j++) {	//checks for number in name
-			if(Character.isDigit(schoolName.charAt(j))){
-				System.out.println(schoolName + " contains a number and is not accepted.");
-				break;
-			}
+//		for(int j = 0; i < schoolName.length()-1; j++) {	//checks for number in name
+//			if(Character.isDigit(schoolName.charAt(j))){
+//				System.out.println(schoolName + " contains a number and is not accepted.");
+//				return success;
+//			}
+//		}
+		if(schoolName.matches(".*\\d.*")) {
+			System.out.println(schoolName + " contains a number and is not accepted.");
+			return success;
 		}
+		
 		
 		String schoolName2 = schoolName.toUpperCase();
 
@@ -261,10 +266,17 @@ public class AdminInteraction {
 					&& emphasis5 != emphasis4) {
 				emphasesList.add(emphasis5);
 			}
-
+			if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 != null  && emphasis2 != null  && emphasis3 != null  && emphasis4 != null  && emphasis5 != null)){
+				adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+						percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+						percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, null);
+			}
+			
+			else {
 			adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
 					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
 					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasesList);
+			}
 			success = true;
 
 		}
@@ -308,20 +320,72 @@ public class AdminInteraction {
 		adminFController.addUser(firstName, lastName, username, password, typeToPass);
 	}
 
+//	public boolean editUniversity(String name, String editstate, String editlocation, String editcontrol,
+//			String editnumberOfStudents, String editpercentFemales, String editSATVerbal, String editSATMath,
+//			String editexpenses, String editpercentFinancialAid, String editnumberOfApplicants,
+//			String editpercentAdmitted, String editpercentEnrolled, String editacademicsScale, String editsocialScale,
+//			String editqualityOfLifeScale, List<String> emphases) {
+//		return uc.editUniversity(name, editstate, editlocation, editcontrol,
+//				Integer.parseInt(editnumberOfStudents), Integer.parseInt(editpercentFemales),
+//				Integer.parseInt(editSATVerbal), Integer.parseInt(editSATMath), Integer.parseInt(editexpenses),
+//				Integer.parseInt(editpercentFinancialAid), Integer.parseInt(editnumberOfApplicants),
+//				Integer.parseInt(editpercentAdmitted), Integer.parseInt(editpercentEnrolled),
+//				Integer.parseInt(editacademicsScale), Integer.parseInt(editsocialScale),
+//				Integer.parseInt(editqualityOfLifeScale), emphases);
+//	}
+	
 	public boolean editUniversity(String name, String editstate, String editlocation, String editcontrol,
 			String editnumberOfStudents, String editpercentFemales, String editSATVerbal, String editSATMath,
 			String editexpenses, String editpercentFinancialAid, String editnumberOfApplicants,
 			String editpercentAdmitted, String editpercentEnrolled, String editacademicsScale, String editsocialScale,
-			String editqualityOfLifeScale, List<String> emphases) {
+			String editqualityOfLifeScale, String emphasis1, String emphasis2, String emphasis3, String emphasis4,
+			String emphasis5) {
+	
+	
+	List<String> emphasesList = new ArrayList<String>();
+
+	if (emphasis1 != null || emphasis1 != "") {
+		emphasesList.add(emphasis1);
+	}
+
+	if ((emphasis2 != null || emphasis2 != "") && emphasis2 != emphasis1) {
+		emphasesList.add(emphasis2);
+	}
+
+	if ((emphasis3 != null || emphasis3 != "") && emphasis3 != emphasis1 && emphasis3 != emphasis2) {
+		emphasesList.add(emphasis3);
+	}
+
+	if ((emphasis4 != null || emphasis4 != "") && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {
+		emphasesList.add(emphasis4);
+	}
+
+	if ((emphasis5 != null || emphasis5 != "") && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3
+			&& emphasis5 != emphasis4) {
+		emphasesList.add(emphasis5);
+	}
+	
+	if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 != null  && emphasis2 != null  && emphasis3 != null  && emphasis4 != null  && emphasis5 != null)){
+	return uc.editUniversity(name, editstate, editlocation, editcontrol,
+			Integer.parseInt(editnumberOfStudents), Integer.parseInt(editpercentFemales),
+			Integer.parseInt(editSATVerbal), Integer.parseInt(editSATMath), Integer.parseInt(editexpenses),
+			Integer.parseInt(editpercentFinancialAid), Integer.parseInt(editnumberOfApplicants),
+			Integer.parseInt(editpercentAdmitted), Integer.parseInt(editpercentEnrolled),
+			Integer.parseInt(editacademicsScale), Integer.parseInt(editsocialScale),
+			Integer.parseInt(editqualityOfLifeScale), null);
+	}
+	
+	else {
 		return uc.editUniversity(name, editstate, editlocation, editcontrol,
 				Integer.parseInt(editnumberOfStudents), Integer.parseInt(editpercentFemales),
 				Integer.parseInt(editSATVerbal), Integer.parseInt(editSATMath), Integer.parseInt(editexpenses),
 				Integer.parseInt(editpercentFinancialAid), Integer.parseInt(editnumberOfApplicants),
 				Integer.parseInt(editpercentAdmitted), Integer.parseInt(editpercentEnrolled),
 				Integer.parseInt(editacademicsScale), Integer.parseInt(editsocialScale),
-				Integer.parseInt(editqualityOfLifeScale), emphases);
+				Integer.parseInt(editqualityOfLifeScale), emphasesList);
 	}
-
+	}
+	
 	/**
 	 * shows the admin the list of universities by calling viewUniversities() in the
 	 * AdminFunctionalityController

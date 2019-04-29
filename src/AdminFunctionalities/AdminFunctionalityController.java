@@ -72,9 +72,22 @@ public class AdminFunctionalityController {
 			int percentFemale, int verbalSAT, int mathSAT, int schoolExpenses, int percentFinancialAid, int numApplicants,
 			int percentAdmitted, int percentEnrolled, int academicScale, int socialScale, int qualityScale, List<String> emphases) {
 		
-		return uniController.addUniversityInfo(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
-				percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
-				percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+//		return uniController.addUniversityInfo(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+//				percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+//				percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+		
+		
+		if(emphases== null){
+			return uniController.addUniversityInfo(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, null);
+		}
+		
+		else {
+			return uniController.addUniversityInfo(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+		}
 	}
 
 
