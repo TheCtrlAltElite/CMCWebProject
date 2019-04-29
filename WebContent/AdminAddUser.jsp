@@ -7,8 +7,13 @@
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>AdminAddUser</title>
 </head>
+
+
+<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	</div>
 <body>
 	<a href="AdminMenu.jsp">Back to menu</a>
+	<form method="post" action="addAction.jsp" name="AdminAddUser">
 	Add User Form:
 	<br>
 	<br>
@@ -48,9 +53,10 @@
 		</tbody>
 	</table>
 	<br>
-	<a href=addAction.jsp><input value="Add User" name="AddUser" type="submit">&nbsp;&nbsp;&nbsp;</a>
+	<input value="Add User" name="AddUser" type="submit">&nbsp;&nbsp;&nbsp;
 	<input name="Reset" type="reset">
 	<br>
+	</form>
 	<br>
 </body>
 </html>

@@ -61,7 +61,7 @@ public class UserFunctionalityController {
 			String percentEnrolled1, String percentEnrolled2, String academicScale1, String academicScale2,
 			String socialScale1, String socialScale2, String qualityScale1, String qualityScale2,
 			List<String> emphases) {
-		DBController dbc = new DBController();
+		//DBController dbc = new DBController();
 		List<University> listUnis = dbc.loadUniversities();
 		List<University> matchingUnis = new ArrayList<University>();
 		int counter = 0;
@@ -177,7 +177,7 @@ public class UserFunctionalityController {
 					continue;
 				}
 			}
-			if (emphases != null) {
+			if (emphases != null && emphases.size()!=0) {
 				counter++;
 				// List<String> emphasesInDB = dbc.getUniversityEmphases();
 				// int emphasesCounter = 0;

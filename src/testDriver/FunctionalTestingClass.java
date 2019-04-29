@@ -24,6 +24,7 @@ public class FunctionalTestingClass {
 	private static AdminInteraction aic = new AdminInteraction();
 	private static AdminFunctionalityController  afc = new AdminFunctionalityController();
 	private static UserFunctionalityController  ufc = new UserFunctionalityController();
+	private static UserInteraction  ui = new UserInteraction();
 	
 	
 	public FunctionalTestingClass() {
@@ -33,6 +34,7 @@ public class FunctionalTestingClass {
 	     aic = new AdminInteraction();
 	     afc = new AdminFunctionalityController();
 	     ufc = new UserFunctionalityController();
+	     ui = new UserInteraction();
 	}
 
 	public static void main(String[] args) {
@@ -74,7 +76,7 @@ public class FunctionalTestingClass {
     	/**
     	 * Add New User
     	 */
-     //   aic.addUser();     //Not hard coded, asks for parameters
+     //   aic.addUser("Billy", "Joe", "biljo@gmail.com", "asdfQWER123", "u");     //Not hard coded, asks for parameters
      //   afc.addUser("BEEBOOPBOPBOOP", "Robot", "zuser259@gmail.com", "Zpasswordis99", 'a'); //call from AdminInteraction	
         
     	/**
@@ -87,10 +89,11 @@ public class FunctionalTestingClass {
          * Search Schools with emphases
          * INCLUDES SEARCH SCHOOL RESULTS
          */     
-     //   List<String> emphases = new ArrayList<String>();
-     //   emphases.add("BIOLOGY");
-     //   ufc.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, emphases);       
-     
+        //List<String> emphases = new ArrayList<String>();
+        //emphases.add("BIOLOGY");
+    	//ui.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        //List<University> list = ufc.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);       
+        
         /**
          * Search Schools Template
          * INCLUDES SEARCH SCHOOL RESULTS
@@ -100,7 +103,7 @@ public class FunctionalTestingClass {
         /**
          * Save school from search
          */        
-     //   ufc.addToSavedSchoolsList3("FBaggins@gmail.com", "YANKTOWN COLLEGE");
+        //ufc.addToSavedSchoolsList3("juser", "AUBURN");
   
         /**
          * Get saved school list
@@ -148,12 +151,15 @@ public class FunctionalTestingClass {
     	 * Remove University from Database ***ADDITIONAL FUNCTIONALITY
     	 */
      //   afc.removeUniversityDB("zootoopa");     //call from AdminInteraction	
+      // aic.removeUniversityDB("aaa"); 
         
         /**
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY
          * INCLUDES RANDOM PASSWORD GENERATOR ***ADDITIONAL FUNCTIONALITY
          */
-        //acc.recoverPassword("jmuehls@gmail.com");	    
+     //   int result = acc.recoverPassword("");	   
+     //   System.out.println(result);
+    	
         
     	/**
     	 * Email saved schools list   ***ADDITIONAL FUNCTIONALITY

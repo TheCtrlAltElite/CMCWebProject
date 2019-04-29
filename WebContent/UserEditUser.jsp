@@ -2,13 +2,14 @@
 	<%@include file="verifyLogin.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<% Account acc = ac.getCurrentAccount(); 
+<% Account acc = ai.getCurrentAccount(); 
 %>
 <head>
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>UserEditUser</title>
 </head>
 <body>
+	<form method="post" action="UserEditUserAction.jsp" name="UserEditUser">
 	<a href="UserMenu.jsp">Back to menu</a>
 	<br>
 	<br>
@@ -54,9 +55,10 @@
 		</tbody>
 	</table>
 	<br>
-	<input value="Edit User" name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;
+	<input value="Edit User" name="EditUser" type="submit">&nbsp;&nbsp;&nbsp;</a>
 	<input name="Reset" type="reset">
 	<br>
+	</form>
 	<br>
 </body>
 </html>
