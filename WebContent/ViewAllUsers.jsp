@@ -13,9 +13,9 @@
 	<%@include file="verifyLogin.jsp"%>
 	<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
 	</div>
-	Hello User
+	Hello
 	<%
-		out.println(ac.getCurrentAccount().getEmail());
+		out.println(ac.getCurrentAccount().getFirstName());
 	%>
 
 	<table style="text-align: left; width: 100%;" border="1"
