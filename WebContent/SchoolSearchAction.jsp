@@ -136,11 +136,21 @@
 	}
 	
 	List<String> emphases = new ArrayList<String>();
-// 	emphases.add(emphasis1);
-// 	emphases.add(emphasis2);
-// 	emphases.add(emphasis3);
-// 	emphases.add(emphasis4);
-// 	emphases.add(emphasis5);
+	if (emphasis1 != null) {
+ 		emphases.add(emphasis1);
+	}
+	if (emphasis2 != null) {
+ 		emphases.add(emphasis2);
+	}
+	if (emphasis3 != null) {
+ 		emphases.add(emphasis3);
+	}
+	if (emphasis4 != null) {
+ 		emphases.add(emphasis4);
+	}
+	if (emphasis5 != null) {
+ 		emphases.add(emphasis5);
+	}
 
 	System.out.println("This" + schoolName + " " + state + " " + location + " " + control + " " + numStudents1 + " " + numStudents2 + " " + percentFemale1 + " " + percentFemale2 + " " + satVerbal1 + " " + satVerbal2 + " " + satMath1 + " " + satMath2 + " " + expenses1 + " " + expenses2 + " " + percentFinancialAid1 + " " + percentFinancialAid2 + " " + numApplicants1 + " " + numApplicants2 + " " + percentAdmitted1 + " " + percentAdmitted2 + " " + percentEnrolled1 + " " + percentEnrolled2 + " " + academicScale1 + " " + academicScale2 + " " + socialScale1 + " " + socialScale2 + " " + qualityScale1 + " " + qualityScale2 + " " + emphases);
 	
@@ -163,8 +173,8 @@
 				%>
 				<tr>
 					<td style="vertical-align: top; width: 100px;"><a
-						href="RemoveFromSavedSchoolsAction.jsp"><button value="Remove"
-								name="Remove" >Remove</button></a></td>
+						href="AddToSavedSchoolsAction.jsp"><button value="Save"
+								name="Save" >Save</button></a></td>
 					<td style="vertical-align: top; width: 600px;">
 						<%
 							out.println("University = " + unis.get(i).getSchoolName());
