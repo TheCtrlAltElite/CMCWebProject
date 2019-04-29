@@ -24,6 +24,7 @@ public class FunctionalTestingClass {
 	private static AdminInteraction aic = new AdminInteraction();
 	private static AdminFunctionalityController  afc = new AdminFunctionalityController();
 	private static UserFunctionalityController  ufc = new UserFunctionalityController();
+	private static UserInteraction  ui = new UserInteraction();
 	
 	
 	public FunctionalTestingClass() {
@@ -33,6 +34,7 @@ public class FunctionalTestingClass {
 	     aic = new AdminInteraction();
 	     afc = new AdminFunctionalityController();
 	     ufc = new UserFunctionalityController();
+	     ui = new UserInteraction();
 	}
 
 	public static void main(String[] args) {
@@ -87,10 +89,11 @@ public class FunctionalTestingClass {
          * Search Schools with emphases
          * INCLUDES SEARCH SCHOOL RESULTS
          */     
-     //   List<String> emphases = new ArrayList<String>();
-     //   emphases.add("BIOLOGY");
-     //   ufc.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, emphases);       
-     
+        //List<String> emphases = new ArrayList<String>();
+        //emphases.add("BIOLOGY");
+    	//ui.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+        //List<University> list = ufc.searchSchools(null, "NEW YORK", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);       
+        
         /**
          * Search Schools Template
          * INCLUDES SEARCH SCHOOL RESULTS
@@ -100,7 +103,7 @@ public class FunctionalTestingClass {
         /**
          * Save school from search
          */        
-        ufc.addToSavedSchoolsList3("juser", "AUBURN");
+        //ufc.addToSavedSchoolsList3("juser", "AUBURN");
   
         /**
          * Get saved school list

@@ -11,7 +11,7 @@
 	<br>
 	<div style="text-align: left;">
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; &nbsp;&nbsFunctionalityControllerp;&nbsp; &nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
@@ -136,7 +136,7 @@
 					SCALE(1-5)<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;">between <input
-					name="Quality Scale"> and <input name="QualityScsale2"><br>
+					name="QualityScale"> and <input name="QualityScale2"><br>
 				</td>
 			</tr>
 			<tr>
@@ -147,7 +147,7 @@
 						cellpadding="2" cellspacing="2">
 						<tbody>
 							<tr>
-								<td style="vertical-align: top;"><input name="Empasis1"><br>
+								<td style="vertical-align: top;"><input name="Emphasis1"><br>
 								</td>
 							</tr>
 							<tr>
