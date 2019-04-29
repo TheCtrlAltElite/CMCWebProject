@@ -183,8 +183,13 @@
 							out.println("University = " + unis.get(i).getSchoolName());
 						%><br>
 					</td>
-					<td style="vertical-align: top; width: 100px;"><a
-						href="ViewUniversity.jsp"><button value="View" name="View">View</button></a>
+					<td style="vertical-align: top; width: 100px;">
+					<form method="post" action="ViewUniversity.jsp" action="RecommendedSchools.jsp" name="View">
+						<input name="View" value="View" type="submit"> <input
+							name="UniName"
+							value=<%=unis.get(i)%>
+							type="hidden">
+					</form>"
 					</td>
 				</tr>
 				<%
