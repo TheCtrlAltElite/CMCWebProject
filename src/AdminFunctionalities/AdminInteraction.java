@@ -145,6 +145,14 @@ public class AdminInteraction {
 		int x = 0;
 		int uniSize = dbc.loadUniversities().size();
 		int i = 0;
+		
+		for(int j = 0; i < schoolName.length(); j++) {	//checks for number in name
+			if(Character.isDigit(schoolName.charAt(j))){
+				System.out.println(schoolName + " contains a number and is not accepted.");
+				break;
+			}
+		}
+		
 		String schoolName2 = schoolName.toUpperCase();
 
 		// searches through list of universities retrieved through loadUniversities()
@@ -265,26 +273,7 @@ public class AdminInteraction {
 		return success;
 	}
 
-<<<<<<< HEAD
 
-
-//	/**
-//	 * Removes a stored university from the database by calling
-//	 * removeUniversityDB(String) in AdminFunctionalityController
-//	 * 
-//	 * @param schoolName
-//	 */
-//	public void removeUniversityDB() {
-//		Scanner scan = new Scanner(System.in);
-//		System.out.println("Enter school to be removed: \n");
-//		String schoolName = scan.nextLine();
-//		adminFController.removeUniversityDB(schoolName);
-//		scan.close();
-//	}
-	
-	
-=======
->>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
 	/**
 	 * Removes a stored university from the database by calling
 	 * removeUniversityDB(String) in AdminFunctionalityController
