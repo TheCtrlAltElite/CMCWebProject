@@ -181,10 +181,10 @@
 						%><br>
 					</td>
 					<td style="vertical-align: top; width: 100px;">
-					<form method="post" action="ViewUniversity.jsp" name="View">
+					<form method="post" action="ViewUniversity.jsp" action="RecommendedSchools.jsp" name="View">
 						<input name="View" value="View" type="submit"> <input
 							name="UniName"
-							value=<%=unis.get(i).getSchoolName()%>
+							value=<%=unis.get(i)%>
 							type="hidden">
 					</form>"
 					</td>
