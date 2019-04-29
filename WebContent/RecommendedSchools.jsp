@@ -5,10 +5,12 @@
 </head>
 <body>
 	<%
+	DBController dbc = new DBController();
+	University uni = dbc.getUniversity(request.getParameter("UniName"));
 	UniversityController uc = new UniversityController();
-	University uni = uc.getDetailsUni(request.getParameter("UniName"));
 	List<University> schools = uc.recommendedSchools(uni);
-				for (int i = 0; i < afc.viewUniversities().size(); i++) {
+	System.out.println(schools);
+				for (int i = 0; i < schools.size(); i++) {
 			%>
 	<table style="text-align: left; height: 480px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">
@@ -17,91 +19,83 @@
 
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSchoolName());
+						out.println(uni.get(0).getSchoolName());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSchoolState());
+						out.println(uni.get(0).getSchoolState());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSchoolLocation());
+						out.println(uni.get(0).getSchoolLocation());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSchoolControl());
+						out.println(uni.get(0).getSchoolControl());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getNumberStudents());
+						out.println(uni.get(0).getNumberStudents());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getPercentFemale());
+						out.println(uni.get(0).getPercentFemale());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getVerbalSAT());
+						out.println(uni.get(0).getVerbalSAT());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getMathSAT());
+						out.println(uni.get(0).getMathSAT());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSchoolExpenses());
+						out.println(uni.get(0).getSchoolExpenses());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getPercentFinancialAid());
+						out.println(uni.get(0).getPercentFinancialAid());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getNumApplicants());
+						out.println(uni.get(0).getNumApplicants());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getPercentAdmitted());
+						out.println(uni.get(0).getPercentAdmitted());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getPercentEnrolled());
+						out.println(uni.get(0).getPercentEnrolled());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getAcademicScale());
+						out.println(uni.get(0).getAcademicScale());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getSocialScale());
+						out.println(uni.get(0).getSocialScale());
 					%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
-						out.println(afc.viewUniversities().get(i).getQualityScale());
+						out.println(uni.get(0).getQualityScale());
 					%><br>
-				</td>
-				<td style="vertical-align: top; text-align: center;">
-					<form method="post" action="AdminEditUniversity.jsp" name="Edit">
-						<input name="View" value="Edit" type="submit"> <input
-							name="SchoolName"
-							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
-							type="hidden">
-					</form>
 				</td>
 			</tr>
 		</tbody>
