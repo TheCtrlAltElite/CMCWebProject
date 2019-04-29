@@ -270,18 +270,29 @@ public class AdminInteraction {
 
 
 
+//	/**
+//	 * Removes a stored university from the database by calling
+//	 * removeUniversityDB(String) in AdminFunctionalityController
+//	 * 
+//	 * @param schoolName
+//	 */
+//	public void removeUniversityDB() {
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("Enter school to be removed: \n");
+//		String schoolName = scan.nextLine();
+//		adminFController.removeUniversityDB(schoolName);
+//		scan.close();
+//	}
+	
+	
 	/**
 	 * Removes a stored university from the database by calling
 	 * removeUniversityDB(String) in AdminFunctionalityController
 	 * 
 	 * @param schoolName
 	 */
-	public void removeUniversityDB() {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter school to be removed: \n");
-		String schoolName = scan.nextLine();
+	public void removeUniversityDB(String schoolName) {
 		adminFController.removeUniversityDB(schoolName);
-		scan.close();
 	}
 	
 	

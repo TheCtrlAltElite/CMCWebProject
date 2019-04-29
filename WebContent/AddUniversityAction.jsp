@@ -7,9 +7,34 @@
 AdminInteraction adminI = new AdminInteraction();
 
 String schoolName = request.getParameter("school");
-String schoolState = request.getParameter("state");
-String schoolLocation =request.getParameter("location");
-String schoolControl = request.getParameter("control");
+//String schoolState = request.getParameter("state");
+//String schoolLocation =request.getParameter("location");
+//String schoolControl = request.getParameter("control");
+
+String schoolState;
+if(request.getParameter("state") == ""){
+	schoolState = "-1";
+}
+else{
+	schoolState = request.getParameter("state");
+}
+
+String schoolLocation;
+if(request.getParameter("location") == ""){
+	schoolLocation = "-1";
+}
+else{
+	schoolLocation = request.getParameter("location");
+}
+
+String schoolControl;
+if(request.getParameter("control") == ""){
+	schoolControl = "-1";
+}
+else{
+	schoolControl = request.getParameter("control");
+}
+
 int numberStudents = 0;
 if(request.getParameter("students") == ""){
 	numberStudents = -1;

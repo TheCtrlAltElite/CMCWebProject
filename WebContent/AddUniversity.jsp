@@ -4,6 +4,13 @@
 <title>AddUniversity</title>
 </head>
 <body>
+
+
+<%@include file="verifyLogin.jsp" %>
+<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	</div>
+	
+	
 <br> Add University form:
 	<br>
 	<form method="post" action="AddUniversityAction.jsp" name="addUniversity">

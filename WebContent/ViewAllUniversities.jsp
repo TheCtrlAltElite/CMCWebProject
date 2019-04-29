@@ -9,6 +9,11 @@
 
 %>
 <%@include file="verifyLogin.jsp" %>
+
+<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	</div>
+	
+	
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
@@ -64,6 +69,9 @@
 				</td>
 				<td style="vertical-align: top; width: 130px; text-align: center;"><br>
 				</td>
+				</td>
+				<td style="vertical-align: top; width: 130px; text-align: center;"><br>
+				</td>
 			</tr>
 			<% for(int i = 0 ; i <afc.viewUniversities().size(); i++ ){
 
@@ -88,6 +96,19 @@
 				<td style="vertical-align: top; text-align: center;"><a
 					href="AdminEditUniversity.jsp"><button value="Edit" name="Edit">Edit</button>
 						<br> </a></td>
+<!-- 				<td style="vertical-align: top; text-align: center;"><a -->
+<!-- 					href="AdminDeleteUniversity.jsp"><button value="Delete" name="Delete">Delete</button> -->
+<!-- 						<br> </a></td> -->
+						
+						
+						<td style="vertical-align: top; text-align: center;"><a>
+						<form method="post" action="AdminDeleteUniversity.jsp" name="Delete">
+    <input name="Delete" value="Delete" type="submit">
+    <input name="University" value= <% out.println(afc.viewUniversities().get(i).getSchoolName()); %> type="hidden">
+</form>
+<br> </a></td>
+						
+				
 			</tr>
 			
 			<%}%>
