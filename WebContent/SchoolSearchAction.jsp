@@ -152,10 +152,8 @@
  		emphases.add(emphasis5);
 	}
 
-	System.out.println("This" + schoolName + " " + state + " " + location + " " + control + " " + numStudents1 + " " + numStudents2 + " " + percentFemale1 + " " + percentFemale2 + " " + satVerbal1 + " " + satVerbal2 + " " + satMath1 + " " + satMath2 + " " + expenses1 + " " + expenses2 + " " + percentFinancialAid1 + " " + percentFinancialAid2 + " " + numApplicants1 + " " + numApplicants2 + " " + percentAdmitted1 + " " + percentAdmitted2 + " " + percentEnrolled1 + " " + percentEnrolled2 + " " + academicScale1 + " " + academicScale2 + " " + socialScale1 + " " + socialScale2 + " " + qualityScale1 + " " + qualityScale2 + " " + emphases);
-	
 	List<University> unis = ui.searchSchools(schoolName, state, location, control, numStudents1, numStudents2, percentFemale1, percentFemale2, satVerbal1, satVerbal2, satMath1, satMath2, expenses1, expenses2, percentFinancialAid1, percentFinancialAid2, numApplicants1, numApplicants2, percentAdmitted1, percentAdmitted2, percentEnrolled1, percentEnrolled2, academicScale1, academicScale2, socialScale1, socialScale2, qualityScale1, qualityScale2, emphases);
-	System.out.println(unis);
+
 	%>
 	<html>
 	<head>
@@ -167,14 +165,19 @@
 			border="1" cellpadding="2" cellspacing="2">
 			<tbody>
 				<%
-				out.println(unis.size());
+				out.println("Search results shows " + unis.size() + " universities.");
 					for (int i = 0; i < unis.size(); i++) {
 						
 				%>
 				<tr>
-					<td style="vertical-align: top; width: 100px;"><a
-						href="AddToSavedSchoolsAction.jsp"><button value="Save"
-								name="Save" >Save</button></a></td>
+					<td style="vertical-align: top; width: 100px;">
+						<form method="post" action="AddToSavedSchoolsAction.jsp" name="Save">
+						<input name="Save" value="Save" type="submit"> <input
+						name="UniName"
+						value=<%=unis.get(i).getSchoolName()%>
+						type="hidden">
+						</form>
+								
 					<td style="vertical-align: top; width: 600px;">
 						<%
 							out.println("University = " + unis.get(i).getSchoolName());
