@@ -172,7 +172,7 @@
 						name="Delete">
 						<input name="Delete" value="Delete" type="submit"> <input
 							name="University"
-							value="<%out.println(afc.viewUniversities().get(i).getSchoolName());%>"
+							value="<%=afc.viewUniversities().get(i).getSchoolName()%>"
 							type="hidden">
 					</form>
 </td>

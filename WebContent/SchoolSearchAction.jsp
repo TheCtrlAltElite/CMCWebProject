@@ -314,9 +314,7 @@
 							type="hidden">
 					</form>
 				<td style="vertical-align: top; width: 600px;">
-					<%
-							out.println(unis.get(i).getSchoolName());
-						%><br>
+					<%=unis.get(i).getSchoolName()%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<form method="post" action="ViewUniversity.jsp" name="View">

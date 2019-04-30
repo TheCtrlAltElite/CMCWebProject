@@ -21,7 +21,7 @@
 					<td style="vertical-align: top; width: 291px;">SCHOOL<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
-						readonly="readonly" name="School Name" value=<%=details.get(0)%>><br></td>
+						readonly="readonly" name="School Name" value="<%=details.get(0)%>"><br></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top; width: 291px;">STATE<br>
