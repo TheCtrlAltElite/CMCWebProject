@@ -265,26 +265,7 @@ public class AdminInteraction {
 		return success;
 	}
 
-<<<<<<< HEAD
 
-
-//	/**
-//	 * Removes a stored university from the database by calling
-//	 * removeUniversityDB(String) in AdminFunctionalityController
-//	 * 
-//	 * @param schoolName
-//	 */
-//	public void removeUniversityDB() {
-//		Scanner scan = new Scanner(System.in);
-//		System.out.println("Enter school to be removed: \n");
-//		String schoolName = scan.nextLine();
-//		adminFController.removeUniversityDB(schoolName);
-//		scan.close();
-//	}
-	
-	
-=======
->>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
 	/**
 	 * Removes a stored university from the database by calling
 	 * removeUniversityDB(String) in AdminFunctionalityController
