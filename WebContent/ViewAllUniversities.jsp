@@ -163,7 +163,7 @@
 					<form method="post" action="AdminEditUniversity.jsp" name="Edit">
 						<input name="Edit" value="Edit" type="submit"> <input
 							name="SchoolName"
-							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
+							value="<%=afc.viewUniversities().get(i).getSchoolName()%>"
 							type="hidden">
 					</form>
 					</td>
@@ -172,7 +172,7 @@
 						name="Delete">
 						<input name="Delete" value="Delete" type="submit"> <input
 							name="University"
-							value=<%out.println(afc.viewUniversities().get(i).getSchoolName());%>
+							value="<%out.println(afc.viewUniversities().get(i).getSchoolName());%>"
 							type="hidden">
 					</form>
 </td>
