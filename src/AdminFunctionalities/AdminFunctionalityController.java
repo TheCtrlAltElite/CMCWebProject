@@ -89,6 +89,33 @@ public class AdminFunctionalityController {
 					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
 		}
 	}
+	
+	
+	/**
+	 * Adds a new university to the database.
+	 * by calling addUniversityInfo() in UniversityController 
+	 */
+	public int editUniversity(String schoolName, String schoolState, String schoolLocation, String schoolControl, int numberStudents,
+			int percentFemale, int verbalSAT, int mathSAT, int schoolExpenses, int percentFinancialAid, int numApplicants,
+			int percentAdmitted, int percentEnrolled, int academicScale, int socialScale, int qualityScale, List<String> emphases) {
+		
+//		return uniController.addUniversityInfo(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+//				percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+//				percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+		
+		
+		if(emphases== null){
+			return uniController.editUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, null);
+		}
+		
+		else {
+			return uniController.editUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
+					percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
+					percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphases);
+		}
+	}
 
 
 	
