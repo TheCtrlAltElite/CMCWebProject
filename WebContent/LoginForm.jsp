@@ -12,7 +12,7 @@
 				<tr>
 					<td style="vertical-align: top;"><img
 						style="width: 369px; height: 399px;" alt="CMCLogo"
-						src="images/CMC_Logo.jpg">
+						src="images/CMC_Logo.png">
 					</td>
 					<td style="vertical-align: top;"><br> <br> <br>
 						<form method="post" action="loginAction.jsp" name="Login">
