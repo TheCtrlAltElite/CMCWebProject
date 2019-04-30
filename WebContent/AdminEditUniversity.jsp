@@ -127,7 +127,7 @@
 							<tbody>
 								<tr>
 									<td style="vertical-align: top;"><input
-										name="Empasis1"
+										name="Emphasis1"
 										value=<%if (details.size() >= 17)
 				out.println(details.get(16));%>><br></td>
 								</tr>
@@ -145,7 +145,7 @@
 								</tr>
 								<tr>
 									<td style="vertical-align: top;"><input
-										name="Empasis4"
+										name="Emphasis4"
 										value=<%if (details.size() >= 20)
 				out.println(details.get(19));%>><br></td>
 								</tr>

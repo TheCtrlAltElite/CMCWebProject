@@ -19,6 +19,11 @@
 		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <big><big><big>SEARCH
 					MENU</big></big></big><br>
 	</div>
+			<%
+			String Error = request.getParameter("Error");
+			if (Error != null && Error.equals("-1")) {
+				out.println("Please type in some parameters.");
+				}%>
 	<br>
 	<table style="text-align: left; height: 480px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">

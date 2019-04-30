@@ -1,7 +1,9 @@
-<%@ page language="java" import="UserFunctionalities.*, UniversityFunctionalities.*"%>
-<%@include file="verifyLogin.jsp" %>
+<%@ page language="java"
+	import="UserFunctionalities.*, UniversityFunctionalities.*"%>
+<%@include file="verifyLogin.jsp"%>
 <% 
 	UserInteraction ui = new UserInteraction();
+	boolean status = true;
 	String schoolName = request.getParameter("SchoolName");
 	schoolName = schoolName.toUpperCase();
 	if(schoolName == "" || schoolName == null){
@@ -160,54 +162,179 @@
 	if (emphasis5 != null) {
  		emphases.add(emphasis5);
 	}
+	
+	if(schoolName == "" || schoolName == null){
+		System.out.println("hi");
+		if(state == "" || state == null){
+			System.out.println("hi");
 
+			if(location == "" || location == null){
+				System.out.println("hi");
+
+				if(control == "" || control == null){
+					System.out.println("hi");
+
+					if(numStudents1 == "" || numStudents1 == null){
+						System.out.println("hi");
+
+						if(numStudents2 == "" || numStudents2 == null){
+							System.out.println("hi");
+
+							if(percentFemale1 == "" || percentFemale1 == null){
+								System.out.println("hi");
+
+								if(percentFemale2 == "" || percentFemale2 == null){
+									System.out.println("hi");
+
+									if(satVerbal1 == "" || satVerbal1 == null){
+										System.out.println("hi");
+
+										if(satVerbal2 == "" || satVerbal2 == null){
+											System.out.println("hi");
+
+											if(satMath1 == "" || satMath1 == null){
+												System.out.println("satMath1");
+
+												if(satMath2 == "" || satMath2 == null){
+													System.out.println("hi");
+
+													if(expenses1 == "" || expenses1 == null){
+														System.out.println("hi");
+
+														if(expenses2 == "" || expenses2 == null){
+															System.out.println("hi");
+
+															if(percentFinancialAid1 == "" || percentFinancialAid1 == null){
+																System.out.println("hi");
+
+																if(percentFinancialAid2 == "" || percentFinancialAid2 == null){
+																	System.out.println("hi");
+				
+																	if(numApplicants1 == "" || numApplicants1 == null){
+																		System.out.println("num");
+
+																		if(numApplicants2 == "" || numApplicants2 == null){
+																			System.out.println("hi");
+
+																			if(percentAdmitted1 == "" || percentAdmitted1 == null){
+																				System.out.println("hi");
+
+																				if(percentAdmitted2 == "" || percentAdmitted2 == null){
+																					System.out.println("hi");
+
+																					if(percentEnrolled1 == "" || percentEnrolled1 == null){
+																						System.out.println("enrolled");
+
+																						if(percentEnrolled2 == "" || percentEnrolled2 == null){
+																							System.out.println("hi");
+
+																							if(academicScale1 == "" || academicScale1 == null){
+																								System.out.println("hi");
+
+																								if(academicScale2 == "" || academicScale2 == null){
+																									System.out.println("hi");
+
+																									if(socialScale1 == "" || socialScale1 == null){
+																										System.out.println("hi");
+
+																										if(socialScale2 == "" || socialScale2 == null){
+																											System.out.println("hi");
+
+																											if(qualityScale1 == "" || qualityScale1 == null){
+																												System.out.println("hi");
+
+																												if(qualityScale2 == "" || qualityScale2 == null){
+																													System.out.println("qualscale2");
+
+																													if(emphases.size() == 0 || emphases == null){
+																														System.out.println("hi");
+																														response.sendRedirect("schoolSearch.jsp?Error=-1");
+																														status = false;
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	if(status) {
 	List<University> unis = ui.searchSchools(schoolName, state, location, control, numStudents1, numStudents2, percentFemale1, percentFemale2, satVerbal1, satVerbal2, satMath1, satMath2, expenses1, expenses2, percentFinancialAid1, percentFinancialAid2, numApplicants1, numApplicants2, percentAdmitted1, percentAdmitted2, percentEnrolled1, percentEnrolled2, academicScale1, academicScale2, socialScale1, socialScale2, qualityScale1, qualityScale2, emphases);
-
+	
 	%>
-	<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>SearchResults</title>
-	</head>
-	<body>
-		<table style="text-align: center; width: 800px; height: 108px;"
-			border="1" cellpadding="2" cellspacing="2">
-			<tbody>
-				<%
-				out.println("Search results shows " + unis.size() + " universities.");
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SearchResults</title>
+</head>
+<body>
+	<div style="text-align: left;"><a href="schoolSearch.jsp">Return to search</a>
+	<table style="text-align: center; width: 800px; height: 108px;"
+		border="1" cellpadding="2" cellspacing="2">
+		<br>
+		<tbody>
+			<div style="text-align: middle;"> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;<%
+				out.println("Search results show " + unis.size() + " universities.");
 					for (int i = 0; i < unis.size(); i++) {
 						
-				%>
-				<tr>
-					<td style="vertical-align: top; width: 100px;">
-						<form method="post" action="AddToSavedSchoolsAction.jsp" name="Save">
+				%> </div>
+			<tr>
+				<td style="vertical-align: top; width: 100px;">
+					<form method="post" action="AddToSavedSchoolsAction.jsp"
+						name="Save">
 						<input name="Save" value="Save" type="submit"> <input
-						name="UniName"
-						value="<%=unis.get(i).getSchoolName()%>"
-						type="hidden">
-						</form>
-								
-					<td style="vertical-align: top; width: 600px;">
-						<%
-							out.println(unis.get(i).getSchoolName());
-						%><br>
-					</td>
-					<td style="vertical-align: top; width: 100px;">
-					<form method="post" action="ViewUniversity.jsp"name="View">
-						<input name="View" value="View" type="submit"> <input
-							name="UniName"
-							value="<%=unis.get(i).getSchoolName()%>"
+							name="UniName" value="<%=unis.get(i).getSchoolName()%>"
 							type="hidden">
 					</form>
-					</td>
-				</tr>
-				<%
+				<td style="vertical-align: top; width: 600px;">
+					<%
+							out.println(unis.get(i).getSchoolName());
+						%><br>
+				</td>
+				<td style="vertical-align: top; width: 100px;">
+					<form method="post" action="ViewUniversity.jsp" name="View">
+						<input name="View" value="View" type="submit"> <input
+							name="UniName" value="<%=unis.get(i).getSchoolName()%>"
+							type="hidden">
+					</form>
+				</td>
+			</tr>
+			<%
 					}
 				%>
-			</tbody>
-		</table>
-	</body>
-	</html>
+			
+		</tbody>
+	</table>
+</body>
+</html>
+<% } %>
 
 
 
