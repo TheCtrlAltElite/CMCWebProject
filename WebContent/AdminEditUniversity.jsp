@@ -19,108 +19,108 @@
 			border="10" bordercolor="gray"  cellpadding="3" cellspacing="0">
 			<tbody>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">SCHOOL<br>
+					<td align="center" style="vertical-align: top; width: 291px;">SCHOOL<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						readonly="readonly" name="School Name" value="<%=details.get(0)%>"><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">STATE<br>
+					<td align="center" style="vertical-align: top; width: 291px;">STATE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="State" value=<%=details.get(1)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">LOCATION<br>
+					<td align="center" style="vertical-align: top; width: 291px;">LOCATION<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Location" value=<%=details.get(2)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">CONTROL<br>
+					<td align="center" style="vertical-align: top; width: 291px;">CONTROL<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Control" value=<%=details.get(3)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">NUMBER OF
+					<td align="center" style="vertical-align: top; width: 291px;">NUMBER OF
 						STUDENTS<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Num Students" value=<%=details.get(4)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">PERCENT FEMALE<br>
+					<td align="center" style="vertical-align: top; width: 291px;">PERCENT FEMALE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Percent Female" value=<%=details.get(5)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">SAT VERBAL<br>
+					<td align="center" style="vertical-align: top; width: 291px;">SAT VERBAL<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="SAT Verbal" value=<%=details.get(6)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">SAT MATH<br>
+					<td align="center" style="vertical-align: top; width: 291px;">SAT MATH<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="SAT Math" value=<%=details.get(7)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">EXPENSES<br>
+					<td align="center" style="vertical-align: top; width: 291px;">EXPENSES<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Expenses" value=<%=details.get(8)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">PERCENT
+					<td align="center" style="vertical-align: top; width: 291px;">PERCENT
 						FINANCIAL AID<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Percent Aid" value=<%=details.get(9)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">NUMBER OF
+					<td align="center" style="vertical-align: top; width: 291px;">NUMBER OF
 						APPLICANTS<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Num Applicants" value=<%=details.get(10)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">PERCENT
+					<td align="center" style="vertical-align: top; width: 291px;">PERCENT
 						ADMITTED<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Percent Admitted" value=<%=details.get(11)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">PERCENT
+					<td align="center" style="vertical-align: top; width: 291px;">PERCENT
 						ENROLLED<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Percent Enrolled" value=<%=details.get(12)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">ACADEMIC SCALE<br>
+					<td align="center" style="vertical-align: top; width: 291px;">ACADEMIC SCALE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Academic Scale" value=<%=details.get(13)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">SOCIAL SCALE<br>
+					<td align="center" style="vertical-align: top; width: 291px;">SOCIAL SCALE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Social Scale" value=<%=details.get(14)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">QUALITY SCALE<br>
+					<td align="center" style="vertical-align: top; width: 291px;">QUALITY SCALE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
 						name="Quality Scale" value=<%=details.get(15)%>><br></td>
 				</tr>
 				<tr>
-					<td style="vertical-align: top; width: 291px;">EMPHASIS<br>
+					<td align="center" style="vertical-align: middle; width: 291px;">EMPHASIS<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;">
 						<table style="text-align: left; width: 100%;" border="1"
@@ -162,8 +162,15 @@
 				</tr>
 			</tbody>
 		</table>
-		<br> <input value="Edit University" name="EditUniversity" type="submit">&nbsp;&nbsp;&nbsp;
-		<input name="Reset" type="reset"> <br>
+		<table style="text-align: left; width: 100px; height: 40px;"
+		align="center" border="0" cellpadding="1" cellspacing="1">
+		<tbody>
+			<tr>
+		<td> <input value="Edit University" name="EditUniversity" type="submit"> </td>
+		<td> <input name="Reset" type="reset"> </td>
+		</tr>
+			</tbody>
+			</table>
 	</form>
 	<br>
 </body>
