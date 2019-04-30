@@ -283,13 +283,12 @@ public class UserFunctionalityController {
 	/**
 	 * Email's the user's savedSchoolsList to the user's email
 	 */
-	public boolean emailSavedSchools(String username) throws MessagingException {
+	public boolean emailSavedSchools(String username, String firstName, String email) throws MessagingException {
 		boolean status = false;
-		if (dbc.isUserReal(username)) {
+		if (email.contains("@") & email.contains(".com")) {
 			status = true;
-		}
-		Map<String, String> savedSchoolsList = getSavedSchoolsList(username);
-		String mail_body = "Your saved schools list: \n";
+			Map<String, String> savedSchoolsList = getSavedSchoolsList(username);
+			String mail_body = firstName + "'s saved schools list: \n";
 
 		try {
 			Properties props = new Properties();
@@ -312,18 +311,19 @@ public class UserFunctionalityController {
 			MimeMessage message = new MimeMessage(session); // creates MimeMessage object to send email
 			message.setFrom(new InternetAddress("cmcdatabase2019@gmail.com")); // sets from email which is
 																				// cmcdatabase2019@gmail.com
-			message.addRecipient(Message.RecipientType.TO, new InternetAddress(username)); // receiver
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); // receiver
 																											// of the
 																											// email
-			message.setSubject("Your Saved Schools List"); // subject of the email
+			message.setSubject(firstName + "'s Saved Schools List"); // subject of the email
 			message.setText(mail_body); // sets the body of the email to mail_body
 
-			System.out.println(message); // shows email has begun to send out
+			//System.out.println(message); // shows email has begun to send out
 			Transport.send(message); // Sends out email
-			System.out.println("Message sent!"); // Informs message is sent
+			//System.out.println("Message sent!"); // Informs message is sent
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
 		}
 		return status;
 

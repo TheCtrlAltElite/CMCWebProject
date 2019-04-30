@@ -28,7 +28,7 @@
 				<form method="post" action="RemoveFromSavedSchoolsAction.jsp" name="Remove">
 						<input name="Remove" value="Remove" type="submit"> <input
 							name="UniName"
-							value=<%out.println(entry.getKey());%>
+							value="<%=entry.getKey()%>"
 							type="hidden">
 					</form></td>
 				<td style="vertical-align: top; width: 600px;">
@@ -40,7 +40,7 @@
 				<form method="post" action="ViewUniversity.jsp" name="View">
 						<input name="View" value="View" type="submit"> <input
 							name="UniName"
-							value=<%out.println(entry.getKey());%>
+							value="<%=entry.getKey()%>"
 							type="hidden">
 					</form>
 				</td>
@@ -50,5 +50,14 @@
 			%>
 		</tbody>
 	</table>
+		<form method="post" action="EmailSavedSchoolsList.jsp" name="Email">
+						<input name="Email" value="Email Saved Schools List" type="submit"> 
+					</form>
+	<%
+	String status = request.getParameter("Status");
+	if(status != null && status.equals("0")) {
+		out.println("Email was sent with your saved schools list. Please check your email.");
+	}
+	%>
 </body>
 </html>

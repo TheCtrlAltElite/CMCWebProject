@@ -151,7 +151,7 @@ public class FunctionalTestingClass {
     	 * Remove University from Database ***ADDITIONAL FUNCTIONALITY
     	 */
      //   afc.removeUniversityDB("zootoopa");     //call from AdminInteraction	
-      // aic.removeUniversityDB("aaa"); 
+      //aic.removeUniversityDB("aaauni"); 
         
         /**
          * Send Recovery Password  ****ADDITIONAL FUNCTIONALITY

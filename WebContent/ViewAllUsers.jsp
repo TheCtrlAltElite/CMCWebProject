@@ -1,6 +1,6 @@
 <%@page language="java"
 	import="AdminFunctionalities.*,AccountFunctionalities.*"%>
-
+	<%@include file="verifyLogin.jsp"%>
 
 <html>
 <head>
@@ -8,15 +8,14 @@
 </head>
 <body>
 	<%
-		AccountController ac = new AccountController();
 		AdminFunctionalityController afc = new AdminFunctionalityController();
 	%>
-	<%@include file="verifyLogin.jsp"%>
-	<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	<div style="text-align: left;"><a href="AdminMenu.jsp">Back to menu</a><br>
+	<br>
 	</div>
 	Hello
 	<%
-		out.println(ac.getCurrentAccount().getFirstName());
+		out.println(ai.getCurrentAccount().getFirstName());
 	%>
 	<table style="text-align: left; width: 100%;" border="1"
 		cellpadding="2" cellspacing="2">

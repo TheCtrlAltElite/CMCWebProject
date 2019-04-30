@@ -3,18 +3,22 @@
 <% 
 	UserInteraction ui = new UserInteraction();
 	String schoolName = request.getParameter("SchoolName");
+	schoolName = schoolName.toUpperCase();
 	if(schoolName == "" || schoolName == null){
 		schoolName = null;
 	}
 	String state = request.getParameter("State");
+	state = state.toUpperCase();
 	if(state == "" || state == null){
 		state = null;
 	}
 	String location = request.getParameter("Location");
+	location = location.toUpperCase();
 	if(location == "" || location == null){
 		location = null;
 	}
 	String control = request.getParameter("Control");
+	control = control.toUpperCase();
 	if(control == "" || control == null){
 		control = null;
 	}
@@ -115,37 +119,50 @@
 		qualityScale2 = null;
 	}
 	String emphasis1 = request.getParameter("Emphasis1");
+	emphasis1 = emphasis1.toUpperCase();
 	if(emphasis1 == "" || emphasis1 == null){
 		emphasis1 = null;
 	}
 	String emphasis2 = request.getParameter("Emphasis2");
+	emphasis2 = emphasis2.toUpperCase();
 	if(emphasis2 == "" || emphasis2 == null){
 		emphasis2 = null;
 	}
 	String emphasis3 = request.getParameter("Emphasis3");
+	emphasis3 = emphasis3.toUpperCase();
 	if(emphasis3 == "" || emphasis3 == null){
 		emphasis3 = null;
 	}
 	String emphasis4 = request.getParameter("Emphasis4");
+	emphasis4 = emphasis4.toUpperCase();
 	if(emphasis4 == "" || emphasis4 == null){
 		emphasis4 = null;
 	}
 	String emphasis5 = request.getParameter("Emphasis5");
+	emphasis5 = emphasis5.toUpperCase();
 	if(emphasis5 == "" || emphasis5 == null){
 		emphasis5 = null;
 	}
 	
 	List<String> emphases = new ArrayList<String>();
-// 	emphases.add(emphasis1);
-// 	emphases.add(emphasis2);
-// 	emphases.add(emphasis3);
-// 	emphases.add(emphasis4);
-// 	emphases.add(emphasis5);
+	if (emphasis1 != null) {
+ 		emphases.add(emphasis1);
+	}
+	if (emphasis2 != null) {
+ 		emphases.add(emphasis2);
+	}
+	if (emphasis3 != null) {
+ 		emphases.add(emphasis3);
+	}
+	if (emphasis4 != null) {
+ 		emphases.add(emphasis4);
+	}
+	if (emphasis5 != null) {
+ 		emphases.add(emphasis5);
+	}
 
-	System.out.println("This" + schoolName + " " + state + " " + location + " " + control + " " + numStudents1 + " " + numStudents2 + " " + percentFemale1 + " " + percentFemale2 + " " + satVerbal1 + " " + satVerbal2 + " " + satMath1 + " " + satMath2 + " " + expenses1 + " " + expenses2 + " " + percentFinancialAid1 + " " + percentFinancialAid2 + " " + numApplicants1 + " " + numApplicants2 + " " + percentAdmitted1 + " " + percentAdmitted2 + " " + percentEnrolled1 + " " + percentEnrolled2 + " " + academicScale1 + " " + academicScale2 + " " + socialScale1 + " " + socialScale2 + " " + qualityScale1 + " " + qualityScale2 + " " + emphases);
-	
 	List<University> unis = ui.searchSchools(schoolName, state, location, control, numStudents1, numStudents2, percentFemale1, percentFemale2, satVerbal1, satVerbal2, satMath1, satMath2, expenses1, expenses2, percentFinancialAid1, percentFinancialAid2, numApplicants1, numApplicants2, percentAdmitted1, percentAdmitted2, percentEnrolled1, percentEnrolled2, academicScale1, academicScale2, socialScale1, socialScale2, qualityScale1, qualityScale2, emphases);
-	System.out.println(unis);
+
 	%>
 	<html>
 	<head>
@@ -157,21 +174,31 @@
 			border="1" cellpadding="2" cellspacing="2">
 			<tbody>
 				<%
-				out.println(unis.size());
+				out.println("Search results shows " + unis.size() + " universities.");
 					for (int i = 0; i < unis.size(); i++) {
 						
 				%>
 				<tr>
-					<td style="vertical-align: top; width: 100px;"><a
-						href="RemoveFromSavedSchoolsAction.jsp"><button value="Remove"
-								name="Remove" >Remove</button></a></td>
+					<td style="vertical-align: top; width: 100px;">
+						<form method="post" action="AddToSavedSchoolsAction.jsp" name="Save">
+						<input name="Save" value="Save" type="submit"> <input
+						name="UniName"
+						value="<%=unis.get(i).getSchoolName()%>"
+						type="hidden">
+						</form>
+								
 					<td style="vertical-align: top; width: 600px;">
 						<%
-							out.println("University = " + unis.get(i).getSchoolName());
+							out.println(unis.get(i).getSchoolName());
 						%><br>
 					</td>
-					<td style="vertical-align: top; width: 100px;"><a
-						href="ViewUniversity.jsp"><button value="View" name="View">View</button></a>
+					<td style="vertical-align: top; width: 100px;">
+					<form method="post" action="ViewUniversity.jsp"name="View">
+						<input name="View" value="View" type="submit"> <input
+							name="UniName"
+							value="<%=unis.get(i).getSchoolName()%>"
+							type="hidden">
+					</form>
 					</td>
 				</tr>
 				<%

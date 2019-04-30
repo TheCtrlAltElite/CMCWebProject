@@ -84,7 +84,7 @@ public class UserInteraction {
 	 * Emails the user's savedSchoolsList to the user's email
 	 * @throws MessagingException 
 	 */	
-	public void emailSavedSchools(String username) throws MessagingException {
-		userController.emailSavedSchools(username);
+	public boolean emailSavedSchools(String username,String firstName, String email) throws MessagingException {
+		return userController.emailSavedSchools(username, firstName, email);
 	}
 }

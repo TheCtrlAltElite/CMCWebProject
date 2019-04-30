@@ -6,7 +6,13 @@
 
 AdminInteraction adminI = new AdminInteraction();
 
-String schoolName = request.getParameter("school");
+String schoolName = null;
+if(request.getParameter("school") == ""){
+	response.sendRedirect("ViewAllUniversities.jsp?Error=-2");
+}
+else{
+	schoolName = request.getParameter("school");
+}
 //String schoolState = request.getParameter("state");
 //String schoolLocation =request.getParameter("location");
 //String schoolControl = request.getParameter("control");
@@ -139,14 +145,17 @@ String emphasis3 = request.getParameter("emphasis3");
 String emphasis4 = request.getParameter("emphasis4");
 String emphasis5 = request.getParameter("emphasis5");
 
-
+if(schoolName != null){
 boolean success = adminI.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
-
 if(success){
 	response.sendRedirect("ViewAllUniversities.jsp");
 }
 else {
 	response.sendRedirect("ViewAllUniversities.jsp?Error=-1");
 }
+
+}
+
+
 
 %>

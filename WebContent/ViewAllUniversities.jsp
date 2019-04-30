@@ -4,29 +4,23 @@
 <title>UniTable</title>
 </head>
 <body>
-<<<<<<< HEAD
+
 	<% 	
 	AdminFunctionalityController afc = new AdminFunctionalityController();
 
 %>
 <%@include file="verifyLogin.jsp" %>
 
-<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+<div style="text-align: left;"><a href="AdminMenu.jsp">Back to menu</a><br>
 	</div>
-	
-	
-=======
-	<%
-		AdminFunctionalityController afc = new AdminFunctionalityController();
-	%>
-	<%@include file="verifyLogin.jsp"%>
->>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
+
+
 	<br>
 	<table style="text-align: left; width: 1623px; height: 108px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr>
-				<td colspan="17"
+				<td colspan="18"
 					style="vertical-align: top; width: 23px; text-align: center;"><a
 					href="AddUniversity.jsp">Add a New University</a><br></td>
 			</tr>
@@ -84,40 +78,7 @@
 				for (int i = 0; i < afc.viewUniversities().size(); i++) {
 			%>
 			<tr>
-<<<<<<< HEAD
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolName());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolState());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolLocation());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolControl());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getNumberStudents());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentFemale());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getVerbalSAT());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getMathSAT());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSchoolExpenses());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentFinancialAid());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getNumApplicants());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentAdmitted());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getPercentEnrolled());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getAcademicScale());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getSocialScale());%><br></td>
-				<td style="vertical-align: top; width: 100px;"><%out.println(afc.viewUniversities().get(i).getQualityScale());%><br></td>
-				<td style="vertical-align: top; text-align: center;"><a
-					href="AdminEditUniversity.jsp"><button value="Edit" name="Edit">Edit</button>
-						<br> </a></td>
-<!-- 				<td style="vertical-align: top; text-align: center;"><a -->
-<!-- 					href="AdminDeleteUniversity.jsp"><button value="Delete" name="Delete">Delete</button> -->
-<!-- 						<br> </a></td> -->
-						
-						
-						<td style="vertical-align: top; text-align: center;"><a>
-						<form method="post" action="AdminDeleteUniversity.jsp" name="Delete">
-    <input name="Delete" value="Delete" type="submit">
-    <input name="University" value= <% out.println(afc.viewUniversities().get(i).getSchoolName()); %> type="hidden">
-</form>
-<br> </a></td>
-						
-				
-=======
+
 				<td style="vertical-align: top; width: 100px;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolName());
@@ -205,10 +166,21 @@
 							value=<%=afc.viewUniversities().get(i).getSchoolName()%>
 							type="hidden">
 					</form>
->>>>>>> 87b6f18af21c6296e88f8b83af3e52b6e674ad17
+					</td>
+					<td style="vertical-align: top; text-align: center;">
+					<form method="post" action="AdminDeleteUniversity.jsp"
+						name="Delete">
+						<input name="Delete" value="Delete" type="submit"> <input
+							name="University"
+							value=<%out.println(afc.viewUniversities().get(i).getSchoolName());%>
+							type="hidden">
+					</form>
+</td>
 			</tr>
 
-			<%}%>
+			<%
+				}
+			%>
 		</tbody>
 	</table>
 	<br>
