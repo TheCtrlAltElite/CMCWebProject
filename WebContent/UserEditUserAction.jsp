@@ -8,11 +8,6 @@
 	String pass = request.getParameter("Password");
 	String stat = request.getParameter("Status");
 	String type = request.getParameter("Type");
-	boolean change = AC.editProfile(fName, lName, uname, pass, type, stat);
-	if(change){
-		response.sendRedirect("UserMenu.jsp");
-	}
-	else {
-		response.sendRedirect("UserMenu.jsp?Error=-1");
-	}
+	AC.editProfile(fName, lName, uname, pass, type, stat);
+	response.sendRedirect("UserMenu.jsp");
 %>

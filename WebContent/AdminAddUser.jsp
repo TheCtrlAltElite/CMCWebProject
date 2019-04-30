@@ -8,17 +8,15 @@
 <title>AdminAddUser</title>
 </head>
 
-
-<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
-	</div>
-<body>
-	<a href="AdminMenu.jsp">Back to menu</a>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
+	<a href="ViewAllUsers.jsp">Back to All Users</a>
 	<form method="post" action="addAction.jsp" name="AdminAddUser">
 	Add User Form:
 	<br>
 	<br>
-	<table style="text-align: left; width: 418px;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table align="center" style="text-align: left; width: 418px;" border="10"
+		bordercolor="grey" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr>
 				<td style="vertical-align: top; width: 200px;">First Name<br>
@@ -52,10 +50,15 @@
 			</tr>
 		</tbody>
 	</table>
-	<br>
-	<input value="Add User" name="AddUser" type="submit">&nbsp;&nbsp;&nbsp;
-	<input name="Reset" type="reset">
-	<br>
+	<table style="text-align: left; width: 100px; height: 40px;"
+			align="center" border="0" cellpadding="1" cellspacing="1">
+			<tbody>
+				<tr>
+					<td><input value="Add User" name="AddUser" type="submit"></td>
+					<td><input name="Reset" type="reset"></td>
+				</tr>
+			</tbody>
+		</table>
 	</form>
 	<br>
 </body>
