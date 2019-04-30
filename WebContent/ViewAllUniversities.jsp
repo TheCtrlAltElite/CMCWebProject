@@ -3,7 +3,8 @@
 <head>
 <title>UniTable</title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
 
 	<% 	
 	AdminFunctionalityController afc = new AdminFunctionalityController();
@@ -16,8 +17,8 @@
 
 
 	<br>
-	<table style="text-align: left; width: 1623px; height: 108px;"
-		border="1" cellpadding="2" cellspacing="2">
+	<table align="center" style="text-align: left; width: 1623px; height: 108px;"
+		border="10" bordercolor="gray" cellpadding="3" cellspacing="0">
 		<tbody>
 			<tr>
 				<td colspan="18"
@@ -79,82 +80,82 @@
 			%>
 			<tr>
 
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolName());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolState());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolLocation());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolControl());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getNumberStudents());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getPercentFemale());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getVerbalSAT());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getMathSAT());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSchoolExpenses());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getPercentFinancialAid());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getNumApplicants());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getPercentAdmitted());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getPercentEnrolled());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getAcademicScale());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getSocialScale());
 					%><br>
 				</td>
-				<td style="vertical-align: top; width: 100px;">
+				<td style="vertical-align: top; width: 100px; text-align: center;">
 					<%
 						out.println(afc.viewUniversities().get(i).getQualityScale());
 					%><br>
