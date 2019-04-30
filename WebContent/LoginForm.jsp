@@ -2,7 +2,8 @@
 <head>
 <title>Login Form</title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
 	<div style="text-align: center;">
 		Welcome to the Choose My College Database System!<br> Please sign
 		in below to get started.<br>
