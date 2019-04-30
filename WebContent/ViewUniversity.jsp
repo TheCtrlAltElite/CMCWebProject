@@ -13,7 +13,9 @@
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>ViewUniversity</title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
+	<a href="javascript:history.back()">Go Back</a><br>
 	<%
 	String school = request.getParameter("UniName");
 	List<String> details = UI.viewSchool(school);
@@ -21,32 +23,29 @@
 	University u = dbc.getUniversity(school);
 	
 	%>
-	<table style="text-align: left; height: 480px; width: 829px;"
+		<div style="text-align: center;">
+		<big><big><big><%=u.getSchoolName()%></big></big></big><br>
+	</div>
+	<table align="center" style="text-align: left; height: 480px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
-			<tr>
-				<td style="vertical-align: top; width: 291px;">SCHOOL<br>
-				</td>
-				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="School Name" value="<%=u.getSchoolName()%>"><br></td>
-			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">STATE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="State" value=<%=u.getSchoolState()%>><br></td>
+					readonly="readonly" name="State" value="<%=u.getSchoolState()%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">LOCATION<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Location" value=<%=u.getSchoolLocation()%>><br></td>
+					readonly="readonly" name="Location" value="<%=u.getSchoolLocation()%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">CONTROL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Control" value=<%=u.getSchoolControl()%>><br></td>
+					readonly="readonly" name="Control" value="<%=u.getSchoolControl()%>"><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">NUMBER OF
@@ -169,14 +168,14 @@
 					<form method="post" action="AddToSavedSchoolsAction.jsp"
 						name="Save">
 						<input name="Save" value="Save" type="submit"> <input
-							name="UniName" value=<%=u.getSchoolName()%> type="hidden">
+							name="UniName" value="<%=u.getSchoolName()%>" type="hidden">
 					</form>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<table style="text-align: left; height: 100px; width: 829px;"
+	<table align="center" style="text-align: left; height: 100px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">
 		<tbody>
 			<tr>
