@@ -12,6 +12,7 @@ if(request.getParameter("school") == ""){
 }
 else{
 	schoolName = request.getParameter("school");
+	schoolName = schoolName.toUpperCase();
 }
 //String schoolState = request.getParameter("state");
 //String schoolLocation =request.getParameter("location");
@@ -23,6 +24,7 @@ if(request.getParameter("state") == ""){
 }
 else{
 	schoolState = request.getParameter("state");
+	schoolState = schoolState.toUpperCase();
 }
 
 String schoolLocation;
@@ -31,6 +33,7 @@ if(request.getParameter("location") == ""){
 }
 else{
 	schoolLocation = request.getParameter("location");
+	schoolLocation = schoolLocation.toUpperCase();
 }
 
 String schoolControl;
@@ -39,6 +42,7 @@ if(request.getParameter("control") == ""){
 }
 else{
 	schoolControl = request.getParameter("control");
+	schoolControl = schoolControl.toUpperCase();
 }
 
 int numberStudents = 0;
@@ -140,10 +144,15 @@ else{
 }
 
 String emphasis1 = request.getParameter("emphasis1");
+emphasis1 = emphasis1.toUpperCase();
 String emphasis2 = request.getParameter("emphasis2");
+emphasis2 = emphasis2.toUpperCase();
 String emphasis3 = request.getParameter("emphasis3");
+emphasis3 = emphasis3.toUpperCase();
 String emphasis4 = request.getParameter("emphasis4");
+emphasis4 = emphasis4.toUpperCase();
 String emphasis5 = request.getParameter("emphasis5");
+emphasis5 = emphasis5.toUpperCase();
 
 if(schoolName != null){
 boolean success = adminI.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
