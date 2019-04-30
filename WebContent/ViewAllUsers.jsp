@@ -1,24 +1,26 @@
 <%@page language="java"
 	import="AdminFunctionalities.*,AccountFunctionalities.*"%>
-	<%@include file="verifyLogin.jsp"%>
+<%@include file="verifyLogin.jsp"%>
 
 <html>
 <head>
 <title></title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
 	<%
 		AdminFunctionalityController afc = new AdminFunctionalityController();
 	%>
-	<div style="text-align: left;"><a href="AdminMenu.jsp">Back to menu</a><br>
-	<br>
+	<div style="text-align: left;">
+		<a href="AdminMenu.jsp">Back to menu</a><br> <br>
 	</div>
 	Hello
 	<%
 		out.println(ai.getCurrentAccount().getFirstName());
 	%>
-	<table style="text-align: left; width: 100%;" border="1"
-		cellpadding="2" cellspacing="2">
+	<table align="center" style="text-align: left; width: 100%;"
+		border="10" bordercolor="gray" border="1" cellpadding="2"
+		cellspacing="2">
 		<tbody>
 			<tr align="center">
 
@@ -75,36 +77,42 @@
 						out.println(afc.viewUsers().get(i).getStatus());
 					%>
 				</td>
-				<%if(afc.viewUsers().get(i).getStatus()=='y' || afc.viewUsers().get(i).getStatus()=='Y') {%>
+				<%
+					if (afc.viewUsers().get(i).getStatus() == 'y' || afc.viewUsers().get(i).getStatus() == 'Y') {
+				%>
 				<td style="vertical-align: top;">
 					<form method="post" action="DeactivateAction.jsp" name="Deactivate">
-						<input name="Deactivate" value="Deactivate" type="submit"> <input
-							name="Username"
-							value=<% out.println(afc.viewUsers().get(i).getEmail()); %>
+						<input name="Deactivate" value="Deactivate" type="submit">
+						<input name="Username"
+							value=<%out.println(afc.viewUsers().get(i).getEmail());%>
 							type="hidden">
 					</form>
 				</td>
-				<% } else{ %>
-					<td style="vertical-align: top;">
+				<%
+					} else {
+				%>
+				<td style="vertical-align: top;">
 					<form method="post" action="ActivateAction.jsp" name="Activate">
 						<input name="Activate" value="Activate" type="submit"> <input
 							name="Username"
-							value=<% out.println(afc.viewUsers().get(i).getEmail()); %>
+							value=<%out.println(afc.viewUsers().get(i).getEmail());%>
 							type="hidden">
 					</form>
 				</td>
-				<% } %>
+				<%
+					}
+				%>
 			</tr>
 			<%
-}
-%>
+				}
+			%>
 		</tbody>
 	</table>
 </body>
 </html>
 <%
-String Error = request.getParameter("Error");
-if (Error != null && Error.equals("-1")) {
-	out.println("Something went wrong while accessing the database.");
-}
+	String Error = request.getParameter("Error");
+	if (Error != null && Error.equals("-1")) {
+		out.println("Something went wrong while accessing the database.");
+	}
 %>
