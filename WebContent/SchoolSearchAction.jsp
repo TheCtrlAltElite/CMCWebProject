@@ -166,88 +166,34 @@
 	if(schoolName == "" || schoolName == null){
 		System.out.println("hi");
 		if(state == "" || state == null){
-			System.out.println("hi");
-
 			if(location == "" || location == null){
-				System.out.println("hi");
 
 				if(control == "" || control == null){
-					System.out.println("hi");
-
 					if(numStudents1 == "" || numStudents1 == null){
-						System.out.println("hi");
-
 						if(numStudents2 == "" || numStudents2 == null){
-							System.out.println("hi");
-
 							if(percentFemale1 == "" || percentFemale1 == null){
-								System.out.println("hi");
-
 								if(percentFemale2 == "" || percentFemale2 == null){
-									System.out.println("hi");
-
 									if(satVerbal1 == "" || satVerbal1 == null){
-										System.out.println("hi");
-
 										if(satVerbal2 == "" || satVerbal2 == null){
-											System.out.println("hi");
-
-											if(satMath1 == "" || satMath1 == null){
-												System.out.println("satMath1");
-
+											if(satMath1 == "" || satMath1 == null){							
 												if(satMath2 == "" || satMath2 == null){
-													System.out.println("hi");
-
 													if(expenses1 == "" || expenses1 == null){
-														System.out.println("hi");
-
 														if(expenses2 == "" || expenses2 == null){
-															System.out.println("hi");
-
 															if(percentFinancialAid1 == "" || percentFinancialAid1 == null){
-																System.out.println("hi");
-
 																if(percentFinancialAid2 == "" || percentFinancialAid2 == null){
-																	System.out.println("hi");
-				
 																	if(numApplicants1 == "" || numApplicants1 == null){
-																		System.out.println("num");
-
 																		if(numApplicants2 == "" || numApplicants2 == null){
-																			System.out.println("hi");
-
 																			if(percentAdmitted1 == "" || percentAdmitted1 == null){
-																				System.out.println("hi");
-
 																				if(percentAdmitted2 == "" || percentAdmitted2 == null){
-																					System.out.println("hi");
-
 																					if(percentEnrolled1 == "" || percentEnrolled1 == null){
-																						System.out.println("enrolled");
-
 																						if(percentEnrolled2 == "" || percentEnrolled2 == null){
-																							System.out.println("hi");
-
 																							if(academicScale1 == "" || academicScale1 == null){
-																								System.out.println("hi");
-
 																								if(academicScale2 == "" || academicScale2 == null){
-																									System.out.println("hi");
-
 																									if(socialScale1 == "" || socialScale1 == null){
-																										System.out.println("hi");
-
-																										if(socialScale2 == "" || socialScale2 == null){
-																											System.out.println("hi");
-
+																										if(socialScale2 == "" || socialScale2 == null){;
 																											if(qualityScale1 == "" || qualityScale1 == null){
-																												System.out.println("hi");
-
 																												if(qualityScale2 == "" || qualityScale2 == null){
-																													System.out.println("qualscale2");
-
 																													if(emphases.size() == 0 || emphases == null){
-																														System.out.println("hi");
 																														response.sendRedirect("schoolSearch.jsp?Error=-1");
 																														status = false;
 																													}
