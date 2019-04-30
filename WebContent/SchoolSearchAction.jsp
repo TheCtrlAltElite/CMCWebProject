@@ -3,18 +3,22 @@
 <% 
 	UserInteraction ui = new UserInteraction();
 	String schoolName = request.getParameter("SchoolName");
+	schoolName = schoolName.toUpperCase();
 	if(schoolName == "" || schoolName == null){
 		schoolName = null;
 	}
 	String state = request.getParameter("State");
+	state = state.toUpperCase();
 	if(state == "" || state == null){
 		state = null;
 	}
 	String location = request.getParameter("Location");
+	location = location.toUpperCase();
 	if(location == "" || location == null){
 		location = null;
 	}
 	String control = request.getParameter("Control");
+	control = control.toUpperCase();
 	if(control == "" || control == null){
 		control = null;
 	}
@@ -115,22 +119,27 @@
 		qualityScale2 = null;
 	}
 	String emphasis1 = request.getParameter("Emphasis1");
+	emphasis1 = emphasis1.toUpperCase();
 	if(emphasis1 == "" || emphasis1 == null){
 		emphasis1 = null;
 	}
 	String emphasis2 = request.getParameter("Emphasis2");
+	emphasis2 = emphasis2.toUpperCase();
 	if(emphasis2 == "" || emphasis2 == null){
 		emphasis2 = null;
 	}
 	String emphasis3 = request.getParameter("Emphasis3");
+	emphasis3 = emphasis3.toUpperCase();
 	if(emphasis3 == "" || emphasis3 == null){
 		emphasis3 = null;
 	}
 	String emphasis4 = request.getParameter("Emphasis4");
+	emphasis4 = emphasis4.toUpperCase();
 	if(emphasis4 == "" || emphasis4 == null){
 		emphasis4 = null;
 	}
 	String emphasis5 = request.getParameter("Emphasis5");
+	emphasis5 = emphasis5.toUpperCase();
 	if(emphasis5 == "" || emphasis5 == null){
 		emphasis5 = null;
 	}
@@ -174,20 +183,20 @@
 						<form method="post" action="AddToSavedSchoolsAction.jsp" name="Save">
 						<input name="Save" value="Save" type="submit"> <input
 						name="UniName"
-						value=<%=unis.get(i).getSchoolName()%>
+						value="<%=unis.get(i).getSchoolName()%>"
 						type="hidden">
 						</form>
 								
 					<td style="vertical-align: top; width: 600px;">
 						<%
-							out.println("University = " + unis.get(i).getSchoolName());
+							out.println(unis.get(i).getSchoolName());
 						%><br>
 					</td>
 					<td style="vertical-align: top; width: 100px;">
 					<form method="post" action="ViewUniversity.jsp"name="View">
 						<input name="View" value="View" type="submit"> <input
 							name="UniName"
-							value=<%=unis.get(i).getSchoolName()%>
+							value="<%=unis.get(i).getSchoolName()%>"
 							type="hidden">
 					</form>
 					</td>

@@ -15,7 +15,11 @@
 </head>
 <body>
 	<%
-		List<String> details = UI.viewSchool(request.getParameter("UniName"));
+	String school = request.getParameter("UniName");
+	List<String> details = UI.viewSchool(school);
+	DBController dbc = new DBController();
+	University u = dbc.getUniversity(school);
+	
 	%>
 	<table style="text-align: left; height: 480px; width: 829px;"
 		border="1" cellpadding="2" cellspacing="2">
@@ -24,63 +28,63 @@
 				<td style="vertical-align: top; width: 291px;">SCHOOL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="School Name" value=<%=details.get(0)%>><br></td>
+					readonly="readonly" name="School Name" value=<%=u.getSchoolName()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">STATE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="State" value=<%=details.get(1)%>><br></td>
+					readonly="readonly" name="State" value=<%=u.getSchoolState()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">LOCATION<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Location" value=<%=details.get(2)%>><br></td>
+					readonly="readonly" name="Location" value=<%=u.getSchoolLocation()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">CONTROL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Control" value=<%=details.get(3)%>><br></td>
+					readonly="readonly" name="Control" value=<%=u.getSchoolControl()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">NUMBER OF
 					STUDENTS<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Num Students" value=<%=details.get(4)%>><br></td>
+					readonly="readonly" name="Num Students" value=<%=u.getNumberStudents()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT FEMALE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Percent Female" value=<%=details.get(5)%>><br></td>
+					readonly="readonly" name="Percent Female" value=<%=u.getPercentFemale()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">SAT VERBAL<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="SAT Verbal" value=<%=details.get(6)%>><br></td>
+					readonly="readonly" name="SAT Verbal" value=<%=u.getVerbalSAT()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">SAT MATH<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="SAT Math" value=<%=details.get(7)%>><br></td>
+					readonly="readonly" name="SAT Math" value=<%=u.getMathSAT()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">EXPENSES<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Expenses" value=<%=details.get(8)%>><br></td>
+					readonly="readonly" name="Expenses" value=<%=u.getSchoolExpenses()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT
 					FINANCIAL AID<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Percent Aid" value=<%=details.get(9)%>><br></td>
+					readonly="readonly" name="Percent Aid" value=<%=u.getPercentFinancialAid()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">NUMBER OF
@@ -88,40 +92,40 @@
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
 					readonly="readonly" name="Num Applicants"
-					value=<%=details.get(10)%>><br></td>
+					value=<%=u.getNumApplicants()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT ADMITTED<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
 					readonly="readonly" name="Percent Admitted"
-					value=<%=details.get(11)%>><br></td>
+					value=<%=u.getPercentAdmitted()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">PERCENT ENROLLED<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
 					readonly="readonly" name="Percent Enrolled"
-					value=<%=details.get(12)%>><br></td>
+					value=<%=u.getPercentEnrolled()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">ACADEMIC SCALE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
 					readonly="readonly" name="Academic Scale"
-					value=<%=details.get(13)%>><br></td>
+					value=<%=u.getAcademicScale()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">SOCIAL SCALE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Social Scale" value=<%=details.get(14)%>><br></td>
+					readonly="readonly" name="Social Scale" value=<%=u.getSocialScale()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">QUALITY SCALE<br>
 				</td>
 				<td style="vertical-align: top; width: 520px;"><input
-					readonly="readonly" name="Quality Scale" value=<%=details.get(15)%>><br></td>
+					readonly="readonly" name="Quality Scale" value=<%=u.getQualityScale()%>><br></td>
 			</tr>
 			<tr>
 				<td style="vertical-align: top; width: 291px;">EMPHASIS<br>
@@ -165,7 +169,7 @@
 					<form method="post" action="AddToSavedSchoolsAction.jsp"
 						name="Save">
 						<input name="Save" value="Save" type="submit"> <input
-							name="UniName" value=<%=details.get(0)%> type="hidden">
+							name="UniName" value=<%=u.getSchoolName()%> type="hidden">
 					</form>
 				</td>
 			</tr>
@@ -216,7 +220,7 @@
 				</td>
 			</tr>
 			<%
-				DBController dbc = new DBController();
+				//DBController dbc = new DBController();
 				University uni = dbc.getUniversity(request.getParameter("UniName"));
 				UniversityController uc = new UniversityController();
 				List<University> schools = uc.recommendedSchools(uni);
