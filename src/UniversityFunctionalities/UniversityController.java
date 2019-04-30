@@ -237,7 +237,7 @@ public class UniversityController {
 		int y = 0;
 		for(Entry<Float, University> entry : scores.entrySet()) {
 			y++;
-		   System.out.println(y + ": " + entry.getKey() + " " + entry.getValue().getSchoolName());	   
+		   //System.out.println(y + ": " + entry.getKey() + " " + entry.getValue().getSchoolName());	   
         }
 		List<University> recommendedSchools = new ArrayList<University>();
 			for(int i = 0; i < 5; i++) {
@@ -246,7 +246,7 @@ public class UniversityController {
 				this.scores.remove(key);
 				
 		}
-		System.out.println(recommendedSchools);
+		//System.out.println(recommendedSchools);
 		return recommendedSchools;
 	}
 

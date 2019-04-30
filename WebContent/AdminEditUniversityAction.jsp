@@ -25,22 +25,8 @@
 	String emph4 = request.getParameter("Emphasis4");
 	String emph5 = request.getParameter("Emphasis5");
 	
-	System.out.println(emph1 + emph2 + emph3 + emph4 + emph1 + emph5);
-// 	if(emph1 != null){
-// 		emphases.add(emph1);
-// 	}
-// 	if(emph2 != null){
-// 		emphases.add(emph2);
-// 	}
-// 	if(emph3 != null){
-// 		emphases.add(emph3);
-// 	}
-// 	if(emph4 != null){
-// 		emphases.add(emph4);
-// 	}
-// 	if(emph5 != null){
-// 		emphases.add(emph5);
-// 	}
+	//System.out.println(emph1 + emph2 + emph3 + emph4 + emph5);
+
 
  	boolean change = adminI.editUniversity(schoolName, state, location, control, numStudents, percentFemales,
  			satVerbal, satMath, expenses, percentAid, numApplicants, percentAdmitted, percentEnrolled,
