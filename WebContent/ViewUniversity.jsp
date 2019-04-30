@@ -15,7 +15,7 @@
 </head>
 <body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
 	alink="#000099" link="#000099" vlink="#990099">
-
+	<a href="javascript:history.back()">Go Back</a><br>
 	<%
 	String school = request.getParameter("UniName");
 	List<String> details = UI.viewSchool(school);

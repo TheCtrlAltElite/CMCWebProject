@@ -14,7 +14,7 @@
 	alink="#000099" link="#000099" vlink="#990099">
 	<form method="post" action="AdminEditUserAction.jsp"
 		name="AdminEditUser">
-		<a href="AdminMenu.jsp">Back to menu</a> <br> <br>
+		<a href="ViewAllUsers.jsp">Back to All Users</a> <br>
 		<table align="center" style="text-align: left; width: 418px;"
 			border="10" bordercolor="gray" cellpadding="2" cellspacing="2">
 			<tbody>
