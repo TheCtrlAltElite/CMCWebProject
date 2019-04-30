@@ -250,37 +250,73 @@ public class UniversityController {
 		return recommendedSchools;
 	}
 
+//	/**
+//	 * edits a University by taking in information to be changed and calling updateUniversity() in DBController
+//	 */
+//	public boolean editUniversity(String nameToFind, String editState, String editLocation, String editControl, int editNumberOfStudents, double editPercentFemales, double editSATVerbal, double editSATMath, double editExpenses, double editPercentFinancialAid, int editNumberOfApplicants, double editPercentAdmitted, double editPercentEnrolled, int editAcademicsScale, int editSocialScale, int editQualityOfLifeScale, List<String> emphases) {
+//		boolean e = false;
+//		int num = dbc.updateUniversity(nameToFind, editState, editLocation, editControl, editNumberOfStudents, editPercentFemales, editSATVerbal, editSATMath, editExpenses, editPercentFinancialAid, editNumberOfApplicants, editPercentAdmitted, editPercentEnrolled, editAcademicsScale, editSocialScale, editQualityOfLifeScale);
+//		dbc.removeUniversityEmphases(nameToFind);
+//		
+//		
+//		if(num != -1) {
+//		if(!emphases.isEmpty()) {
+//		
+//		for (int i = 0; i < emphases.size(); i++) {
+//			String emphasis = emphases.get(i);
+//			dbc.addUniversityEmphasis(nameToFind, emphasis);
+//		}
+//		}
+//		}
+//		listUnis = dbc.loadUniversities();
+//		List<String> schools = new ArrayList<String>();
+//		for(int i = 0; i < listUnis.size(); i++) {
+//			schools.add(listUnis.get(i).getSchoolName());
+//		}
+//		if (num == -1 || !schools.contains(nameToFind)) {
+//        	return e;
+//        }
+//        else {
+//        	e = true;
+//        }
+//        return e;
+//	}
+	
+	
 	/**
-	 * edits a University by taking in information to be changed and calling updateUniversity() in DBController
+	 * adds a University by taking information and calling addUniversity() from DBController()
 	 */
-	public boolean editUniversity(String nameToFind, String editState, String editLocation, String editControl, int editNumberOfStudents, double editPercentFemales, double editSATVerbal, double editSATMath, double editExpenses, double editPercentFinancialAid, int editNumberOfApplicants, double editPercentAdmitted, double editPercentEnrolled, int editAcademicsScale, int editSocialScale, int editQualityOfLifeScale, List<String> emphases) {
-		boolean e = false;
+	public int editUniversity(String nameToFind, String editState, String editLocation, String editControl, int editNumberOfStudents, double editPercentFemales, double editSATVerbal, double editSATMath, double editExpenses, double editPercentFinancialAid, int editNumberOfApplicants, double editPercentAdmitted, double editPercentEnrolled, int editAcademicsScale, int editSocialScale, int editQualityOfLifeScale, List<String> emphases) {		
+
 		int num = dbc.updateUniversity(nameToFind, editState, editLocation, editControl, editNumberOfStudents, editPercentFemales, editSATVerbal, editSATMath, editExpenses, editPercentFinancialAid, editNumberOfApplicants, editPercentAdmitted, editPercentEnrolled, editAcademicsScale, editSocialScale, editQualityOfLifeScale);
 		dbc.removeUniversityEmphases(nameToFind);
 		
-		
 		if(num != -1) {
-		if(emphases != null || emphases.size() > 0) {
-		
-		for (int i = 0; i < emphases.size(); i++) {
-			String emphasis = emphases.get(i);
-			dbc.addUniversityEmphasis(nameToFind, emphasis);
+			int counter = 0;
+			if(emphases == null) {
+				return 0;
+			}
+			else {
+			for (int i = 0; i < emphases.size(); i++) {
+				int num2 = dbc.addUniversityEmphasis(nameToFind, emphases.get(i));
+				if (num2 != -1) {
+					counter++;
+				}
+			}
+			if(counter != emphases.size()) {
+				return -2;
+			}
+			return 0;
+			}
 		}
+		else {
+			return -1;
 		}
-		}
-		listUnis = dbc.loadUniversities();
-		List<String> schools = new ArrayList<String>();
-		for(int i = 0; i < listUnis.size(); i++) {
-			schools.add(listUnis.get(i).getSchoolName());
-		}
-		if (num == -1 || !schools.contains(nameToFind)) {
-        	return e;
-        }
-        else {
-        	e = true;
-        }
-        return e;
-	}
+    }
+	
+	
+	
+	
 	
 	/**
 	 * adds a University by taking information and calling addUniversity() from DBController()
@@ -294,7 +330,7 @@ public class UniversityController {
 				percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale);
 		if(addUniNum != -1) {
 			int counter = 0;
-			if(emphases == null) {
+			if(emphases == null || emphases.size() == 0) {
 				return 0;
 			}
 			else {

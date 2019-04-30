@@ -246,27 +246,29 @@ public class AdminInteraction {
 
 			List<String> emphasesList = new ArrayList<String>();
 
-			if (emphasis1 != null) {
+			if (emphasis1 != null && emphasis1 != "") {
 				emphasesList.add(emphasis1);
 			}
 
-			if (emphasis2 != null && emphasis2 != emphasis1) {
+			if (emphasis2 != null && emphasis2 != "" && emphasis2 != emphasis1) {
 				emphasesList.add(emphasis2);
 			}
 
-			if (emphasis3 != null && emphasis3 != emphasis1 && emphasis3 != emphasis2) {
+			if (emphasis3 != null && emphasis3 != "" && emphasis3 != emphasis1 && emphasis3 != emphasis2) {
 				emphasesList.add(emphasis3);
 			}
 
-			if (emphasis4 != null && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {
+			if (emphasis4 != null && emphasis4 != "" && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {
 				emphasesList.add(emphasis4);
 			}
 
-			if (emphasis5 != null && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3
+			if (emphasis5 != null && emphasis5 != "" && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3
 					&& emphasis5 != emphasis4) {
 				emphasesList.add(emphasis5);
 			}
-			if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 != null  && emphasis2 != null  && emphasis3 != null  && emphasis4 != null  && emphasis5 != null)){
+			
+			System.out.println("EmphasesListSize: " + emphasesList.size());
+			if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 == null  && emphasis2 == null  && emphasis3 == null  && emphasis4 == null  && emphasis5 == null)){
 				adminFController.addUniversity(schoolName, schoolState, schoolLocation, schoolControl, numberStudents,
 						percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants,
 						percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, null);
@@ -284,6 +286,7 @@ public class AdminInteraction {
 
 		return success;
 	}
+
 
 	/**
 	 * Removes a stored university from the database by calling
@@ -341,32 +344,34 @@ public class AdminInteraction {
 			String editqualityOfLifeScale, String emphasis1, String emphasis2, String emphasis3, String emphasis4,
 			String emphasis5) {
 	
-	
-	List<String> emphasesList = new ArrayList<String>();
+		boolean success = false;
+		List<String> emphasesList = new ArrayList<String>();
 
-	if (emphasis1 != null || emphasis1 != "") {
-		emphasesList.add(emphasis1);
-	}
+		if (emphasis1 != null && emphasis1 != "") {
+			emphasesList.add(emphasis1);
+		}
+		System.out.println("Emphases: " + emphasesList.get(0));
 
-	if ((emphasis2 != null || emphasis2 != "") && emphasis2 != emphasis1) {
-		emphasesList.add(emphasis2);
-	}
-
-	if ((emphasis3 != null || emphasis3 != "") && emphasis3 != emphasis1 && emphasis3 != emphasis2) {
-		emphasesList.add(emphasis3);
-	}
-
-	if ((emphasis4 != null || emphasis4 != "") && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {
-		emphasesList.add(emphasis4);
-	}
-
-	if ((emphasis5 != null || emphasis5 != "") && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3
-			&& emphasis5 != emphasis4) {
-		emphasesList.add(emphasis5);
-	}
-	
-	if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 != null  && emphasis2 != null  && emphasis3 != null  && emphasis4 != null  && emphasis5 != null)){
-	return uc.editUniversity(name, editstate, editlocation, editcontrol,
+		if (emphasis2 != null && emphasis2 != "" && emphasis2 != emphasis1) {
+			emphasesList.add(emphasis2);
+		}
+		System.out.println("Emphases: " + emphasesList.get(2));
+		if (emphasis3 != null && emphasis3 != "" && emphasis3 != emphasis1 && emphasis3 != emphasis2) {
+			emphasesList.add(emphasis3);
+		}
+		System.out.println("Emphases: " + emphasesList.get(3));
+		if (emphasis4 != null && emphasis4 != "" && emphasis4 != emphasis1 && emphasis4 != emphasis2 && emphasis4 != emphasis3) {
+			emphasesList.add(emphasis4);
+		}
+		System.out.println("Emphases: " + emphasesList.get(4));
+		if (emphasis5 != null && emphasis5 != "" && emphasis5 != emphasis1 && emphasis5 != emphasis2 && emphasis5 != emphasis3
+				&& emphasis5 != emphasis4) {
+			emphasesList.add(emphasis5);
+		}
+		System.out.println("Emphases: " + emphasesList.get(5));
+		System.out.println("EmphasesListSizeEdit: " + emphasesList.size());
+		if(emphasesList.isEmpty() || emphasesList.size() == 0 || (emphasis1 == null  && emphasis2 == null  && emphasis3 == null  && emphasis4 == null  && emphasis5 == null)){
+	 uc.editUniversity(name, editstate, editlocation, editcontrol,
 			Integer.parseInt(editnumberOfStudents), Integer.parseInt(editpercentFemales),
 			Integer.parseInt(editSATVerbal), Integer.parseInt(editSATMath), Integer.parseInt(editexpenses),
 			Integer.parseInt(editpercentFinancialAid), Integer.parseInt(editnumberOfApplicants),
@@ -376,7 +381,7 @@ public class AdminInteraction {
 	}
 	
 	else {
-		return uc.editUniversity(name, editstate, editlocation, editcontrol,
+		 uc.editUniversity(name, editstate, editlocation, editcontrol,
 				Integer.parseInt(editnumberOfStudents), Integer.parseInt(editpercentFemales),
 				Integer.parseInt(editSATVerbal), Integer.parseInt(editSATMath), Integer.parseInt(editexpenses),
 				Integer.parseInt(editpercentFinancialAid), Integer.parseInt(editnumberOfApplicants),
@@ -384,6 +389,9 @@ public class AdminInteraction {
 				Integer.parseInt(editacademicsScale), Integer.parseInt(editsocialScale),
 				Integer.parseInt(editqualityOfLifeScale), emphasesList);
 	}
+		success = true;
+		
+		return success;
 	}
 	
 	/**

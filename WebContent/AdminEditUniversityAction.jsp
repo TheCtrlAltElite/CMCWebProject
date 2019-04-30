@@ -18,12 +18,14 @@
 	String acadScale = request.getParameter("Academic Scale");
 	String socialScale = request.getParameter("Social Scale");
 	String qualScale = request.getParameter("Quality Scale");
-	List<String> emphases = new ArrayList<String>();
+	//List<String> emphases = new ArrayList<String>();
 	String emph1 = request.getParameter("Emphasis1");
 	String emph2 = request.getParameter("Emphasis2");
 	String emph3 = request.getParameter("Emphasis3");
 	String emph4 = request.getParameter("Emphasis4");
 	String emph5 = request.getParameter("Emphasis5");
+	
+	System.out.println(emph1 + emph2 + emph3 + emph4 + emph1 + emph5);
 // 	if(emph1 != null){
 // 		emphases.add(emph1);
 // 	}
