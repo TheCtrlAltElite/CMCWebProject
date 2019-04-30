@@ -25,7 +25,7 @@
 	String emph4 = request.getParameter("Emphasis4");
 	String emph5 = request.getParameter("Emphasis5");
 	
-	System.out.println(emph1 + emph2 + emph3 + emph4 + emph1 + emph5);
+	System.out.println(emph1 + emph2 + emph3 + emph4 + emph5);
 // 	if(emph1 != null){
 // 		emphases.add(emph1);
 // 	}
