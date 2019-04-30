@@ -10,12 +10,13 @@
 %>
 <title>AdminEditUser</title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
 	<form method="post" action="AdminEditUniversityAction.jsp"
 		name="AdminEditUser">
 		<a href="AdminMenu.jsp">Back to menu</a> <br> <br>
-		<table style="text-align: left; height: 480px; width: 829px;"
-			border="1" cellpadding="2" cellspacing="2">
+		<table align="center" style="text-align: left; height: 480px; width: 829px;"
+			border="10" bordercolor="gray"  cellpadding="3" cellspacing="0">
 			<tbody>
 				<tr>
 					<td style="vertical-align: top; width: 291px;">SCHOOL<br>
