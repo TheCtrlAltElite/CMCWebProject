@@ -50,5 +50,14 @@
 			%>
 		</tbody>
 	</table>
+		<form method="post" action="EmailSavedSchoolsList.jsp" name="Email">
+						<input name="Email" value="Email Saved Schools List" type="submit"> 
+					</form>
+	<%
+	String status = request.getParameter("Status");
+	if(status != null && status.equals("0")) {
+		out.println("Email was sent with your saved schools list. Please check your email.");
+	}
+	%>
 </body>
 </html>

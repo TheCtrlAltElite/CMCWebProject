@@ -11,7 +11,7 @@
 %>
 <%@include file="verifyLogin.jsp" %>
 
-<div style="text-align: right;"><a href="AdminMenu.jsp">Back to menu</a><br>
+<div style="text-align: left;"><a href="AdminMenu.jsp">Back to menu</a><br>
 	</div>
 
 

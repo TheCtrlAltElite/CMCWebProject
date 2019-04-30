@@ -7,6 +7,7 @@
 <title>School Search</title>
 </head>
 <body>
+	<div style="text-align: left;"><a href="UserMenu.jsp">Back to menu</a>
 	<form method="post" action="SchoolSearchAction.jsp" name="SchoolSearch">
 	<br>
 	<div style="text-align: left;">
