@@ -54,13 +54,13 @@
 			if (Error != null && Error.equals("-1")) {
 				out.println("Provided user is deactivated.");
 			} else if (Error != null && Error.equals("-2")) {
-				out.println("Provided password is not valid. ");
+				out.println("Provided username and password combination is not valid. ");
 			} else if (Error != null && Error.equals("-3")) {
-				out.println("Provided username is not valid.");
+				out.println("Error while trying to access database.");
 			} else if (Error != null && Error.equals("-4")) {
 				out.println("Please sign in to access system pages.");
-			} else if (Error != null && Error.equals("-5")) {
-				out.println("Error while trying to access database.");
+			} else if (Error != null && Error.equals("-5")){
+				out.println("User does not exist.");
 			}
 		%>
 	
