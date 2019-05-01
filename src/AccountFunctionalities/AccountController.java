@@ -43,23 +43,29 @@ public class AccountController {
 	 * @throws Exception
 	 */
 	public int login(String username, String password) {
-		int status = -5;
+		int status = -3;
 		if (database.isUserReal(username)) { // makes sure user is real
 			String pw = database.getPassword(username);
 			if (pw.equals(password)) { // checks that the password enter is correct and corresponds with the account
 				List<String> details = database.getDetailsProfile2(username);
 				this.account = new Account(details.get(0), details.get(1), details.get(2), details.get(3),
 						details.get(4).charAt(0), details.get(5).charAt(0));
-				if (this.account.getStatus() == 'N') {
-					status = -1;
+				if (this.account.getType() == 'u') {
+					this.account.setLoginStatus(true);
+					status = 1; 
 				} else if (this.account.getType() == 'a') {
 					this.account.setLoginStatus(true);
 					status = 0;
-				} else if (this.account.getType() == 'u') {
-					this.account.setLoginStatus(true);
-					status = 1;
+				} else if (this.account.getStatus() == 'N') {
+					status = -1;
 				}
 			}
+			else if (!pw.equals(password)) {
+				status = -2;
+			} 
+		}
+		else if (!database.isUserReal(username)) {
+			status = -5;
 		}
 		return status;
 	}
