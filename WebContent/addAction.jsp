@@ -1,4 +1,4 @@
-<%@page language="java" import="AdminFunctionalities.*" import="UserFunctionalities.*"%>\
+<%@page language="java" import="AdminFunctionalities.*" import="UserFunctionalities.*" import="CMCDatabase.*"%>
 <%@include file="verifyLogin.jsp" %>
 <%
 	AdminInteraction adminI = (AdminInteraction)session.getAttribute("adminI");
@@ -8,8 +8,30 @@
 	String username = request.getParameter("Username");
 	String password = request.getParameter("Password");
 	String type = request.getParameter("Type");
-	System.out.println(fname + " " + lname + " " + username + " " + password + " " + type);
 	
-	adminI.addUser(fname, lname, username, password, type);
-	response.sendRedirect("ViewAllUsers.jsp");
+	
+	DBController dbc = new DBController();
+	int j = 0;
+    for(int i = 0; i < dbc.loadUsers().size() ; i++) {
+    	String name = dbc.loadUsers().get(i).getEmail();
+    	if (name.equals(username)){
+    			response.sendRedirect("AdminAddUser.jsp?Error=-3");	
+    	}
+    	j = i;
+    }
+    
+    
+    if(j == dbc.loadUsers().size()-1){
+    	
+    
+    AccountController ac = new AccountController();
+    if(ac.passwordRequirements(password)){
+    	adminI.addUser(fname, lname, username, password, type);
+    	response.sendRedirect("ViewAllUsers.jsp");
+    }
+    
+    else {
+    	response.sendRedirect("AdminAddUser.jsp?Error=-4");
+    }
+    }
 %>
