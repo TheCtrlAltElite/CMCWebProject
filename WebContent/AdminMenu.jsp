@@ -35,6 +35,22 @@
 			</tr>
 		</tbody>
 	</table>
+	<table style="text-align: left; width: 362px; height: 147px;"
+		align="center" border="0" cellpadding="1" cellspacing="1">
+		<tbody>
+			<tr>
+				<td style="vertical-align: top; text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img style="width: 117px; height: 109px;" alt="SearchIcon"
+					src="images/9228f03f9d.png"><br>
+				</td>
+			</tr>
+			<tr>
+				<td style="vertical-align: top; text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="AdminSearchSchools.jsp">Quick University Search</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 	<br>
 	<br>
 </body>

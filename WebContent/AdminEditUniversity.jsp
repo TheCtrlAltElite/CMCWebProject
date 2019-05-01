@@ -28,19 +28,19 @@
 					<td align="center" style="vertical-align: top; width: 291px;">STATE<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
-						name="State" value=<%=details.get(1)%>><br></td>
+						name="State" value="<%=details.get(1)%>"><br></td>
 				</tr>
 				<tr>
 					<td align="center" style="vertical-align: top; width: 291px;">LOCATION<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
-						name="Location" value=<%=details.get(2)%>><br></td>
+						name="Location" value="<%=details.get(2)%>"><br></td>
 				</tr>
 				<tr>
 					<td align="center" style="vertical-align: top; width: 291px;">CONTROL<br>
 					</td>
 					<td style="vertical-align: top; width: 520px;"><input
-						name="Control" value=<%=details.get(3)%>><br></td>
+						name="Control" value="<%=details.get(3)%>"><br></td>
 				</tr>
 				<tr>
 					<td align="center" style="vertical-align: top; width: 291px;">NUMBER OF
