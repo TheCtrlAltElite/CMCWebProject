@@ -68,7 +68,13 @@
 				out.println("Username already exists in database, please use a different username.");
 			} 
 			else if (Error != null && Error.equals("-4")) {
-				out.println("Password does not meet requirements, please enter a password of length 10 or greater that contains: at least 1 capital letter, 1 lowercase letter, and 1 number. ");
+				out.println("Password does not meet requirements, please enter a password of length 10 or greater that contains: at least 1 capital letter, 1 lowercase letter, and 1 number.");
+			}
+			else if (Error != null && Error.equals("-5")) {
+				out.println("Type invalid. Please give type 'u' user or 'a' admin.");
+			}
+			else if (Error != null && Error.equals("-6")) {
+				out.println("Please make sure all fields are filled in.");
 			}
 			%>
 </body>
