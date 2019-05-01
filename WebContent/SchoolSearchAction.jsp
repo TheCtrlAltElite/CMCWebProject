@@ -164,7 +164,6 @@
 	}
 
 	if (schoolName == "" || schoolName == null) {
-		System.out.println("hi");
 		if (state == "" || state == null) {
 			if (location == "" || location == null) {
 

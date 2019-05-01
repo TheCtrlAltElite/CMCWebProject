@@ -208,9 +208,9 @@ public class UserFunctionalityController {
 			matchingUnis.add(listUnis.get(i));
 		}
 		if (counter > 0) {
-			for (int i = 0; i < matchingUnis.size(); i++) {
-				System.out.println(matchingUnis.get(i).getSchoolName());
-			}
+			//for (int i = 0; i < matchingUnis.size(); i++) {
+			//	System.out.println(matchingUnis.get(i).getSchoolName());
+			//}
 			return matchingUnis;
 		} else {
 			//System.out.println("You have not entered any arguments to search for.");
