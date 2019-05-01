@@ -1,4 +1,4 @@
-<%@page language="java" import="AdminFunctionalities.*,java.util.*"%>
+<%@page language="java" import="AdminFunctionalities.*,java.util.*,UniversityFunctionalities.*"%>
 
 <%@include file="verifyLogin.jsp" %>
 
@@ -8,12 +8,23 @@ AdminInteraction adminI = new AdminInteraction();
 
 String schoolName = null;
 if(request.getParameter("school") == ""){
-	response.sendRedirect("ViewAllUniversities.jsp?Error=-2");
+	response.sendRedirect("AddUniversity.jsp?Error=-1");
 }
 else{
 	schoolName = request.getParameter("school");
 	schoolName = schoolName.toUpperCase();
 }
+
+List<University> unis = adminI.viewUniversities();
+List<String> schoolNames = new ArrayList<String>();
+for (int i = 0; i < unis.size(); i++){
+	schoolNames.add(unis.get(i).getSchoolName());
+}
+
+if(schoolNames.contains(schoolName)){
+	response.sendRedirect("AddUniversity.jsp?Error=-2");
+}
+
 //String schoolState = request.getParameter("state");
 //String schoolLocation =request.getParameter("location");
 //String schoolControl = request.getParameter("control");
@@ -154,13 +165,14 @@ emphasis4 = emphasis4.toUpperCase();
 String emphasis5 = request.getParameter("emphasis5");
 emphasis5 = emphasis5.toUpperCase();
 
-if(schoolName != null){
+
+if(schoolName != null && !schoolNames.contains(schoolName)){
 boolean success = adminI.addUniversity1(schoolName, schoolState, schoolLocation, schoolControl, numberStudents, percentFemale, verbalSAT, mathSAT, schoolExpenses, percentFinancialAid, numApplicants, percentAdmitted, percentEnrolled, academicScale, socialScale, qualityScale, emphasis1, emphasis2, emphasis3, emphasis4, emphasis5);
 if(success){
 	response.sendRedirect("ViewAllUniversities.jsp");
 }
 else {
-	response.sendRedirect("ViewAllUniversities.jsp?Error=-1");
+	response.sendRedirect("AddUniversity.jsp?Error=-2");
 }
 
 }

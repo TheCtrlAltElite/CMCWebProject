@@ -398,8 +398,8 @@ public class AdminInteraction {
 	 * shows the admin the list of universities by calling viewUniversities() in the
 	 * AdminFunctionalityController
 	 */
-	public void viewUniversities() {
-		adminFController.viewUniversities();
+	public List<University> viewUniversities() {
+		return adminFController.viewUniversities();
 	}
 
 	/**

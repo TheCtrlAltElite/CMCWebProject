@@ -14,6 +14,15 @@
 	
 <br> Add University form:
 	<br>
+	<%
+			String Error = request.getParameter("Error");
+			if (Error != null && Error.equals("-1")) {
+				out.println("Please Enter a school name.");
+			}
+				else if (Error != null && Error.equals("-2")) {
+					out.println("School name is already used.");
+			}
+			%>
 	<form method="post" action="AddUniversityAction.jsp" name="addUniversity">
 		<br>
 	<table align="center" style="text-align: left; width: 570px;" border="10" bordercolor="gray"

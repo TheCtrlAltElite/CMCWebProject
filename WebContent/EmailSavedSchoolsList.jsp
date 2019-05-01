@@ -6,14 +6,16 @@
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
 <title>EmailSavedSchoolsList</title>
 </head>
-<body>
+<body style="color: rgb(0, 0, 0); background-color: rgb(221, 245, 255);"
+	alink="#000099" link="#000099" vlink="#990099">
 	<a href="SavedSchools.jsp">Return to Saved Schools Menu</a>
 	<br>
 	<br>
 	<form method="post" action="EmailSavedSchoolsListAction.jsp" name="EmailSavedSchoolsListAction">
-		<big style="font-weight: bold;">Email Saved Schools List</big><br>
-		<br> Type in the email that you want the saved schools list sent to:<br> <br>
-		<table style="text-align: left; width: 94px; height: 60px;" border="1"
+	<div style="text-align: center;">
+		<big style="font-weight: bold;">Email Saved Schools List</big></div><br>
+		<div style="text-align: center;"> Type in the email that you want the saved schools list sent to: </div><br> <br>
+		<table align="center" style="text-align: left; width: 94px; height: 60px;" border="10"
 			cellpadding="2" cellspacing="2">
 			<tbody>
 				<tr>
