@@ -231,15 +231,13 @@
 					<form method="post" action="AddToSavedSchoolsAction.jsp"
 						name="Save">
 						<input name="Save" value="Save" type="submit"> <input
-							name="UniName" value=<%=schools.get(i).getSchoolName()%>
+							name="UniName" value="<%=schools.get(i).getSchoolName()%>"
 							type="hidden">
 					</form>
 				</td>
 
 				<td style="vertical-align: top; width: 100px;">
-					<%
-						out.println(schools.get(i).getSchoolName());
-					%><br>
+					<%=schools.get(i).getSchoolName()%><br>
 				</td>
 				<td style="vertical-align: top; width: 100px;">
 					<%
