@@ -3,6 +3,20 @@
 <%@include file="verifyLogin.jsp"%>
 
 <html>
+<div style="text-align: center;">
+<%
+	String Error = request.getParameter("Error");
+	if (Error != null && Error.equals("-1")) {
+		out.println("Something went wrong while accessing the database.");
+	}
+	else if (Error != null && Error.equals("-4")) {
+		out.println("Invalid Type. Must be 'a' or 'u'.");
+	}
+	else if (Error != null && Error.equals("-3")) {
+		out.println("Invalid Status. Must be 'y' or 'n'.");
+	}
+%>
+</div>
 <head>
 <title></title>
 </head>
@@ -110,9 +124,4 @@
 	</table>
 </body>
 </html>
-<%
-	String Error = request.getParameter("Error");
-	if (Error != null && Error.equals("-1")) {
-		out.println("Something went wrong while accessing the database.");
-	}
-%>
+

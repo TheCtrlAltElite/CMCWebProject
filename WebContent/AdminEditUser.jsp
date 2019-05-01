@@ -22,38 +22,38 @@
 					<td style="vertical-align: top; width: 200px;">First Name<br>
 					</td>
 					<td style="vertical-align: top; width: 200px;"><input
-						name="FirstName" value=<%=list.get(1)%>></td>
+						name="FirstName" value="<%=list.get(1)%>"></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top; width: 200px;">Last Name<br>
 					</td>
 					<td style="vertical-align: top; width: 200px;"><input
-						name="LastName" value=<%=list.get(2)%>><br></td>
+						name="LastName" value="<%=list.get(2)%>"><br></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top; width: 200px;">Username<br>
 					</td>
 					<td style="vertical-align: top; width: 200px;"><input
-						readonly="readonly" name="Username" value=<%=list.get(0)%>><br></td>
+						readonly="readonly" name="Username" value="<%=list.get(0)%>"><br></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top; width: 200px;">Password<br>
 					</td>
 					<td style="vertical-align: top; width: 200px;"><input
-						name="Password" value=<%=list.get(3)%>><br></td>
+						name="Password" value="<%=list.get(3)%>"><br></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top; width: 200px;">Type<br>
 					</td>
 					<td style="vertical-align: top; width: 200px;"><input
-						name="Type" value=<%=list.get(4)%>><br></td>
+						name="Type" value="<%=list.get(4)%>"><br></td>
 				</tr>
 				<tr>
 					<td style="vertical-align: top;">Status<br>
 					</td>
 
 					<td style="vertical-align: top; width: 200px;"><input
-						name="Status" value=<%=list.get(5)%>><br></td>
+						name="Status" value="<%=list.get(5)%>"><br></td>
 				</tr>
 			</tbody>
 		</table>
